@@ -42,12 +42,12 @@
         }
     </style>
 
-    <title>{{ page.title }}</title>
+    <title>{{ site.title }}</title>
 </head>
 
 <body>
-      <!-- add navbar -->
-      <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top hidden-navbar" id="main-navbar">
+    <!-- add navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top hidden-navbar" id="main-navbar">
         <a class="navbar-brand" href="#">Art Gallery Website Logo</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -62,7 +62,7 @@
                     <a class="nav-link" href="#about">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#exhibitions">Exhibitions</a>
+                    <a class="nav-link" href="#Paintings">Paintings</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#contact">Contact</a>
@@ -80,8 +80,8 @@
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 {% for item in site.slider_images %}
-                    <li data-target="#carouselExampleIndicators" data-slide-to="{{ forloop.index0 }}"
-                        {% if forloop.first %}class="active"{% endif %}></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="{{ forloop.index0 }}" {% if forloop.first
+                    %}class="active" {% endif %}></li>
                 {% endfor %}
             </ol>
             <div class="carousel-inner">
@@ -91,7 +91,7 @@
                         style="max-height: 100vh; object-fit: cover;">
                 </div>
                 {% endfor %}
-                
+
             </div>
             <button class="carousel-control-prev" type="button" data-target="#carouselExampleIndicators"
                 data-slide="prev">
@@ -106,12 +106,13 @@
         </div>
     </section>
 
+    <section id = "about"></section>
     <div class="break" style="min-height: 5em;"></div>
 
 
     <div class="container">
         <!-- about section  -->
-        <h3 id="about"> About Me </h3>
+        <h3> About Me </h3>
         <div class="row">
             <div class="col-md-7">
                 {{ content }}
@@ -124,46 +125,68 @@
         </div>
 
 
+        <!-- Paintings section -->
+        <section id = "Paintings"></section>
         <div class="break" style="min-height: 5em;"></div>
+        
+        <h2>Paintings</h2>
+        <br>
 
-        <!-- exhibitions section -->
-        <h2 id="exhibitions">Exhibitions</h2>
+        <p>These are my paintings. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto quam inventore
+            dolor laudantium beatae similique possimus magni enim eligendi facilis. Recusandae voluptatum voluptate
+            doloribus, ipsam minima dolore voluptas necessitatibus enim odit laboriosam possimus quibusdam hic nam quo
+            culpa! Hic magni provident vel dolorum, reiciendis odit dolor officiis alias aliquid facere.</p>
+
+        <br>
+
+        <h4>Oil Paintings </h4>
 
         <div class="container mt-4">
             <div class="row">
                 <!-- Image Gallery -->
+                {% for item in site.oil_paintings %}
                 <div class="col-md-4 mb-4">
-                    <img src="{{ site.baseurl }}/assets/thumbnails/1.jpg" class="img-fluid rounded gallery-image" data-toggle="modal"
-                        data-target="#imageModal" data-src="{{ site.baseurl }}/assets/gallery/1.jpg" data-name="Image 1" alt="Image 1">
+                    <img src="{{ site.baseurl }}/{{item.thumbnail}}" class="img-fluid rounded gallery-image"
+                        data-toggle="modal" data-target="#imageModal" data-src="{{ site.baseurl }}/{{item.url}}"
+                        data-name="{{item.title}}" alt={{item.title}}>
                 </div>
-
-                <div class="col-md-4 mb-4">
-                    <img src="{{ site.baseurl }}/assets/thumbnails/2.jpg" class="img-fluid rounded gallery-image" data-toggle="modal"
-                        data-target="#imageModal" data-src="{{ site.baseurl }}/assets/gallery/2.jpg" alt="Image 1">
-                </div>
-
-                <div class="col-md-4 mb-4">
-                    <img src="{{ site.baseurl }}/assets/thumbnails/3.jpg" class="img-fluid rounded gallery-image" data-toggle="modal"
-                        data-target="#imageModal" data-src="{{ site.baseurl }}/assets/gallery/3.jpg" alt="Image 1">
-                </div>
-
-                <div class="col-md-4 mb-4">
-                    <img src="{{ site.baseurl }}/assets/thumbnails/4.jpg" class="img-fluid rounded gallery-image" data-toggle="modal"
-                        data-target="#imageModal" data-src="{{ site.baseurl }}/assets/gallery/4.jpg" alt="Image 1">
-                </div>
-
-                <div class="col-md-4 mb-4">
-                    <img src="{{ site.baseurl }}/assets/thumbnails/5.jpg" class="img-fluid rounded gallery-image" data-toggle="modal"
-                        data-target="#imageModal" data-src="{{ site.baseurl }}/assets/gallery/5.jpg" alt="Image 1">
-                </div>
-
-                <div class="col-md-4 mb-4">
-                    <img src="{{ site.baseurl }}/assets/thumbnails/6.jpg" class="img-fluid rounded gallery-image" data-toggle="modal"
-                        data-target="#imageModal" data-src="{{ site.baseurl }}/assets/gallery/6.jpg" alt="Image 1">
-                </div>
-                <!-- Repeat for other images -->
+                {% endfor %}
             </div>
         </div>
+
+        <br><br>
+
+        <h4>Acrylic Paintings </h4>
+
+        <div class="container mt-4">
+            <div class="row">
+                <!-- Image Gallery -->
+                {% for item in site.acrylic_paintings %}
+                <div class="col-md-4 mb-4">
+                    <img src="{{ site.baseurl }}/{{item.thumbnail}}" class="img-fluid rounded gallery-image"
+                        data-toggle="modal" data-target="#imageModal" data-src="{{ site.baseurl }}/{{item.url}}"
+                        data-name="{{item.title}}" alt={{item.title}}>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <br><br>
+
+        <h4>Water Color Media </h4>
+
+        <div class="container mt-4">
+            <div class="row">
+                <!-- Image Gallery -->
+                {% for item in site.water_color_media %}
+                <div class="col-md-4 mb-4">
+                    <img src="{{ site.baseurl }}/{{item.thumbnail}}" class="img-fluid rounded gallery-image"
+                        data-toggle="modal" data-target="#imageModal" data-src="{{ site.baseurl }}/{{item.url}}"
+                        data-name="{{item.title}}" alt={{item.title}}>
+                </div>
+                {% endfor %}
+            </div>
+
 
         <!-- Single Modal -->
         <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel"
@@ -247,4 +270,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
     -->
 </body>
+
 </html>

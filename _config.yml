@@ -1,4 +1,4 @@
-title: Your awesome title
+title: Anika Roy Canvas
 email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
@@ -17,3 +17,79 @@ slider_images:
   - assets/slider/1.jpg
   - assets/slider/2.jpg
   - assets/slider/3.jpg
+
+oil_paintings:
+  - url: assets/gallery/1.jpg
+    thumbnail: assets/thumbnails/1.jpg
+    title: "Oil Painting 1"
+
+  - url: assets/gallery/2.jpg
+    thumbnail: assets/thumbnails/2.jpg
+    title: "Oil Painting 2"
+
+  - url: assets/gallery/3.jpg
+    thumbnail: assets/thumbnails/3.jpg
+    title: "Oil Painting 3"
+
+  - url: assets/gallery/4.jpg
+    thumbnail: assets/thumbnails/4.jpg
+    title: "Oil Painting 4"
+
+  - url: assets/gallery/5.jpg
+    thumbnail: assets/thumbnails/5.jpg
+    title: "Oil Painting 5"
+
+  - url: assets/gallery/6.jpg 
+    thumbnail: assets/thumbnails/6.jpg
+    title: "Oil Painting 6"
+
+acrylic_paintings:
+  - url: assets/gallery/1.jpg
+    thumbnail: assets/thumbnails/1.jpg
+    title: "Acrylic Painting 1"
+
+  - url: assets/gallery/2.jpg
+    thumbnail: assets/thumbnails/2.jpg
+    title: "Acrylic Painting 2"
+
+  - url: assets/gallery/3.jpg
+    thumbnail: assets/thumbnails/3.jpg
+    title: "Acrylic Painting 3"
+
+  - url: assets/gallery/4.jpg
+    thumbnail: assets/thumbnails/4.jpg
+    title: "Acrylic Painting 4"
+
+  - url: assets/gallery/5.jpg
+    thumbnail: assets/thumbnails/5.jpg
+    title: "Acrylic Painting 5"
+
+  - url: assets/gallery/6.jpg 
+    thumbnail: assets/thumbnails/6.jpg
+    title: "Acrylic Painting 6"
+
+
+water_color_media:
+  - url: assets/gallery/1.jpg
+    thumbnail: assets/thumbnails/1.jpg
+    title: "Water Color Media 1"
+
+  - url: assets/gallery/2.jpg
+    thumbnail: assets/thumbnails/2.jpg
+    title: "Water Color Media 2"
+
+  - url: assets/gallery/3.jpg
+    thumbnail: assets/thumbnails/3.jpg
+    title: "Water Color Media 3"
+
+  - url: assets/gallery/4.jpg
+    thumbnail: assets/thumbnails/4.jpg
+    title: "Water Color Media 4"
+
+  - url: assets/gallery/5.jpg
+    thumbnail: assets/thumbnails/5.jpg
+    title: "Water Color Media 5"
+
+  - url: assets/gallery/6.jpg 
+    thumbnail: assets/thumbnails/6.jpg
+    title: "Water Color Media 6"
