@@ -89,9 +89,6 @@
                     <li data-target="#carouselExampleIndicators" data-slide-to="2"
                         ></li>
                 
-                    <li data-target="#carouselExampleIndicators" data-slide-to="3"
-                        ></li>
-                
             </ol>
             <div class="carousel-inner">
                 
@@ -107,11 +104,6 @@
                 
                 <div class="carousel-item ">
                     <img src="/assets/slider/3.jpg" class="d-block w-100" alt="..."
-                        style="max-height: 100vh; object-fit: cover;">
-                </div>
-                
-                <div class="carousel-item ">
-                    <img src="/assets/slider/4.jpg" class="d-block w-100" alt="..."
                         style="max-height: 100vh; object-fit: cover;">
                 </div>
                 
@@ -178,7 +170,7 @@
                 <!-- Image Gallery -->
                 <div class="col-md-4 mb-4">
                     <img src="/assets/thumbnails/1.jpg" class="img-fluid rounded gallery-image" data-toggle="modal"
-                        data-target="#imageModal" data-src="/assets/gallery/1.jpg" alt="Image 1">
+                        data-target="#imageModal" data-src="/assets/gallery/1.jpg" data-name="Image 1" alt="Image 1">
                 </div>
 
                 <div class="col-md-4 mb-4">
@@ -215,13 +207,14 @@
             <div class="modal-dialog modal-xl" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="imageModalLabel">Image Preview</h5>
+                        <h5 class="modal-title" id="imageModalHeader">Image Preview</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body text-center">
                         <img id="modalImage" class="img-fluid" alt="Modal Image" style="max-height: 80vh">
+                        <p id="modalImageName"></p>
                     </div>
                 </div>
             </div>
@@ -273,9 +266,11 @@
             $('#imageModal').on('show.bs.modal', function (event) {
                 var image = $(event.relatedTarget); // Image that triggered the modal
                 var imageUrl = image.data('src'); // Extract info from data-* attributes
+                var imageName = image.data('name');
 
                 // Update the modal's content with the new image source
                 $('#modalImage').attr('src', imageUrl);
+                $('#imageModalHeader').text(imageName);
             });
         });
     </script>
