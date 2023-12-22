@@ -4,7 +4,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "" 
 url: "https://anika-canvas.github.io/" 
 
 
@@ -43,6 +43,7 @@ oil_paintings:
     thumbnail: assets/thumbnails/6.jpg
     title: "Oil Painting 6"
 
+
 acrylic_paintings:
   - url: assets/gallery/1.jpg
     thumbnail: assets/thumbnails/1.jpg
@@ -67,6 +68,58 @@ acrylic_paintings:
   - url: assets/gallery/6.jpg 
     thumbnail: assets/thumbnails/6.jpg
     title: "Acrylic Painting 6"
+
+
+pen_media:
+  - url: assets/gallery/1.jpg
+    thumbnail: assets/thumbnails/1.jpg
+    title: "Pen Painting 1"
+
+  - url: assets/gallery/2.jpg
+    thumbnail: assets/thumbnails/2.jpg
+    title: "Pen Painting 2"
+
+  - url: assets/gallery/3.jpg
+    thumbnail: assets/thumbnails/3.jpg
+    title: "Pen Painting 3"
+
+  - url: assets/gallery/4.jpg
+    thumbnail: assets/thumbnails/4.jpg
+    title: "Pen Painting 4"
+
+  - url: assets/gallery/5.jpg
+    thumbnail: assets/thumbnails/5.jpg
+    title: "Pen Painting 5"
+
+  - url: assets/gallery/6.jpg 
+    thumbnail: assets/thumbnails/6.jpg
+    title: "Pen Painting 6"
+
+
+pencil_media:
+  - url: assets/gallery/1.jpg
+    thumbnail: assets/thumbnails/1.jpg
+    title: "Pencil Media 1"
+
+  - url: assets/gallery/2.jpg
+    thumbnail: assets/thumbnails/2.jpg
+    title: "Pencil Media 2"
+
+  - url: assets/gallery/3.jpg
+    thumbnail: assets/thumbnails/3.jpg
+    title: "Pencil Media 3"
+
+  - url: assets/gallery/4.jpg
+    thumbnail: assets/thumbnails/4.jpg
+    title: "Pencil Media 4"
+
+  - url: assets/gallery/5.jpg
+    thumbnail: assets/thumbnails/5.jpg
+    title: "Pencil Media 5"
+
+  - url: assets/gallery/6.jpg 
+    thumbnail: assets/thumbnails/6.jpg
+    title: "Pencil Media 6"
 
 
 water_color_media:
