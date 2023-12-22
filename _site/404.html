@@ -40,6 +40,57 @@
             width: 100%;
             object-fit: cover;
         }
+
+        .carousel-caption {
+            position: absolute;
+            top: 40%;
+        }
+
+        @media(max-width: 800px) {
+            .carousel-caption h2 {
+                font-size: 260%;
+            }
+
+            .carousel-caption p {
+                font-size: 90%;
+            }
+        }
+
+        @media(max-width: 600px) {
+            .carousel-caption h2 {
+                font-size: 110%;
+            }
+
+            .carousel-caption p {
+                font-size: 80%;
+            }
+        }
+
+        .typewriter h2 {
+            overflow: hidden;
+            /* Ensures the content is not revealed until the animation */
+            /*border-right: .15em solid orange;  The typwriter cursor */
+            white-space: nowrap;
+            /* Keeps the content on a single line */
+            margin: 0 auto;
+            /* Gives that scrolling effect as the typing happens */
+            letter-spacing: .10em;
+            /* Adjust as needed */
+            animation:
+                typing 3.5s steps(40, end),
+                blink-caret .75s step-end infinite;
+        }
+
+        /* The typing effect */
+        @keyframes typing {
+            from {
+                width: 0
+            }
+
+            to {
+                width: 100%
+            }
+        }
     </style>
 
     <title>Anika Roy Canvas</title>
@@ -92,16 +143,46 @@
                 <div class="carousel-item  active ">
                     <img src="/assets/slider/1.jpg" class="d-block w-100" alt="..."
                         style="max-height: 100vh; object-fit: cover;">
+
+                    <div class="carousel-caption d-none d-block">
+                        <div class="typewriter">
+                            <h2 style="font-family: 'Economica';" class="display-4">Hi, this is Anika Roy</h2>
+                        </div>
+                        <p class="lead"> Welcome to art that whisper the voice of nature, explore the entire universe.
+                            <br>
+                            <a href="#Paintings" style="color: inherit; "> See more </a>
+                        </p>
+                    </div>
                 </div>
                 
                 <div class="carousel-item ">
                     <img src="/assets/slider/2.jpg" class="d-block w-100" alt="..."
                         style="max-height: 100vh; object-fit: cover;">
+
+                    <div class="carousel-caption d-none d-block">
+                        <div class="typewriter">
+                            <h2 style="font-family: 'Economica';" class="display-4">Hi, this is Anika Roy</h2>
+                        </div>
+                        <p class="lead"> Welcome to art that whisper the voice of nature, explore the entire universe.
+                            <br>
+                            <a href="#Paintings" style="color: inherit; "> See more </a>
+                        </p>
+                    </div>
                 </div>
                 
                 <div class="carousel-item ">
                     <img src="/assets/slider/3.jpg" class="d-block w-100" alt="..."
                         style="max-height: 100vh; object-fit: cover;">
+
+                    <div class="carousel-caption d-none d-block">
+                        <div class="typewriter">
+                            <h2 style="font-family: 'Economica';" class="display-4">Hi, this is Anika Roy</h2>
+                        </div>
+                        <p class="lead"> Welcome to art that whisper the voice of nature, explore the entire universe.
+                            <br>
+                            <a href="#Paintings" style="color: inherit; "> See more </a>
+                        </p>
+                    </div>
                 </div>
                 
 
@@ -119,7 +200,7 @@
         </div>
     </section>
 
-    <section id = "about"></section>
+    <section id="about"></section>
     <div class="break" style="min-height: 5em;"></div>
 
 
@@ -159,9 +240,9 @@
 
 
         <!-- Paintings section -->
-        <section id = "Paintings"></section>
+        <section id="Paintings"></section>
         <div class="break" style="min-height: 5em;"></div>
-        
+
         <h2>Paintings</h2>
         <br>
 
@@ -311,83 +392,85 @@
             </div>
 
 
-        <!-- Single Modal -->
-        <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="imageModalHeader">Image Preview</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body text-center">
-                        <img id="modalImage" class="img-fluid" alt="Modal Image" style="max-height: 80vh">
-                        <p id="modalImageName"></p>
+            <!-- Single Modal -->
+            <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-xl" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="imageModalHeader">Image Preview</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <img id="modalImage" class="img-fluid" alt="Modal Image" style="max-height: 80vh">
+                            <p id="modalImageName"></p>
+                        </div>
                     </div>
                 </div>
             </div>
+            <!-- modal ends  -->
+
+            <div class="break" style="min-height: 5em;"></div>
+            <!-- contact section -->
+            <h2>Contact</h2>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est dolorum nesciunt laudantium odio nobis
+            quisquam,
+            necessitatibus fugiat similique quia qui voluptatem blanditiis totam deserunt dolorem accusantium corporis
+            error
+            vero minus mollitia. Ipsa voluptatum omnis eos laborum impedit cupiditate ipsam veritatis?
+            <!-- contact ends -->
+
+            <div class="break" style="min-height: 5em;"></div>
+
         </div>
-        <!-- modal ends  -->
-
-        <div class="break" style="min-height: 5em;"></div>
-        <!-- contact section -->
-        <h2>Contact</h2>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est dolorum nesciunt laudantium odio nobis quisquam,
-        necessitatibus fugiat similique quia qui voluptatem blanditiis totam deserunt dolorem accusantium corporis error
-        vero minus mollitia. Ipsa voluptatum omnis eos laborum impedit cupiditate ipsam veritatis?
-        <!-- contact ends -->
-
-        <div class="break" style="min-height: 5em;"></div>
-
-    </div>
 
 
-    <!-- Optional JavaScript; choose one of the two! -->
+        <!-- Optional JavaScript; choose one of the two! -->
 
-    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
-        crossorigin="anonymous"></script>
+        <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+            crossorigin="anonymous"></script>
 
-    <script>
-        $(document).ready(function () {
-            // Add scroll event listener
-            $(window).scroll(function () {
-                // Check if the user has scrolled 200px
-                if ($(this).scrollTop() > 280) {
-                    // If yes, remove the "hidden-navbar" class to make the navbar visible
-                    $('#main-navbar').removeClass('hidden-navbar');
-                } else {
-                    // If not, add the "hidden-navbar" class to hide the navbar
-                    $('#main-navbar').addClass('hidden-navbar');
-                }
+        <script>
+            $(document).ready(function () {
+                // Add scroll event listener
+                $(window).scroll(function () {
+                    // Check if the user has scrolled 200px
+                    if ($(this).scrollTop() > 280) {
+                        // If yes, remove the "hidden-navbar" class to make the navbar visible
+                        $('#main-navbar').removeClass('hidden-navbar');
+                    } else {
+                        // If not, add the "hidden-navbar" class to hide the navbar
+                        $('#main-navbar').addClass('hidden-navbar');
+                    }
+                });
             });
-        });
-    </script>
+        </script>
 
-    <script>
-        $(document).ready(function () {
-            // Set up event listener for when the modal is about to be shown
-            $('#imageModal').on('show.bs.modal', function (event) {
-                var image = $(event.relatedTarget); // Image that triggered the modal
-                var imageUrl = image.data('src'); // Extract info from data-* attributes
-                var imageName = image.data('name');
+        <script>
+            $(document).ready(function () {
+                // Set up event listener for when the modal is about to be shown
+                $('#imageModal').on('show.bs.modal', function (event) {
+                    var image = $(event.relatedTarget); // Image that triggered the modal
+                    var imageUrl = image.data('src'); // Extract info from data-* attributes
+                    var imageName = image.data('name');
 
-                // Update the modal's content with the new image source
-                $('#modalImage').attr('src', imageUrl);
-                $('#imageModalHeader').text(imageName);
+                    // Update the modal's content with the new image source
+                    $('#modalImage').attr('src', imageUrl);
+                    $('#imageModalHeader').text(imageName);
+                });
             });
-        });
-    </script>
+        </script>
 
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
+        <!-- Option 2: Separate Popper and Bootstrap JS -->
+        <!--
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
