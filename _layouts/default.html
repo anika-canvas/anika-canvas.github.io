@@ -301,6 +301,31 @@
 
         <br><br> 
 
+        <h4>Mix Media</h4>
+
+        <div class="container mt-4">
+            <div class="row">
+                <!-- Image Gallery -->
+                {% for item in site.illustration_mix_media %}
+                {% include gallery_item.html item=item %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <br><br>
+
+        <h4>Pen Sketchbooking  </h4>
+
+        <div class="container mt-4">
+            <div class="row">
+                <!-- Image Gallery -->
+                {% for item in site.pen_sketchbook %}
+                {% include gallery_item.html item=item %}
+                {% endfor %}
+            </div>
+
+        
+
         {% include single_modal.html %}
 
         <div class="break" style="min-height: 5em;"></div>

@@ -25,8 +25,8 @@ oil_paintings:
     thumbnail: assets/thumbnails/WINDOW.jpg
     title: "WINDOW"
 
-  - url: assets/gallery/Soil's storage.jpg
-    thumbnail: assets/thumbnails/Soil's storage.jpg
+  - url: assets/gallery/Soil_s storage.jpg
+    thumbnail: assets/thumbnails/Soil_s storage.jpg
     title: "Soil's storage"
 
   - url: assets/gallery/InkedIMG_20200203_155451_LI.jpg
@@ -77,12 +77,12 @@ oil_paintings:
     thumbnail: assets/thumbnails/2.jpg
     title: "Fish Market"
 
-  - url: assets/gallery/IMG_3053.jpg 
-    thumbnail: assets/thumbnails/IMG_3053.jpg
+  - url: assets/gallery/IMG_3053.jpeg 
+    thumbnail: assets/thumbnails/IMG_3053.jpeg
     title: "Meat Market"
 
-  - url: assets/gallery/IMG_5620.jpg 
-    thumbnail: assets/thumbnails/IMG_5620.jpg
+  - url: assets/gallery/IMG_5620.jpeg 
+    thumbnail: assets/thumbnails/IMG_5620.jpeg
     title: "Meat Market 2"
 
 
@@ -361,79 +361,79 @@ digital_illustration:
     thumbnail: assets/thumbnails/cartoon anika.jpg
     title: "cartoon anika"
 
-  - url: assets/gallery/book illustration 1.jpg
-    thumbnail: assets/thumbnails/book illustration 1.jpg
+  - url: assets/gallery/book illustration 1.png
+    thumbnail: assets/thumbnails/book illustration 1.png
     title: "Book illustration 1"
 
-  - url: assets/gallery/book illustration 2.jpg 
-    thumbnail: assets/thumbnails/book illustration 2.jpg
+  - url: assets/gallery/book illustration 2.png 
+    thumbnail: assets/thumbnails/book illustration 2.png
     title: "Book illustration 2"
 
-  - url: assets/gallery/book illustration 3.jpg 
-    thumbnail: assets/thumbnails/book illustration 3.jpg
+  - url: assets/gallery/book illustration 3.png 
+    thumbnail: assets/thumbnails/book illustration 3.png
     title: "Book illustration 3"
 
-  - url: assets/gallery/book illustration 4.jpg 
-    thumbnail: assets/thumbnails/book illustration 4.jpg
+  - url: assets/gallery/book illustration 4.png 
+    thumbnail: assets/thumbnails/book illustration 4.png
     title: "Book illustration 4"
 
-  - url: assets/gallery/illus 3a.jpg 
-    thumbnail: assets/thumbnails/illus 3a.jpg
+  - url: assets/gallery/illus 3a.png 
+    thumbnail: assets/thumbnails/illus 3a.png
     title: ""
 
-  - url: assets/gallery/illus 3b.jpg 
-    thumbnail: assets/thumbnails/illus 3b.jpg
+  - url: assets/gallery/illus 3b.png 
+    thumbnail: assets/thumbnails/illus 3b.png
     title: ""
 
-  - url: assets/gallery/illus 3c.jpg 
-    thumbnail: assets/thumbnails/illus 3c.jpg
+  - url: assets/gallery/illus 3c.png 
+    thumbnail: assets/thumbnails/illus 3c.png
     title: ""
 
-  - url: assets/gallery/illus 4 b.jpg 
-    thumbnail: assets/thumbnails/illus 4 b.jpg
+  - url: assets/gallery/illus 4 b.png 
+    thumbnail: assets/thumbnails/illus 4 b.png
     title: ""
 
-  - url: assets/gallery/illus 7b.jpg 
-    thumbnail: assets/thumbnails/illus 7b.jpg
+  - url: assets/gallery/illus 7b.png 
+    thumbnail: assets/thumbnails/illus 7b.png
     title: ""
 
-  - url: assets/gallery/illus 8b.jpg 
-    thumbnail: assets/thumbnails/illus 8b.jpg
+  - url: assets/gallery/illus 8b.png 
+    thumbnail: assets/thumbnails/illus 8b.png
     title: ""
 
-  - url: assets/gallery/illus 8d.jpg 
-    thumbnail: assets/thumbnails/illus 8d.jpg
+  - url: assets/gallery/illus 8d.png 
+    thumbnail: assets/thumbnails/illus 8d.png
     title: ""
 
 poster_design:
-  - url: assets/gallery/Mohanogor poster.jpg
-    thumbnail: assets/thumbnails/Mohanogor poster.jpg
+  - url: assets/gallery/Mohanogor poster.png
+    thumbnail: assets/thumbnails/Mohanogor poster.png
     title: "Mohanogor poster"
 
-  - url: assets/gallery/Friday poster design.jpg
-    thumbnail: assets/thumbnails/Friday poster design.jpg
+  - url: assets/gallery/Friday poster design.png
+    thumbnail: assets/thumbnails/Friday poster design.png
     title: "Fri day"
 
   - url: assets/gallery/bijli poster design.jpg
     thumbnail: assets/thumbnails/bijli poster design.jpg
     title: "Bijli"
 
-  - url: assets/gallery/-.jpg
-    thumbnail: assets/thumbnails/-.jpg
+  - url: assets/gallery/-.jpeg
+    thumbnail: assets/thumbnails/-.jpeg
     title: ""
 
 
-Mix_Media:
-  - url: assets/gallery/Sedin October Book Illustration.jpg
-    thumbnail: assets/thumbnails/Sedin October Book Illustration.jpg
+illustration_mix_media:
+  - url: assets/gallery/Sedin October Book Illustration.png
+    thumbnail: assets/thumbnails/Sedin October Book Illustration.png
     title: "Sedin October"
 
-  - url: assets/gallery/Hridoyakkhi.jpg
-    thumbnail: assets/thumbnails/Hridoyakkhi.jpg
+  - url: assets/gallery/Hridoyakkhi.png
+    thumbnail: assets/thumbnails/Hridoyakkhi.png
     title: "Hridoyakkhi"
 
 
-Pen_Sketchbook:
+pen_sketchbook:
   - url: assets/gallery/IMG_20200625_192151.jpg
     thumbnail: assets/thumbnails/IMG_20200625_192151.jpg
     title: ""
