@@ -14,135 +14,489 @@ plugins:
 # slider
 
 slider_images:
-  - assets/slider/1.jpg
-  - assets/slider/2.jpg
-  - assets/slider/3.jpg
+  - assets/slider/WINDOW.jpg
+  - assets/slider/DSC09392.jpg
+  - assets/slider/DSC09388.jpg
+  - assets/slider/Metal Work.jpg
+  - assets/slider/Night Prayer.jpg
+
 
 oil_paintings:
-  - url: assets/gallery/1.jpg
-    thumbnail: assets/thumbnails/1.jpg
-    title: "Oil Painting 1"
+  - url: assets/gallery/WINDOW.jpg
+    thumbnail: assets/thumbnails/WINDOW.jpg
+    title: "WINDOW"
 
-  - url: assets/gallery/2.jpg
+  - url: assets/gallery/Soil's storage.jpg
+    thumbnail: assets/thumbnails/Soil's storage.jpg
+    title: "Soil's storage"
+
+  - url: assets/gallery/InkedIMG_20200203_155451_LI.jpg
+    thumbnail: assets/thumbnails/InkedIMG_20200203_155451_LI.jpg
+    title: "Still Life"
+
+  - url: assets/gallery/IMG_20191119_183905.jpg
+    thumbnail: assets/thumbnails/IMG_20191119_183905.jpg
+    title: "Trivu Dawn"
+
+  - url: assets/gallery/figure drawing 1.jpg
+    thumbnail: assets/thumbnails/figure drawing 1.jpg
+    title: "Figure Composition 1"
+
+  - url: assets/gallery/DSC09460.jpg 
+    thumbnail: assets/thumbnails/DSC09460.jpg
+    title: "Trivu Morning"
+
+  - url: assets/gallery/IMG_20180630_000758.jpg 
+    thumbnail: assets/thumbnails/IMG_20180630_000758.jpg
+    title: "Still Life"
+
+  - url: assets/gallery/IMG-20221114-WA0006.jpg
+    thumbnail: assets/IMG-20221114-WA0006.jpg
+    title: Trivu Afternon"
+
+  - url: assets/gallery/IMG-20221113-WA0008.jpg
+    thumbnail: assets/thumbnails/IMG-20221113-WA0008.jpg
+    title: ""
+
+  - url: assets/gallery/IMG-20221017-WA0000.jpg
+    thumbnail: assets/thumbnails/IMG-20221017-WA0000.jpg
+    title: "Figure Composition 2"
+
+  - url: assets/gallery/IMG-20220321-WA0000.jpg
+    thumbnail: assets/thumbnails/IMG-20220321-WA0000.jpg
+    title: "Figure Composition 3"
+
+  - url: assets/gallery/IMG_20220920_012756.jpg
+    thumbnail: assets/thumbnails/IMG_20220920_012756.jpg
+    title: "Two Sattire (copy work)"
+
+  - url: assets/gallery/20220811_190102.jpg 
+    thumbnail: assets/thumbnails/20220811_190102.jpg
+    title: ""
+
+  - url: assets/gallery/2.jpg 
     thumbnail: assets/thumbnails/2.jpg
-    title: "Oil Painting 2"
+    title: "Fish Market"
 
-  - url: assets/gallery/3.jpg
-    thumbnail: assets/thumbnails/3.jpg
-    title: "Oil Painting 3"
+  - url: assets/gallery/IMG_3053.jpg 
+    thumbnail: assets/thumbnails/IMG_3053.jpg
+    title: "Meat Market"
 
-  - url: assets/gallery/4.jpg
-    thumbnail: assets/thumbnails/4.jpg
-    title: "Oil Painting 4"
-
-  - url: assets/gallery/5.jpg
-    thumbnail: assets/thumbnails/5.jpg
-    title: "Oil Painting 5"
-
-  - url: assets/gallery/6.jpg 
-    thumbnail: assets/thumbnails/6.jpg
-    title: "Oil Painting 6"
+  - url: assets/gallery/IMG_5620.jpg 
+    thumbnail: assets/thumbnails/IMG_5620.jpg
+    title: "Meat Market 2"
 
 
 acrylic_paintings:
-  - url: assets/gallery/1.jpg
-    thumbnail: assets/thumbnails/1.jpg
-    title: "Acrylic Painting 1"
+  - url: assets/gallery/DSC09392.jpg
+    thumbnail: assets/thumbnails/DSC09392.jpg
+    title: "Travelling with window 1"
 
-  - url: assets/gallery/2.jpg
-    thumbnail: assets/thumbnails/2.jpg
-    title: "Acrylic Painting 2"
+  - url: assets/gallery/DSC09388.jpg
+    thumbnail: assets/thumbnails/DSC09388.jpg
+    title: "Travelling with window 2"
 
-  - url: assets/gallery/3.jpg
-    thumbnail: assets/thumbnails/3.jpg
-    title: "Acrylic Painting 3"
+  - url: assets/gallery/DSC09442 edit.jpg
+    thumbnail: assets/thumbnails/DSC09442 edit.jpg
+    title: "Travelling with window 3"
 
-  - url: assets/gallery/4.jpg
-    thumbnail: assets/thumbnails/4.jpg
-    title: "Acrylic Painting 4"
+  - url: assets/gallery/Traveling With Window.jpg
+    thumbnail: assets/thumbnails/Traveling With Window.jpg
+    title: "Traveling With Window 4"
 
-  - url: assets/gallery/5.jpg
-    thumbnail: assets/thumbnails/5.jpg
-    title: "Acrylic Painting 5"
+  - url: assets/gallery/Traveling With Window 2.jpg
+    thumbnail: assets/thumbnails/Traveling With Window 2.jpg
+    title: "Traveling With Window 5"
 
-  - url: assets/gallery/6.jpg 
-    thumbnail: assets/thumbnails/6.jpg
-    title: "Acrylic Painting 6"
+  - url: assets/gallery/DSC09397.jpg 
+    thumbnail: assets/thumbnails/DSC09397.jpg
+    title: "Traveling With Window 6"
+
+  - url: assets/gallery/16307488524017.jpg 
+    thumbnail: assets/thumbnails/1630748852401.jpg
+    title: "Selfie"
+
+  - url: assets/gallery/Metamorphosis of Emotion 2.jpg
+    thumbnail: assets/thumbnails/Metamorphosis of Emotion 2.jpg
+    title: "Metamorphosis of Emotion"
+
+  - url: assets/gallery/Metamorphosis of Emotion 3.jpg
+    thumbnail: assets/thumbnails/Metamorphosis of Emotion 3.jpg
+    title: "Metamorphosis of Emotion 2"
+
+  - url: assets/gallery/Metamorphosis of Emotion 4.jpg
+    thumbnail: assets/thumbnails/Metamorphosis of Emotion 4.jpg
+    title: "Metamorphosis of Emotion 3"
+
+  - url: assets/gallery/Metamorphosis of Emotion 5.jpg
+    thumbnail: assets/thumbnails/Metamorphosis of Emotion 5.jpg
+    title: "Metamorphosis of Emotion 4"
+
+  - url: assets/gallery/Metamorphosis of Emotion 6.jpg
+    thumbnail: assets/thumbnails/Metamorphosis of Emotion 6.jpg
+    title: "Metamorphosis of Emotion 5"
 
 
 pen_media:
-  - url: assets/gallery/1.jpg
-    thumbnail: assets/thumbnails/1.jpg
-    title: "Pen Painting 1"
+  - url: assets/gallery/restoration of reminiscence Size 48 . 36 inch.jpg
+    thumbnail: assets/thumbnails/restoration of reminiscence Size 48 . 36 inch.jpg
+    title: "restoration of reminiscence"
 
-  - url: assets/gallery/2.jpg
-    thumbnail: assets/thumbnails/2.jpg
-    title: "Pen Painting 2"
+  - url: assets/gallery/IMG_20190228_190300.jpg
+    thumbnail: assets/thumbnails/IMG_20190228_190300.jpg
+    title: " "
 
-  - url: assets/gallery/3.jpg
-    thumbnail: assets/thumbnails/3.jpg
-    title: "Pen Painting 3"
+  - url: assets/gallery/IMG_20190110_111453_106.jpg
+    thumbnail: assets/thumbnails/IMG_20190110_111453_106.jpg
+    title: " "
 
-  - url: assets/gallery/4.jpg
-    thumbnail: assets/thumbnails/4.jpg
-    title: "Pen Painting 4"
+  - url: assets/gallery/IMG_20190102_123225.jpg
+    thumbnail: assets/thumbnails/IMG_20190102_123225.jpg
+    title: " "
 
-  - url: assets/gallery/5.jpg
-    thumbnail: assets/thumbnails/5.jpg
-    title: "Pen Painting 5"
+  - url: assets/gallery/IMG_20180630_001246.jpg
+    thumbnail: assets/thumbnails/IMG_20180630_001246.jpg
+    title: "Freedom"
 
-  - url: assets/gallery/6.jpg 
-    thumbnail: assets/thumbnails/6.jpg
-    title: "Pen Painting 6"
+  - url: assets/gallery/IMG_20180630_001018.jpg 
+    thumbnail: assets/thumbnails/IMG_20180630_001018.jpg
+    title: " "
 
 
 pencil_media:
-  - url: assets/gallery/1.jpg
-    thumbnail: assets/thumbnails/1.jpg
-    title: "Pencil Media 1"
+  - url: assets/gallery/Constraint of life.jpg
+    thumbnail: assets/thumbnails/Constraint of life.jpg
+    title: "Constraint of life"
 
-  - url: assets/gallery/2.jpg
-    thumbnail: assets/thumbnails/2.jpg
-    title: "Pencil Media 2"
+  - url: assets/gallery/IMG_20190302_210824.jpg
+    thumbnail: assets/thumbnails/IMG_20190302_210824.jpg
+    title: "Still Life"
 
-  - url: assets/gallery/3.jpg
-    thumbnail: assets/thumbnails/3.jpg
-    title: "Pencil Media 3"
+  - url: assets/gallery/IMG_20190302_210652.jpg
+    thumbnail: assets/thumbnails/IMG_20190302_210652.jpg
+    title: " "
 
-  - url: assets/gallery/4.jpg
-    thumbnail: assets/thumbnails/4.jpg
-    title: "Pencil Media 4"
+  - url: assets/gallery/IMG_20180723_224519_911.jpg
+    thumbnail: assets/thumbnails/IMG_20180723_224519_911.jpg
+    title: " "
 
-  - url: assets/gallery/5.jpg
-    thumbnail: assets/thumbnails/5.jpg
-    title: "Pencil Media 5"
+  - url: assets/gallery/IMG_20180701_171854.jpg
+    thumbnail: assets/thumbnails/IMG_20180701_171854.jpg
+    title: " "
 
-  - url: assets/gallery/6.jpg 
-    thumbnail: assets/thumbnails/6.jpg
-    title: "Pencil Media 6"
+  - url: assets/gallery/FB_IMG_1543685540184.jpg 
+    thumbnail: assets/thumbnails/FB_IMG_1543685540184.jpg
+    title: "Still Life 2"
+
+  - url: assets/gallery/FFB_IMG_1543685515843.jpg 
+    thumbnail: assets/thumbnails/FB_IMG_1543685515843.jpg
+    title: " "
+
+  - url: assets/gallery/FB_IMG_1543685507979.jpg 
+    thumbnail: assets/thumbnails/FB_IMG_1543685507979.jpg
+    title: " "
+
+  - url: assets/gallery/FB_IMG_1543685488868.jpg 
+    thumbnail: assets/thumbnails/FB_IMG_1543685488868.jpg
+    title: " "
+
+  - url: assets/gallery/IMG_20190302_210824.jpg
+    thumbnail: assets/thumbnails/IMG_20190302_210824.jpg
+    title: "Still Life"
+
+  - url: assets/gallery/IMG_20190302_210652.jpg
+    thumbnail: assets/thumbnails/IMG_20190302_210652.jpg
+    title: " "
+
+  - url: assets/gallery/IMG_20180723_224519_911.jpg
+    thumbnail: assets/thumbnails/IMG_20180723_224519_911.jpg
+    title: " "
+
+  - url: assets/gallery/Metamorphosis of Emotion 1.jpg
+    thumbnail: assets/thumbnails/Metamorphosis of Emotion 1.jpg
+    title: "Metamorphosis of Emotion 1"
+
+  - url: assets/gallery/Metamorphosis of Emotion 2.jpg 
+    thumbnail: assets/thumbnails/Metamorphosis of Emotion 2.jpg
+    title: "Metamorphosis of Emotion 2"
+
+  - url: assets/gallery/Metamorphosis of Emotion 3.jpg 
+    thumbnail: assets/thumbnails/Metamorphosis of Emotion 3.jpg
+    title: "Metamorphosis of Emotion 3"
+
+  - url: assets/gallery/Metamorphosis of Emotion 4.jpg 
+    thumbnail: assets/thumbnails/Metamorphosis of Emotion 4.jpg
+    title: "Metamorphosis of Emotion 4"
+
+Mix_Media:
+  - url: assets/gallery/Metal Work.jpg
+    thumbnail: assets/thumbnails/Metal Work.jpg
+    title: "Metal Work"
+
+  - url: assets/gallery/IMG_20230909_080356.jpg
+    thumbnail: assets/thumbnails/IMG_20230909_080356.jpg
+    title: "Khewadani"
+
+  - url: assets/gallery/IMG_20200625_015704.jpg
+    thumbnail: assets/thumbnails/IMG_20200625_015704.jpg
+    title: "Tagore"
 
 
-water_color_media:
-  - url: assets/gallery/1.jpg
-    thumbnail: assets/thumbnails/1.jpg
-    title: "Water Color Media 1"
+Rickshaw_Painting:
+  - url: assets/gallery/20211212_163047.jpg
+    thumbnail: assets/thumbnails/20211212_163047.jpg
+    title: ""
 
-  - url: assets/gallery/2.jpg
-    thumbnail: assets/thumbnails/2.jpg
-    title: "Water Color Media 2"
+  - url: assets/gallery/20211212_150132.jpg
+    thumbnail: assets/thumbnails/20211212_150132.jpg
+    title: ""
 
-  - url: assets/gallery/3.jpg
-    thumbnail: assets/thumbnails/3.jpg
-    title: "Water Color Media 3"
+Book_Illustration:
+  - url: assets/gallery/IMG_20210123_233950.jpg
+    thumbnail: assets/thumbnails/IMG_20210123_233950.jpg
+    title: ""
 
-  - url: assets/gallery/4.jpg
-    thumbnail: assets/thumbnails/4.jpg
-    title: "Water Color Media 4"
+  - url: assets/gallery/IMG_20210123_233931.jpg
+    thumbnail: assets/thumbnails/IMG_20210123_233931.jpg
+    title: " "
 
-  - url: assets/gallery/5.jpg
-    thumbnail: assets/thumbnails/5.jpg
-    title: "Water Color Media 5"
+  - url: assets/gallery/IMG_20210123_233908.jpg
+    thumbnail: assets/thumbnails/IMG_20210123_233908.jpg
+    title: " "
 
-  - url: assets/gallery/6.jpg 
-    thumbnail: assets/thumbnails/6.jpg
-    title: "Water Color Media 6"
+  - url: assets/gallery/IMG_20210123_233833.jpg
+    thumbnail: assets/thumbnails/IMG_20210123_233833.jpg
+    title: " "
+
+  - url: assets/gallery/IMG_20210123_233758.jpg
+    thumbnail: assets/thumbnails/IMG_20210123_233758.jpg
+    title: " "
+
+  - url: assets/gallery/IMG_20210123_233710.jpg 
+    thumbnail: assets/thumbnails/IMG_20210123_233710.jpg
+    title: "Dystopia"
+
+  - url: assets/gallery/IMG_20210123_233654.jpg 
+    thumbnail: assets/thumbnails/IMG_20210123_233654.jpg
+    title: " "
+
+  - url: assets/gallery/IMG_20210123_233621.jpg 
+    thumbnail: assets/thumbnails/IMG_20210123_233621.jpg
+    title: ""
+
+  - url: assets/gallery/IMG_20210123_233604.jpg 
+    thumbnail: assets/thumbnails/IMG_20210123_233604.jpg
+    title: ""
+
+  - url: assets/gallery/IMG_20210123_233520.jpg 
+    thumbnail: assets/thumbnails/IMG_20210123_233520.jpg
+    title: ""
+
+  - url: assets/gallery/IMG_20210123_233353.jpg 
+    thumbnail: assets/thumbnails/IMG_20210123_233353.jpg
+    title: ""
+
+  - url: assets/gallery/IMG_20210123_232725.jpg 
+    thumbnail: assets/thumbnails/IMG_20210123_232725.jpg
+    title: ""
+
+  - url: assets/gallery/FB_IMG_1543685593338.jpg 
+    thumbnail: assets/thumbnails/FB_IMG_1543685593338.jpg
+    title: ""
+
+  - url: assets/gallery/IMG_20210123_232632.jpg 
+    thumbnail: assets/thumbnails/IMG_20210123_232632.jpg
+    title: " "
+
+  - url: assets/gallery/IMG_20190728_214110.jpg 
+    thumbnail: assets/thumbnails/IMG_20190728_214110.jpg
+    title: ""
+
+  - url: assets/gallery/IMG_20190728_214110.jpg 
+    thumbnail: assets/thumbnails/IMG_20190728_214110.jpg
+    title: ""
+
+  - url: assets/gallery/IMG_20210123_232445.jpg 
+    thumbnail: assets/thumbnails/IMG_20210123_232445.jpg
+    title: ""
+
+  - url: assets/gallery/IMG_20210123_232356.jpg 
+    thumbnail: assets/thumbnails/IMG_20210123_232356.jpg
+    title: ""
+
+  - url: assets/gallery/IMG_20210123_233353.jpg 
+    thumbnail: assets/thumbnails/IMG_20210123_233353.jpg
+    title: ""
+
+  - url: assets/gallery/IMG_20210123_232321.jpg 
+    thumbnail: assets/thumbnails/IMG_20210123_232321.jpg
+    title: ""
+
+  - url: assets/gallery/IMG_20210123_232217.jpg 
+    thumbnail: assets/thumbnails/IMG_20210123_232217.jpg
+    title: ""
+
+  - url: assets/gallery/IMG_20210123_231944.jpg 
+    thumbnail: assets/thumbnails/IMG_20210123_231944.jpg
+    title: " "
+
+  - url: assets/gallery/IMG_20210123_231807.jpg 
+    thumbnail: assets/thumbnails/IMG_20210123_231807.jpg
+    title: ""
+
+
+Digital_Illustration:
+  - url: assets/gallery/vehement design 1.jpg
+    thumbnail: assets/thumbnails/vehement design 1.jpg
+    title: "vehement design"
+
+  - url: assets/gallery/me.jpg
+    thumbnail: assets/thumbnails/me.jpg
+    title: "me"
+
+  - url: assets/gallery/freedom.jpg
+    thumbnail: assets/thumbnails/freedom.jpg
+    title: "Freedom"
+
+  - url: assets/gallery/cartoon anika.jpg
+    thumbnail: assets/thumbnails/cartoon anika.jpg
+    title: "cartoon anika"
+
+  - url: assets/gallery/book illustration 1.jpg
+    thumbnail: assets/thumbnails/book illustration 1.jpg
+    title: "Book illustration 1"
+
+  - url: assets/gallery/book illustration 2.jpg 
+    thumbnail: assets/thumbnails/book illustration 2.jpg
+    title: "Book illustration 2"
+
+  - url: assets/gallery/book illustration 3.jpg 
+    thumbnail: assets/thumbnails/book illustration 3.jpg
+    title: "Book illustration 3"
+
+  - url: assets/gallery/book illustration 4.jpg 
+    thumbnail: assets/thumbnails/book illustration 4.jpg
+    title: "Book illustration 4"
+
+  - url: assets/gallery/illus 3a.jpg 
+    thumbnail: assets/thumbnails/illus 3a.jpg
+    title: ""
+
+  - url: assets/gallery/illus 3b.jpg 
+    thumbnail: assets/thumbnails/illus 3b.jpg
+    title: ""
+
+  - url: assets/gallery/illus 3c.jpg 
+    thumbnail: assets/thumbnails/illus 3c.jpg
+    title: ""
+
+  - url: assets/gallery/illus 4 b.jpg 
+    thumbnail: assets/thumbnails/illus 4 b.jpg
+    title: ""
+
+  - url: assets/gallery/illus 7b.jpg 
+    thumbnail: assets/thumbnails/illus 7b.jpg
+    title: ""
+
+  - url: assets/gallery/illus 8b.jpg 
+    thumbnail: assets/thumbnails/illus 8b.jpg
+    title: ""
+
+  - url: assets/gallery/illus 8d.jpg 
+    thumbnail: assets/thumbnails/illus 8d.jpg
+    title: ""
+
+Poster_Design:
+  - url: assets/gallery/Mohanogor poster.jpg
+    thumbnail: assets/thumbnails/Mohanogor poster.jpg
+    title: "Mohanogor poster"
+
+  - url: assets/gallery/Friday poster design.jpg
+    thumbnail: assets/thumbnails/Friday poster design.jpg
+    title: "Fri day"
+
+  - url: assets/gallery/bijli poster design.jpg
+    thumbnail: assets/thumbnails/bijli poster design.jpg
+    title: "Bijli"
+
+  - url: assets/gallery/-.jpg
+    thumbnail: assets/thumbnails/-.jpg
+    title: ""
+
+
+Mix_Media:
+  - url: assets/gallery/Sedin October Book Illustration.jpg
+    thumbnail: assets/thumbnails/Sedin October Book Illustration.jpg
+    title: "Sedin October"
+
+  - url: assets/gallery/Hridoyakkhi.jpg
+    thumbnail: assets/thumbnails/Hridoyakkhi.jpg
+    title: "Hridoyakkhi"
+
+
+Pen_Sketchbook:
+  - url: assets/gallery/IMG_20200625_192151.jpg
+    thumbnail: assets/thumbnails/IMG_20200625_192151.jpg
+    title: ""
+
+  - url: assets/gallery/IMG_20200625_185346.jpg
+    thumbnail: assets/thumbnails/IMG_20200625_185346.jpg
+    title: ""
+
+  - url: assets/gallery/IMG_20200625_185135.jpg
+    thumbnail: assets/thumbnails/IMG_20200625_185135.jpg
+    title: ""
+
+  - url: assets/gallery/IMG_20200625_184928.jpg
+    thumbnail: assets/thumbnails/IMG_20200625_184928.jpg
+    title: ""
+
+  - url: assets/gallery/IMG_20200625_184845.jpg
+    thumbnail: assets/thumbnails/IMG_20200625_184845.jpg
+    title: ""
+
+  - url: assets/gallery/IMG_20200502_171057.jpg
+    thumbnail: assets/thumbnails/IMG_20200502_171057.jpg
+    title: ""
+
+  - url: assets/gallery/IMG_20200625_184928.jpg
+    thumbnail: assets/thumbnails/IMG_20200625_184928.jpg
+    title: ""
+
+  - url: assets/gallery/IMG_20200625_184845.jpg
+    thumbnail: assets/thumbnails/IMG_20200625_184845.jpg
+    title: ""
+
+
+Set_Decor:
+  - url: assets/gallery/Mirror.jpg
+    thumbnail: assets/thumbnails/Mirror.jpg
+    title: "Mirror"
+
+  - url: assets/gallery/Ring thala.jpg
+    thumbnail: assets/thumbnails/Ring thala.jpg
+    title: "Ring thala"
+
+  - url: assets/gallery/Pakha.jpg
+    thumbnail: assets/thumbnails/Pakha.jpg
+    title: "Pakha"
+
+  - url: assets/gallery/FB_IMG_1702712562350.jpg
+    thumbnail: assets/thumbnails/FB_IMG_1702712562350.jpg
+    title: ""
+
+  - url: assets/gallery/IMG_20200625_184845.jpg
+    thumbnail: assets/thumbnails/IMG_20200625_184845.jpg
+    title: ""
+
+  - url: assets/gallery/IMG_20200502_171057.jpg
+    thumbnail: assets/thumbnails/IMG_20200502_171057.jpg
+    title: ""
+
+  - url: assets/gallery/IMG_20200625_184928.jpg
+    thumbnail: assets/thumbnails/IMG_20200625_184928.jpg
+    title: ""
+
+  - url: assets/gallery/IMG_20200625_184845.jpg
+    thumbnail: assets/thumbnails/IMG_20200625_184845.jpg
+    title: ""
