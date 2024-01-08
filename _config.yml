@@ -51,7 +51,7 @@ oil_paintings:
     title: "Still Life"
 
   - url: assets/gallery/IMG-20221114-WA0006.jpg
-    thumbnail: assets/IMG-20221114-WA0006.jpg
+    thumbnail: assets/thumbnails/IMG-20221114-WA0006.jpg
     title: Trivu Afternon"
 
   - url: assets/gallery/IMG-20221113-WA0008.jpg
@@ -228,7 +228,7 @@ pencil_media:
     thumbnail: assets/thumbnails/Metamorphosis of Emotion 4.jpg
     title: "Metamorphosis of Emotion 4"
 
-Mix_Media:
+mix_media:
   - url: assets/gallery/Metal Work.jpg
     thumbnail: assets/thumbnails/Metal Work.jpg
     title: "Metal Work"
@@ -242,7 +242,7 @@ Mix_Media:
     title: "Tagore"
 
 
-Rickshaw_Painting:
+rickshaw_painting:
   - url: assets/gallery/20211212_163047.jpg
     thumbnail: assets/thumbnails/20211212_163047.jpg
     title: ""
@@ -251,7 +251,7 @@ Rickshaw_Painting:
     thumbnail: assets/thumbnails/20211212_150132.jpg
     title: ""
 
-Book_Illustration:
+book_illustration:
   - url: assets/gallery/IMG_20210123_233950.jpg
     thumbnail: assets/thumbnails/IMG_20210123_233950.jpg
     title: ""
@@ -345,7 +345,7 @@ Book_Illustration:
     title: ""
 
 
-Digital_Illustration:
+digital_illustration:
   - url: assets/gallery/vehement design 1.jpg
     thumbnail: assets/thumbnails/vehement design 1.jpg
     title: "vehement design"
@@ -406,7 +406,7 @@ Digital_Illustration:
     thumbnail: assets/thumbnails/illus 8d.jpg
     title: ""
 
-Poster_Design:
+poster_design:
   - url: assets/gallery/Mohanogor poster.jpg
     thumbnail: assets/thumbnails/Mohanogor poster.jpg
     title: "Mohanogor poster"
