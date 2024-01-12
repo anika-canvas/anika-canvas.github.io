@@ -1,13 +1,34 @@
 - name: Home
   link: /
 - name: About
-  link: /about
+  link: '#about'
 - name: Paintings
-  link: /paintings
+  link: '#paintings'
   subitems:
     - name: Oil Painting
-      link: /oil-painting
+      link: '#oil-painting'
     - name: Acrylic Painting
-      link: /acrylic-painting
+      link: '#acrylic-painting'
+    - name: Pen Media
+      link: '#pen-media'
+    - name: Pencil Media
+      link: '#pencil-media'
+    - name: Mix Media
+      link: '#mix-media'
+    - name: Rickshaw Painting
+      link: '#rickshaw-painting'
+- name: Illustrations
+  link: '#illustrations'
+  subitems:
+    - name: Book Illustration
+      link: '#book-illustration'
+    - name: Digital Illustration
+      link: '#digital-illustration'
+    - name: Poster Design
+      link: '#poster-design'
+    - name: Mix Media
+      link: '#illustration-mix-media'
+    - name: Pen Sketchbooking
+      link: '#sketchbooking'
 - name: Contact
-  link: /contact
+  link: '#contact'
