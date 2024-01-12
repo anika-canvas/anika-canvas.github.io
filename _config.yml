@@ -112,7 +112,7 @@ acrylic_paintings:
     title: "Traveling With Window 6"
 
   - url: assets/gallery/16307488524017.jpg 
-    thumbnail: assets/thumbnails/1630748852401.jpg
+    thumbnail: assets/thumbnails/16307488524017.jpg
     title: "Selfie"
 
   - url: assets/gallery/Metamorphosis of Emotion 2.jpg
@@ -467,7 +467,7 @@ pen_sketchbook:
     title: ""
 
 
-Set_Decor:
+set_decor:
   - url: assets/gallery/Mirror.jpg
     thumbnail: assets/thumbnails/Mirror.jpg
     title: "Mirror"

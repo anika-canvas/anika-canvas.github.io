@@ -209,7 +209,6 @@
         </div>
 
         <br><br>
-
         <h2>Illustrations </h2>
         <br>
 
@@ -282,6 +281,27 @@
             </div>
         </div>
 
+        <br><br>
+        <h2>Outdoor </h2>
+        <br>
+
+        <p>These are my Outdoor work. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto quam
+            inventore dolor laudantium beatae similique possimus magni enim eligendi facilis. Recusandae voluptatum
+            voluptate
+            doloribus, ipsam minima dolore voluptas necessitatibus enim odit laboriosam possimus quibusdam hic nam quo
+            culpa! Hic magni provident vel dolorum, reiciendis odit dolor officiis alias aliquid facere.</p>
+
+        <section id="set-decor"></section>
+        <br><br>
+        <h4>Set Decor </h4>
+        <div class="container mt-4">
+            <div class="row">
+                <!-- Image Gallery -->
+                {% for item in site.set_decor %}
+                {% include gallery_item.html item=item %}
+                {% endfor %}
+            </div>
+        </div>
 
 
         {% include single_modal.html %}
