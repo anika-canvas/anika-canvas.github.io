@@ -42,8 +42,8 @@ def process_images(directory_path):
             if width > TARGET_SIZE or height > TARGET_SIZE:
                 # Scale the image and replace the original
                 scale_image(image_path, image_path, TARGET_SIZE)
-                print(f"Resized {filename} to {TARGET_SIZE}x{TARGET_SIZE}")
+                print(f"Resized {filename} successfully")
 
 # Replace '/gallery' with the path to your image directory
-process_images('website Images')
+process_images('slider')
 
