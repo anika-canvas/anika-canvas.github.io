@@ -1,0 +1,37 @@
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {% for item in site.slider_images %}
+        <li data-target="#carouselExampleIndicators" data-slide-to="{{ forloop.index0 }}" {% if forloop.first
+            %}class="active" {% endif %}></li>
+        {% endfor %}
+    </ol>
+    <div class="carousel-inner">
+        {% for item in site.slider_images %}
+        <div class="carousel-item {% if forloop.first %} active {% endif %}">
+            <img src="{{ site.baseurl }}/{{item }}" class="d-block w-100" alt="..."
+                style="max-height: 100vh; object-fit: cover;">
+
+            <div class="carousel-caption d-none d-block">
+                <div class="typewriter">
+                    <p class="typewriter" style="color: white;"> Welcome to art that whisper the voice of nature, explore the entire universe.
+                        <br>
+                        <a href="#Paintings" style="color: inherit; "> See more </a>
+                    </p>
+                </div>
+                
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+    <button class="carousel-control-prev" type="button" data-target="#carouselExampleIndicators"
+        data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-target="#carouselExampleIndicators"
+        data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </button>
+</div>

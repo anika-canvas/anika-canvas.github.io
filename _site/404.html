@@ -106,13 +106,21 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="#">Home </a>
+                <a class="nav-link" href="#">Home</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#about">About</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#Paintings">Paintings</a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Paintings
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#oil-painting">Oil Painting</a>
+                    <a class="dropdown-item" href="#acrylic-painting">Acrylic Painting</a>
+                    <!-- Add more painting types as needed -->
+                </div>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#contact">Contact</a>
@@ -122,95 +130,96 @@
 </nav>
 
 
+
     <section id="home">
         <!-- add slider here -->
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active" ></li>
-                
-                <li data-target="#carouselExampleIndicators" data-slide-to="1" ></li>
-                
-                <li data-target="#carouselExampleIndicators" data-slide-to="2" ></li>
-                
-                <li data-target="#carouselExampleIndicators" data-slide-to="3" ></li>
-                
-            </ol>
-            <div class="carousel-inner">
-                
-                <div class="carousel-item  active ">
-                    <img src="/assets/slider/WINDOW.jpg" class="d-block w-100" alt="..."
-                        style="max-height: 100vh; object-fit: cover;">
+    <ol class="carousel-indicators">
+        
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active" ></li>
+        
+        <li data-target="#carouselExampleIndicators" data-slide-to="1" ></li>
+        
+        <li data-target="#carouselExampleIndicators" data-slide-to="2" ></li>
+        
+        <li data-target="#carouselExampleIndicators" data-slide-to="3" ></li>
+        
+    </ol>
+    <div class="carousel-inner">
+        
+        <div class="carousel-item  active ">
+            <img src="/assets/slider/WINDOW.jpg" class="d-block w-100" alt="..."
+                style="max-height: 100vh; object-fit: cover;">
 
-                    <div class="carousel-caption d-none d-block">
-                        <div class="typewriter">
-                            <p class="typewriter" style="color: white;"> Welcome to art that whisper the voice of nature, explore the entire universe.
-                                <br>
-                                <a href="#Paintings" style="color: inherit; "> See more </a>
-                            </p>
-                        </div>
-                        
-                    </div>
+            <div class="carousel-caption d-none d-block">
+                <div class="typewriter">
+                    <p class="typewriter" style="color: white;"> Welcome to art that whisper the voice of nature, explore the entire universe.
+                        <br>
+                        <a href="#Paintings" style="color: inherit; "> See more </a>
+                    </p>
                 </div>
                 
-                <div class="carousel-item ">
-                    <img src="/assets/slider/DSC09392.jpg" class="d-block w-100" alt="..."
-                        style="max-height: 100vh; object-fit: cover;">
-
-                    <div class="carousel-caption d-none d-block">
-                        <div class="typewriter">
-                            <p class="typewriter" style="color: white;"> Welcome to art that whisper the voice of nature, explore the entire universe.
-                                <br>
-                                <a href="#Paintings" style="color: inherit; "> See more </a>
-                            </p>
-                        </div>
-                        
-                    </div>
-                </div>
-                
-                <div class="carousel-item ">
-                    <img src="/assets/slider/Metal Work.jpg" class="d-block w-100" alt="..."
-                        style="max-height: 100vh; object-fit: cover;">
-
-                    <div class="carousel-caption d-none d-block">
-                        <div class="typewriter">
-                            <p class="typewriter" style="color: white;"> Welcome to art that whisper the voice of nature, explore the entire universe.
-                                <br>
-                                <a href="#Paintings" style="color: inherit; "> See more </a>
-                            </p>
-                        </div>
-                        
-                    </div>
-                </div>
-                
-                <div class="carousel-item ">
-                    <img src="/assets/slider/Night Prayer.jpg" class="d-block w-100" alt="..."
-                        style="max-height: 100vh; object-fit: cover;">
-
-                    <div class="carousel-caption d-none d-block">
-                        <div class="typewriter">
-                            <p class="typewriter" style="color: white;"> Welcome to art that whisper the voice of nature, explore the entire universe.
-                                <br>
-                                <a href="#Paintings" style="color: inherit; "> See more </a>
-                            </p>
-                        </div>
-                        
-                    </div>
-                </div>
-                
-
             </div>
-            <button class="carousel-control-prev" type="button" data-target="#carouselExampleIndicators"
-                data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-target="#carouselExampleIndicators"
-                data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </button>
         </div>
+        
+        <div class="carousel-item ">
+            <img src="/assets/slider/DSC09392.jpg" class="d-block w-100" alt="..."
+                style="max-height: 100vh; object-fit: cover;">
+
+            <div class="carousel-caption d-none d-block">
+                <div class="typewriter">
+                    <p class="typewriter" style="color: white;"> Welcome to art that whisper the voice of nature, explore the entire universe.
+                        <br>
+                        <a href="#Paintings" style="color: inherit; "> See more </a>
+                    </p>
+                </div>
+                
+            </div>
+        </div>
+        
+        <div class="carousel-item ">
+            <img src="/assets/slider/Metal Work.jpg" class="d-block w-100" alt="..."
+                style="max-height: 100vh; object-fit: cover;">
+
+            <div class="carousel-caption d-none d-block">
+                <div class="typewriter">
+                    <p class="typewriter" style="color: white;"> Welcome to art that whisper the voice of nature, explore the entire universe.
+                        <br>
+                        <a href="#Paintings" style="color: inherit; "> See more </a>
+                    </p>
+                </div>
+                
+            </div>
+        </div>
+        
+        <div class="carousel-item ">
+            <img src="/assets/slider/Night Prayer.jpg" class="d-block w-100" alt="..."
+                style="max-height: 100vh; object-fit: cover;">
+
+            <div class="carousel-caption d-none d-block">
+                <div class="typewriter">
+                    <p class="typewriter" style="color: white;"> Welcome to art that whisper the voice of nature, explore the entire universe.
+                        <br>
+                        <a href="#Paintings" style="color: inherit; "> See more </a>
+                    </p>
+                </div>
+                
+            </div>
+        </div>
+        
+
+    </div>
+    <button class="carousel-control-prev" type="button" data-target="#carouselExampleIndicators"
+        data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-target="#carouselExampleIndicators"
+        data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </button>
+</div>
     </section>
 
     <section id="about"></section>
@@ -264,8 +273,8 @@
             doloribus, ipsam minima dolore voluptas necessitatibus enim odit laboriosam possimus quibusdam hic nam quo
             culpa! Hic magni provident vel dolorum, reiciendis odit dolor officiis alias aliquid facere.</p>
 
-        <br>
-
+        <section id="oil-painting"></section>
+        <br> <br>
         <h4>Oil Paintings </h4>
 
         <div class="container mt-4">
@@ -387,8 +396,8 @@
             </div>
         </div>
 
+        <section id="acrylic-painting"></section>
         <br><br>
-
         <h4>Acrylic Paintings </h4>
 
         <div class="container mt-4">
@@ -720,7 +729,8 @@
         <h2>Illustrations </h2>
         <br>
 
-        <p>These are my illustrations. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto quam inventore
+        <p>These are my illustrations. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto quam
+            inventore
             dolor laudantium beatae similique possimus magni enim eligendi facilis. Recusandae voluptatum voluptate
             doloribus, ipsam minima dolore voluptas necessitatibus enim odit laboriosam possimus quibusdam hic nam quo
             culpa! Hic magni provident vel dolorum, reiciendis odit dolor officiis alias aliquid facere.</p>
@@ -897,7 +907,7 @@
             </div>
         </div>
 
-        <br><br>  
+        <br><br>
 
         <h4>Digital Illustrations</h4>
 
@@ -1013,7 +1023,7 @@
             </div>
         </div>
 
-        <br><br> 
+        <br><br>
 
         <h4>Poster Design</h4>
 
@@ -1052,7 +1062,7 @@
             </div>
         </div>
 
-        <br><br> 
+        <br><br>
 
         <h4>Mix Media</h4>
 
@@ -1079,7 +1089,7 @@
 
         <br><br>
 
-        <h4>Pen Sketchbooking  </h4>
+        <h4>Pen Sketchbooking </h4>
 
         <div class="container mt-4">
             <div class="row">
@@ -1143,9 +1153,9 @@
                 
             </div>
 
-        
 
-        <!-- Single Modal -->
+
+            <!-- Single Modal -->
 <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel"
     aria-hidden="true">
     <div class="modal-dialog modal-xl" role="document">
@@ -1165,67 +1175,67 @@
 </div>
 <!-- modal ends  -->
 
-        <div class="break" style="min-height: 5em;"></div>
-        <!-- contact section -->
-        <h2>Contact</h2>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est dolorum nesciunt laudantium odio nobis
-        quisquam,
-        necessitatibus fugiat similique quia qui voluptatem blanditiis totam deserunt dolorem accusantium corporis
-        error
-        vero minus mollitia. Ipsa voluptatum omnis eos laborum impedit cupiditate ipsam veritatis?
-        <!-- contact ends -->
+            <div class="break" style="min-height: 5em;"></div>
+            <!-- contact section -->
+            <h2>Contact</h2>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est dolorum nesciunt laudantium odio nobis
+            quisquam,
+            necessitatibus fugiat similique quia qui voluptatem blanditiis totam deserunt dolorem accusantium corporis
+            error
+            vero minus mollitia. Ipsa voluptatum omnis eos laborum impedit cupiditate ipsam veritatis?
+            <!-- contact ends -->
 
-        <div class="break" style="min-height: 5em;"></div>
+            <div class="break" style="min-height: 5em;"></div>
 
-    </div>
+        </div>
 
 
-    <!-- Optional JavaScript; choose one of the two! -->
+        <!-- Optional JavaScript; choose one of the two! -->
 
-    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
-        crossorigin="anonymous"></script>
+        <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+            crossorigin="anonymous"></script>
 
-    <script>
-        $(document).ready(function () {
-            // Add scroll event listener
-            $(window).scroll(function () {
-                // Check if the user has scrolled 200px
-                if ($(this).scrollTop() > 280) {
-                    // If yes, remove the "hidden-navbar" class to make the navbar visible
-                    $('#main-navbar').removeClass('hidden-navbar');
-                } else {
-                    // If not, add the "hidden-navbar" class to hide the navbar
-                    $('#main-navbar').addClass('hidden-navbar');
-                }
+        <script>
+            $(document).ready(function () {
+                // Add scroll event listener
+                $(window).scroll(function () {
+                    // Check if the user has scrolled 200px
+                    if ($(this).scrollTop() > 280) {
+                        // If yes, remove the "hidden-navbar" class to make the navbar visible
+                        $('#main-navbar').removeClass('hidden-navbar');
+                    } else {
+                        // If not, add the "hidden-navbar" class to hide the navbar
+                        $('#main-navbar').addClass('hidden-navbar');
+                    }
+                });
             });
-        });
-    </script>
+        </script>
 
-    <script>
-        $(document).ready(function () {
-            // Set up event listener for when the modal is about to be shown
-            $('#imageModal').on('show.bs.modal', function (event) {
-                var image = $(event.relatedTarget); // Image that triggered the modal
-                var imageUrl = image.data('src'); // Extract info from data-* attributes
-                var imageName = image.data('name');
-                var imageDetails = image.data('details');
+        <script>
+            $(document).ready(function () {
+                // Set up event listener for when the modal is about to be shown
+                $('#imageModal').on('show.bs.modal', function (event) {
+                    var image = $(event.relatedTarget); // Image that triggered the modal
+                    var imageUrl = image.data('src'); // Extract info from data-* attributes
+                    var imageName = image.data('name');
+                    var imageDetails = image.data('details');
 
-                // Update the modal's content with the new image source
-                $('#modalImage').attr('src', imageUrl);
-                $('#imageModalHeader').text(imageName);
-                $('#modalImageName').text(imageDetails);
+                    // Update the modal's content with the new image source
+                    $('#modalImage').attr('src', imageUrl);
+                    $('#imageModalHeader').text(imageName);
+                    $('#modalImageName').text(imageDetails);
+                });
             });
-        });
-    </script>
+        </script>
 
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
+        <!-- Option 2: Separate Popper and Bootstrap JS -->
+        <!--
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>

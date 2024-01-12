@@ -1,0 +1,13 @@
+- name: Home
+  link: /
+- name: About
+  link: /about
+- name: Paintings
+  link: /paintings
+  subitems:
+    - name: Oil Painting
+      link: /oil-painting
+    - name: Acrylic Painting
+      link: /acrylic-painting
+- name: Contact
+  link: /contact
