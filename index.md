@@ -15,6 +15,3 @@ molestias magni blanditiis corporis reiciendis facere? Blanditiis voluptatem ani
 voluptas quisquam enim eius rerum quod in dolorem, asperiores distinctio magnam ea sunt, voluptatum quas
 cum aspernatur? Nihil voluptatem iste quae reiciendis ratione, deserunt assumenda eligendi natus
 voluptatibus, enim qui similique nemo sequi cum, alias ab obcaecati voluptatum aperiam consectetur
-deleniti ipsa necessitatibus exercitationem? Consequuntur eveniet quam fugit magni laborum quas possimus
-voluptatibus porro minus doloribus libero magnam dolorum repellat velit rem inventore, eius iste
-repellendus laudantium? Alias!

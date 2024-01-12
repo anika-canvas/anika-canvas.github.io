@@ -111,8 +111,8 @@ acrylic_paintings:
     thumbnail: assets/thumbnails/DSC09397.jpg
     title: "Traveling With Window 6"
 
-  - url: assets/gallery/16307488524017.jpg 
-    thumbnail: assets/thumbnails/16307488524017.jpg
+  - url: assets/gallery/1630748852401.jpg 
+    thumbnail: assets/thumbnails/1630748852401.jpg
     title: "Selfie"
 
   - url: assets/gallery/Metamorphosis of Emotion 2.jpg
@@ -499,3 +499,62 @@ set_decor:
   - url: assets/gallery/IMG_20200625_184845.jpg
     thumbnail: assets/thumbnails/IMG_20200625_184845.jpg
     title: ""
+
+exhibitions:
+  - title: "WINDOW - First Solo Exhibition"
+    year: 2023
+    venue: "Zainul Gallery, Faculty of Fine Art, University of Dhaka"
+    
+  - title: "Annual Art Exhibition"
+    year: 2023
+    venue: "Zainul Gallery, Faculty of Fine Art, University of Dhaka"
+    
+  - title: "Time: as we know it"
+    year: 2022
+    venue: "EMK center"
+    
+  - title: "25th National Art Exhibition"
+    year: 2022
+    venue: "National Art Gallery, Bangladesh Shilpakala Academy"
+    
+  - title: "Prottaborton Art Exhibition"
+    year: 2022
+    venue: "University of Dhaka"
+    
+  - title: "24th National Art Exhibition"
+    year: 2021
+    venue: "National Art Gallery, Bangladesh Shilpakala Academy"
+    
+  - title: "Berger Young Painter Art Competition"
+    year: 2021
+    
+  - title: "22nd Young Artist Art Exhibition"
+    year: 2020
+    venue: "National Art Gallery, Bangladesh Shilpakala Academy"
+    
+  - title: "Berger Young Painter Art Competition"
+    year: 2020
+    
+  - title: "Annual Art Exhibition"
+    year: 2023
+    venue: "Zainul Gallery, Faculty of Fine Art, University of Dhaka"
+    
+  - title: "Inktober Dhaka"
+    year: 2019
+    venue: "EMK center"
+    
+  - title: "Shilpi Kaiyum Chowdhury Smriti Chitrangkon Protijogita"
+    year: 2019
+    venue: "University of Dhaka"
+    
+  - title: "Annual Art Exhibition"
+    year: 2018
+    venue: "Department of Drawing and Painting, University of Dhaka"
+    
+  - title: "2nd Beauty in Wreckage Group Art Exhibition"
+    year: 2018
+    venue: "Bangladesh Shilpakala Academy"
+    
+  - title: "Inktober Bangladesh"
+    year: 2018
+    venue: "EMK center"

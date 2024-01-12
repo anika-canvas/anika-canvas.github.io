@@ -118,10 +118,23 @@
             </div>
             <div class="col-md-5 text-centering">
                 <div class="card mx-auto" style="max-width: 80%;">
-                    <img src="{{ site.baseurl }}/assets/profile.png" class="card-img" alt="...">
+                    <img src="{{ site.baseurl }}/assets/anika_roy.jpeg" class="card-img" alt="...">
                 </div>
             </div>
         </div>
+
+        <section id="exhibitions"></section>
+        <div class="break" style="min-height: 5em;"></div>
+        <h3>Exhibitions</h3>
+        <ul>
+            {% for exhibition in site.exhibitions %}
+            <li>
+                <strong>{{ exhibition.title }}</strong>
+                {% if exhibition.year %}<span class="year">{{ exhibition.year }}</span>{% endif %}
+                {% if exhibition.venue %}<span class="venue">{{ exhibition.venue }}</span>{% endif %}
+            </li>
+            {% endfor %}
+        </ul>
 
 
         <!-- Paintings section -->
