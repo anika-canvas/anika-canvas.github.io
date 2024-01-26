@@ -2,16 +2,4 @@
 layout: default
 ---
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum qui, ab autem labore, at optio veniam
-assumenda quidem, tempore unde possimus! Tempore unde placeat aut. Quia similique eveniet dolorem
-accusamus amet numquam aspernatur, dicta repudiandae eaque molestiae beatae, nisi consequuntur
-consectetur? Repudiandae unde impedit earum sed ratione quisquam voluptatem fuga dolor asperiores
-tempora eius iusto consectetur minus itaque consequuntur, quod ipsa. Ad nulla totam, vel nemo adipisci
-odit eum magni unde quibusdam illum neque aut quisquam quia, nostrum error similique molestiae repellat
-eius perferendis modi quo. Necessitatibus eum laborum dolores dolorem consequuntur neque at saepe
-voluptate, qui laboriosam omnis tempora eveniet dolorum incidunt asperiores hic itaque repudiandae
-praesentium ab voluptatum officiis. Quam illum officia nisi id itaque similique doloribus, quas omnis,
-molestias magni blanditiis corporis reiciendis facere? Blanditiis voluptatem animi, aut possimus
-voluptas quisquam enim eius rerum quod in dolorem, asperiores distinctio magnam ea sunt, voluptatum quas
-cum aspernatur? Nihil voluptatem iste quae reiciendis ratione, deserunt assumenda eligendi natus
-voluptatibus, enim qui similique nemo sequi cum, alias ab obcaecati voluptatum aperiam consectetur
+An artist does not have any defined language; she speaks worldwide through her artworks. Art has many ways to interpret the meaning, and its open-ended vibe makes it gorgeous. Artists have the capacity to bring people under one umbrella to ask for peace. I plan to work with young artists to enhance them and spread this message to society. When the culture of people becomes affable to accept another culture, heaven will be the earth, in my thought.
