@@ -2,7 +2,7 @@ from PIL import Image
 import os
 
 # Global variable for the target size
-TARGET_SIZE = 1000
+TARGET_SIZE = 500
 
 def scale_image(input_path, output_path, max_size):
     original_image = Image.open(input_path)
@@ -45,5 +45,5 @@ def process_images(directory_path):
                 print(f"Resized {filename} successfully")
 
 # Replace '/gallery' with the path to your image directory
-process_images('slider')
+process_images('thumbnails')
 
