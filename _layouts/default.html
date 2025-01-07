@@ -1,382 +1,376 @@
 <!-- _layouts/default.html -->
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
 
     <style>
-        /* Custom CSS for hiding the navbar */
-        .hidden-navbar {
-            display: none;
-        }
+      /* Custom CSS for hiding the navbar */
+      .hidden-navbar {
+          display: none;
+      }
 
-        /* Add a class to the body when the modal is open */
-        body.modal-opened {
-            filter: blur(50px);
-            /* Adjust the blur amount as needed */
-            -webkit-filter: blur(50px);
-            overflow: hidden;
-            /* Prevent scrolling of the background */
-        }
+      /* Add a class to the body when the modal is open */
+      body.modal-opened {
+          filter: blur(50px);
+          /* Adjust the blur amount as needed */
+          -webkit-filter: blur(50px);
+          overflow: hidden;
+          /* Prevent scrolling of the background */
+      }
 
-        /* Adjust modal styles for a more prominent appearance */
-        .modal-content {
-            background: rgba(255, 255, 255, 1);
-            /* Add a semi-transparent white background to the modal */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            /* Add a subtle box shadow for separation */
-        }
+      /* Adjust modal styles for a more prominent appearance */
+      .modal-content {
+          background: rgba(255, 255, 255, 1);
+          /* Add a semi-transparent white background to the modal */
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+          /* Add a subtle box shadow for separation */
+      }
 
-        .gallery-image {
-            height: 200px;
-            /* Adjust the height as needed */
-            width: 100%;
-            object-fit: cover;
-        }
+      .gallery-image {
+          height: 200px;
+          /* Adjust the height as needed */
+          width: 100%;
+          object-fit: cover;
+      }
 
-        .carousel-caption {
-            position: absolute;
-            top: 40%;
-        }
+      .carousel-caption {
+          position: absolute;
+          top: 40%;
+      }
 
-        @media(max-width: 800px) {
-            .carousel-caption h2 {
-                font-size: 260%;
-            }
+      @media(max-width: 800px) {
+          .carousel-caption h2 {
+              font-size: 260%;
+          }
 
-            .carousel-caption p {
-                font-size: 90%;
-            }
-        }
+          .carousel-caption p {
+              font-size: 90%;
+          }
+      }
 
-        @media(max-width: 600px) {
-            .carousel-caption h2 {
-                font-size: 110%;
-            }
+      @media(max-width: 600px) {
+          .carousel-caption h2 {
+              font-size: 110%;
+          }
 
-            .carousel-caption p {
-                font-size: 80%;
-            }
-        }
+          .carousel-caption p {
+              font-size: 80%;
+          }
+      }
 
-        .typewriter p {
-            overflow: hidden;
-            /* Ensures the content is not revealed until the animation */
-            /*border-right: .15em solid orange;  The typwriter cursor */
-            white-space: nowrap;
-            /* Keeps the content on a single line */
-            margin: 0 auto;
-            /* Gives that scrolling effect as the typing happens */
-            letter-spacing: .10em;
-            /* Adjust as needed */
-            animation:
-                typing 3.5s steps(40, end),
-                blink-caret .75s step-end 10;
-        }
+      .typewriter p {
+          overflow: hidden;
+          /* Ensures the content is not revealed until the animation */
+          /*border-right: .15em solid orange;  The typwriter cursor */
+          white-space: nowrap;
+          /* Keeps the content on a single line */
+          margin: 0 auto;
+          /* Gives that scrolling effect as the typing happens */
+          letter-spacing: .10em;
+          /* Adjust as needed */
+          animation:
+              typing 3.5s steps(40, end),
+              blink-caret .75s step-end 10;
+      }
 
-        /* The typing effect */
-        @keyframes typing {
-            from {
-                width: 0
-            }
+      /* The typing effect */
+      @keyframes typing {
+          from {
+              width: 0
+          }
 
-            to {
-                width: 100%
-            }
-        }
+          to {
+              width: 100%
+          }
+      }
     </style>
 
     <title>{{ site.title }}</title>
-</head>
+  </head>
 
-<body>
+  <body>
     {% include navbar.html %}
 
-
     <section id="home">
-        <!-- add slider here -->
-        {% include slider.html %}
+      <!-- add slider here -->
+      {% include slider.html %}
     </section>
 
     <section id="about"></section>
     <div class="break" style="min-height: 5em;"></div>
 
-
     <div class="container">
-        <!-- about section  -->
-        <h3> About Me </h3>
+      <!-- about section  -->
+      <h3>About Me</h3>
+      <div class="row">
+        <div class="col-md-7">{{ content }}</div>
+        <div class="col-md-5 text-centering">
+          <div class="card mx-auto" style="max-width: 80%;">
+            <img
+              src="{{ site.baseurl }}/assets/anika_roy.jpeg"
+              class="card-img"
+              alt="..."
+            />
+          </div>
+        </div>
+      </div>
+
+      <section id="exhibitions"></section>
+      <div class="break" style="min-height: 5em;"></div>
+      <h3>Exhibitions</h3>
+      <ul>
+        {% for exhibition in site.exhibitions %}
+        <li>
+          <strong>{{ exhibition.title }}</strong>
+          {% if exhibition.year %}<span class="year">{{ exhibition.year }}</span
+          >{% endif %} {% if exhibition.venue %}<span class="venue"
+            >{{ exhibition.venue }}</span
+          >{% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+
+      <!-- Paintings section -->
+      <section id="Paintings"></section>
+      <div class="break" style="min-height: 5em;"></div>
+
+      <h2>Paintings</h2>
+      <br />
+
+      <p>
+        Painting is the way to narrate my stories, my imagination. From
+        childhood, I love to play with brush and color. These paintings are also
+        a reflection of my art journey.
+      </p>
+
+      <section id="oil-painting"></section>
+      <br />
+      <br />
+      <h4>Oil Paintings</h4>
+      <div class="container mt-4">
         <div class="row">
-            <div class="col-md-7">
-                {{ content }}
-            </div>
-            <div class="col-md-5 text-centering">
-                <div class="card mx-auto" style="max-width: 80%;">
-                    <img src="{{ site.baseurl }}/assets/anika_roy.jpeg" class="card-img" alt="...">
-                </div>
-            </div>
+          <!-- Image Gallery -->
+          {% for item in site.oil_paintings %} {% include gallery_item.html
+          item=item %} {% endfor %}
         </div>
+      </div>
 
-        <section id="exhibitions"></section>
-        <div class="break" style="min-height: 5em;"></div>
-        <h3>Exhibitions</h3>
-        <ul>
-            {% for exhibition in site.exhibitions %}
-            <li>
-                <strong>{{ exhibition.title }}</strong>
-                {% if exhibition.year %}<span class="year">{{ exhibition.year }}</span>{% endif %}
-                {% if exhibition.venue %}<span class="venue">{{ exhibition.venue }}</span>{% endif %}
-            </li>
-            {% endfor %}
-        </ul>
-
-
-        <!-- Paintings section -->
-        <section id="Paintings"></section>
-        <div class="break" style="min-height: 5em;"></div>
-
-        <h2>Paintings</h2>
-        <br>
-
-        <p>These are my paintings. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto quam inventore
-            dolor laudantium beatae similique possimus magni enim eligendi facilis. Recusandae voluptatum voluptate
-            doloribus, ipsam minima dolore voluptas necessitatibus enim odit laboriosam possimus quibusdam hic nam quo
-            culpa! Hic magni provident vel dolorum, reiciendis odit dolor officiis alias aliquid facere.</p>
-
-        <section id="oil-painting"></section>
-        <br> <br>
-        <h4>Oil Paintings </h4>
-        <div class="container mt-4">
-            <div class="row">
-                <!-- Image Gallery -->
-                {% for item in site.oil_paintings %}
-                {% include gallery_item.html item=item %}
-                {% endfor %}
-            </div>
+      <section id="acrylic-painting"></section>
+      <br /><br />
+      <h4>Acrylic Paintings</h4>
+      <div class="container mt-4">
+        <div class="row">
+          <!-- Image Gallery -->
+          {% for item in site.acrylic_paintings %} {% include gallery_item.html
+          item=item %} {% endfor %}
         </div>
+      </div>
 
-        <section id="acrylic-painting"></section>
-        <br><br>
-        <h4>Acrylic Paintings </h4>
-        <div class="container mt-4">
-            <div class="row">
-                <!-- Image Gallery -->
-                {% for item in site.acrylic_paintings %}
-                {% include gallery_item.html item=item %}
-                {% endfor %}
-            </div>
+      <section id="pen-media"></section>
+      <br /><br />
+      <h4>Pen Media</h4>
+      <div class="container mt-4">
+        <div class="row">
+          <!-- Image Gallery -->
+          {% for item in site.pen_media %} {% include gallery_item.html
+          item=item %} {% endfor %}
         </div>
+      </div>
 
-        <section id="pen-media"></section>
-        <br><br>
-        <h4> Pen Media </h4>
-        <div class="container mt-4">
-            <div class="row">
-                <!-- Image Gallery -->
-                {% for item in site.pen_media %}
-                {% include gallery_item.html item=item %}
-                {% endfor %}
-            </div>
+      <section id="pencil-media"></section>
+      <br /><br />
+      <h4>Pencil Media</h4>
+      <div class="container mt-4">
+        <div class="row">
+          <!-- Image Gallery -->
+          {% for item in site.pencil_media %} {% include gallery_item.html
+          item=item %} {% endfor %}
         </div>
+      </div>
 
-        <section id="pencil-media"></section>
-        <br><br>
-        <h4> Pencil Media </h4>
-        <div class="container mt-4">
-            <div class="row">
-                <!-- Image Gallery -->
-                {% for item in site.pencil_media %}
-                {% include gallery_item.html item=item %}
-                {% endfor %}
-            </div>
+      <section id="mix-media"></section>
+      <br /><br />
+      <h4>Mix Media</h4>
+      <div class="container mt-4">
+        <div class="row">
+          <!-- Image Gallery -->
+          {% for item in site.mix_media %} {% include gallery_item.html
+          item=item %} {% endfor %}
         </div>
+      </div>
 
-        <section id="mix-media"></section>
-        <br><br>
-        <h4>Mix Media</h4>
-        <div class="container mt-4">
-            <div class="row">
-                <!-- Image Gallery -->
-                {% for item in site.mix_media %}
-                {% include gallery_item.html item=item %}
-                {% endfor %}
-            </div>
+      <section id="rickshaw-painting"></section>
+      <br /><br />
+      <h4>Rickshaw Painting</h4>
+      <div class="container mt-4">
+        <div class="row">
+          <!-- Image Gallery -->
+          {% for item in site.rickshaw_painting %} {% include gallery_item.html
+          item=item %} {% endfor %}
         </div>
+      </div>
 
-        <section id="rickshaw-painting"></section>
-        <br><br>
-        <h4>Rickshaw Painting</h4>
-        <div class="container mt-4">
-            <div class="row">
-                <!-- Image Gallery -->
-                {% for item in site.rickshaw_painting %}
-                {% include gallery_item.html item=item %}
-                {% endfor %}
-            </div>
+      <br /><br />
+      <h2>Illustrations</h2>
+      <br />
+
+      <section id="book-illustration"></section>
+      <br />
+      <br />
+      <h4>Book Illustrations</h4>
+      <div class="container mt-4">
+        <div class="row">
+          <!-- Image Gallery -->
+          {% for item in site.book_illustration %} {% include gallery_item.html
+          item=item %} {% endfor %}
         </div>
+      </div>
 
-        <br><br>
-        <h2>Illustrations </h2>
-        <br>
-
-        <p>These are my illustrations. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto quam
-            inventore
-            dolor laudantium beatae similique possimus magni enim eligendi facilis. Recusandae voluptatum voluptate
-            doloribus, ipsam minima dolore voluptas necessitatibus enim odit laboriosam possimus quibusdam hic nam quo
-            culpa! Hic magni provident vel dolorum, reiciendis odit dolor officiis alias aliquid facere.</p>
-
-
-
-        <section id="book-illustration"></section>
-        <br> <br>
-        <h4>Book Illustrations</h4>
-        <div class="container mt-4">
-            <div class="row">
-                <!-- Image Gallery -->
-                {% for item in site.book_illustration %}
-                {% include gallery_item.html item=item %}
-                {% endfor %}
-            </div>
+      <section id="digital-illustration"></section>
+      <br /><br />
+      <h4>Digital Illustrations</h4>
+      <div class="container mt-4">
+        <div class="row">
+          <!-- Image Gallery -->
+          {% for item in site.digital_illustration %} {% include
+          gallery_item.html item=item %} {% endfor %}
         </div>
+      </div>
 
-        <section id="digital-illustration"></section>
-        <br><br>
-        <h4>Digital Illustrations</h4>
-        <div class="container mt-4">
-            <div class="row">
-                <!-- Image Gallery -->
-                {% for item in site.digital_illustration %}
-                {% include gallery_item.html item=item %}
-                {% endfor %}
-            </div>
+      <br /><br />
+      <section id="poster-design"></section>
+      <h4>Poster Design</h4>
+      <div class="container mt-4">
+        <div class="row">
+          <!-- Image Gallery -->
+          {% for item in site.poster_design %} {% include gallery_item.html
+          item=item %} {% endfor %}
         </div>
+      </div>
 
-
-        <br><br>
-        <section id="poster-design"></section>
-        <h4>Poster Design</h4>
-        <div class="container mt-4">
-            <div class="row">
-                <!-- Image Gallery -->
-                {% for item in site.poster_design %}
-                {% include gallery_item.html item=item %}
-                {% endfor %}
-            </div>
+      <br /><br />
+      <section id="illustration-mix-media"></section>
+      <h4>Mix Media</h4>
+      <div class="container mt-4">
+        <div class="row">
+          <!-- Image Gallery -->
+          {% for item in site.illustration_mix_media %} {% include
+          gallery_item.html item=item %} {% endfor %}
         </div>
+      </div>
 
-        <br><br>
-        <section id="illustration-mix-media"></section>
-        <h4>Mix Media</h4>
-        <div class="container mt-4">
-            <div class="row">
-                <!-- Image Gallery -->
-                {% for item in site.illustration_mix_media %}
-                {% include gallery_item.html item=item %}
-                {% endfor %}
-            </div>
+      <section id="sketchbooking"></section>
+      <br /><br />
+      <h4>Pen Sketchbooking</h4>
+      <div class="container mt-4">
+        <div class="row">
+          <!-- Image Gallery -->
+          {% for item in site.pen_sketchbook %} {% include gallery_item.html
+          item=item %} {% endfor %}
         </div>
+      </div>
 
-        <section id="sketchbooking"></section>
-        <br><br>
-        <h4>Pen Sketchbooking </h4>
-        <div class="container mt-4">
-            <div class="row">
-                <!-- Image Gallery -->
-                {% for item in site.pen_sketchbook %}
-                {% include gallery_item.html item=item %}
-                {% endfor %}
-            </div>
+      <br /><br />
+      <h2>Outdoor</h2>
+      <br />
+
+      <section id="set-decor"></section>
+      <br /><br />
+      <h4>Set Decor</h4>
+      <div class="container mt-4">
+        <div class="row">
+          <!-- Image Gallery -->
+          {% for item in site.set_decor %} {% include gallery_item.html
+          item=item %} {% endfor %}
         </div>
+      </div>
 
-        <br><br>
-        <h2>Outdoor </h2>
-        <br>
+      {% include single_modal.html %}
 
-        <p>These are my Outdoor work. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto quam
-            inventore dolor laudantium beatae similique possimus magni enim eligendi facilis. Recusandae voluptatum
-            voluptate
-            doloribus, ipsam minima dolore voluptas necessitatibus enim odit laboriosam possimus quibusdam hic nam quo
-            culpa! Hic magni provident vel dolorum, reiciendis odit dolor officiis alias aliquid facere.</p>
+      <div class="break" style="min-height: 5em;"></div>
+      <!-- contact section -->
+      <h2>Contact</h2>
+      <p>
+        <strong>Contact:</strong><br />
+        <strong>Email:</strong>
+        <a href="mailto:anikaroya2468@gmail.com">anikaroya2468@gmail.com</a
+        ><br />
+        <strong>Instagram:</strong>
+        <a
+          href="https://www.instagram.com/anikaroya01?igsh=MTA2bmF2YnU5bmZuaw=="
+          target="_blank"
+          >anikaroya01</a
+        ><br />
+        <strong>Facebook Page:</strong>
+        <a href="https://www.facebook.com/AnikasCanvas" target="_blank"
+          >Anika's Canvas</a
+        >
+      </p>
+      <!-- contact ends -->
 
-        <section id="set-decor"></section>
-        <br><br>
-        <h4>Set Decor </h4>
-        <div class="container mt-4">
-            <div class="row">
-                <!-- Image Gallery -->
-                {% for item in site.set_decor %}
-                {% include gallery_item.html item=item %}
-                {% endfor %}
-            </div>
-        </div>
-
-
-        {% include single_modal.html %}
-
-        <div class="break" style="min-height: 5em;"></div>
-        <!-- contact section -->
-        <h2>Contact</h2>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est dolorum nesciunt laudantium odio nobis
-        quisquam,
-        necessitatibus fugiat similique quia qui voluptatem blanditiis totam deserunt dolorem accusantium corporis
-        error
-        vero minus mollitia. Ipsa voluptatum omnis eos laborum impedit cupiditate ipsam veritatis?
-        <!-- contact ends -->
-
-        <div class="break" style="min-height: 5em;"></div>
-
+      <div class="break" style="min-height: 5em;"></div>
     </div>
-
 
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
-        crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+      crossorigin="anonymous"
+    ></script>
 
     <script>
-        $(document).ready(function () {
-            // Add scroll event listener
-            $(window).scroll(function () {
-                // Check if the user has scrolled 200px
-                if ($(this).scrollTop() > 280) {
-                    // If yes, remove the "hidden-navbar" class to make the navbar visible
-                    $('#main-navbar').removeClass('hidden-navbar');
-                } else {
-                    // If not, add the "hidden-navbar" class to hide the navbar
-                    $('#main-navbar').addClass('hidden-navbar');
-                }
-            });
-        });
+      $(document).ready(function () {
+          // Add scroll event listener
+          $(window).scroll(function () {
+              // Check if the user has scrolled 200px
+              if ($(this).scrollTop() > 280) {
+                  // If yes, remove the "hidden-navbar" class to make the navbar visible
+                  $('#main-navbar').removeClass('hidden-navbar');
+              } else {
+                  // If not, add the "hidden-navbar" class to hide the navbar
+                  $('#main-navbar').addClass('hidden-navbar');
+              }
+          });
+      });
     </script>
 
     <script>
-        $(document).ready(function () {
-            // Set up event listener for when the modal is about to be shown
-            $('#imageModal').on('show.bs.modal', function (event) {
-                var image = $(event.relatedTarget); // Image that triggered the modal
-                var imageUrl = image.data('src'); // Extract info from data-* attributes
-                var imageName = image.data('name');
-                var imageDetails = image.data('details');
+      $(document).ready(function () {
+          // Set up event listener for when the modal is about to be shown
+          $('#imageModal').on('show.bs.modal', function (event) {
+              var image = $(event.relatedTarget); // Image that triggered the modal
+              var imageUrl = image.data('src'); // Extract info from data-* attributes
+              var imageName = image.data('name');
+              var imageDetails = image.data('details');
 
-                // Update the modal's content with the new image source
-                $('#modalImage').attr('src', imageUrl);
-                $('#imageModalHeader').text(imageName);
-                $('#modalImageName').text(imageDetails);
-            });
-        });
+              // Update the modal's content with the new image source
+              $('#modalImage').attr('src', imageUrl);
+              $('#imageModalHeader').text(imageName);
+              $('#modalImageName').text(imageDetails);
+          });
+      });
     </script>
-
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
@@ -384,6 +378,5 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
     -->
-</body>
-
+  </body>
 </html>
