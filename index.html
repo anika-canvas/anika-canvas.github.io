@@ -2,21 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-width=1.0">
-    <title>Anika | Contemporary Painter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anika | Artist Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
     <style>
-        /* Base Styles */
         body {
             margin: 0;
             font-family: 'Roboto', sans-serif;
-            background-color: #fcfcfc;
-            color: #333;
+            background-color: #fafafa;
+            color: #2b2b2b;
         }
-        
-        /* Navigation */
         header {
-            padding: 30px 5%;
+            padding: 22px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -24,184 +21,229 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            border-bottom: 1px solid #eaeaea;
         }
         header h1 {
             margin: 0;
             font-family: 'Playfair Display', serif;
-            font-size: 2rem;
+            font-size: 1.8rem;
             letter-spacing: 1px;
         }
-        nav a {
-            margin-left: 20px;
-            text-decoration: none;
-            color: #555;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            transition: color 0.3s;
-        }
-        nav a:hover { color: #000; }
-
-        /* Hero Section */
+        
         .hero {
             text-align: center;
-            padding: 80px 20px;
-            background: #fff;
+            padding: 50px 20px 20px;
         }
         .hero h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             margin-bottom: 10px;
         }
         .hero p {
-            font-size: 1.1rem;
             color: #666;
             max-width: 600px;
             margin: 0 auto;
             line-height: 1.6;
         }
 
-        /* Masonry Gallery */
+        /* Category Filter Buttons */
+        .filter-nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 30px 15px;
+        }
+        .filter-btn {
+            background: transparent;
+            border: 1px solid #ddd;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            color: #555;
+            font-family: inherit;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background: #111;
+            color: #fff;
+            border-color: #111;
+        }
+
+        /* Dynamic Masonry Grid */
         .gallery-container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 40px 20px;
-            column-count: 3; /* Adjusts columns */
-            column-gap: 20px;
+            padding: 10px 20px 80px;
+            column-count: 4;
+            column-gap: 18px;
         }
         .gallery-item {
             break-inside: avoid;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
             position: relative;
             cursor: pointer;
             overflow: hidden;
-            border-radius: 4px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border-radius: 6px;
+            background: #f0f0f0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            transition: transform 0.3s ease;
         }
         .gallery-item img {
             width: 100%;
             display: block;
-            transition: transform 0.5s ease;
+            transition: transform 0.4s ease;
         }
         .gallery-item:hover img {
-            transform: scale(1.05); /* Adds a catchy zoom effect */
+            transform: scale(1.04);
         }
-        
-        /* Hover Overlay */
         .overlay {
             position: absolute;
             inset: 0;
-            background: rgba(0, 0, 0, 0.4);
+            background: rgba(0, 0, 0, 0.45);
             opacity: 0;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             transition: opacity 0.3s ease;
+            padding: 15px;
+            text-align: center;
         }
         .gallery-item:hover .overlay { opacity: 1; }
-        .overlay-text {
-            color: white;
+        .overlay-title {
+            color: #fff;
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            text-align: center;
-            padding: 10px;
+            font-size: 1.15rem;
+            margin-bottom: 4px;
+        }
+        .overlay-cat {
+            color: #ddd;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        /* Lightbox (Click to expand) */
+        /* Lightbox */
         #lightbox {
-            display: none; 
-            position: fixed; 
-            z-index: 1000; 
-            left: 0; top: 0; 
-            width: 100%; height: 100%; 
-            background-color: rgba(255,255,255,0.95);
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0; top: 0;
+            width: 100%; height: 100%;
+            background: rgba(10, 10, 10, 0.92);
             align-items: center;
             justify-content: center;
         }
         #lightbox img {
-            max-width: 90%;
-            max-height: 90%;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+            max-width: 90vw;
+            max-height: 88vh;
+            border-radius: 4px;
         }
         #lightbox-close {
             position: absolute;
-            top: 30px; right: 40px;
+            top: 25px; right: 35px;
             font-size: 40px;
-            color: #333;
+            color: #fff;
             cursor: pointer;
-            font-family: sans-serif;
         }
 
-        /* Responsive Design */
-        @media (max-width: 900px) { .gallery-container { column-count: 2; } }
-        @media (max-width: 600px) { 
-            .gallery-container { column-count: 1; }
-            header { flex-direction: column; text-align: center; gap: 15px; }
-            nav a { margin: 0 10px; }
-        }
+        @media (max-width: 1100px) { .gallery-container { column-count: 3; } }
+        @media (max-width: 768px) { .gallery-container { column-count: 2; } }
+        @media (max-width: 480px) { .gallery-container { column-count: 1; } }
     </style>
 </head>
 <body>
 
     <header>
         <h1>Anika</h1>
-        <nav>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-        </nav>
     </header>
 
     <section class="hero">
-        <h2>Capturing the World in Color</h2>
-        <p>With 15 years of experience as a painter, my work explores the intersection of nature, culture, and emotion. Click on any image below to explore the details.</p>
+        <h2>Selected Artworks</h2>
+        <p>A collection of oil paintings, sketches, watercolors, and decorative pieces.</p>
     </section>
 
-    <div id="portfolio" class="gallery-container">
-        
-        <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
-            <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Oil Painting">
-            <div class="overlay"><div class="overlay-text">Abstract Oil</div></div>
-        </div>
+    <!-- Filter Buttons -->
+    <div class="filter-nav">
+        <button class="filter-btn active" onclick="filterGallery('all')">All Works</button>
+        <button class="filter-btn" onclick="filterGallery('oil')">Oil Paintings</button>
+        <button class="filter-btn" onclick="filterGallery('watercolor')">Watercolor</button>
+        <button class="filter-btn" onclick="filterGallery('pen')">Pen Sketch</button>
+        <button class="filter-btn" onclick="filterGallery('pencil')">Pencil Sketch</button>
+        <button class="filter-btn" onclick="filterGallery('decorations')">Decorations</button>
+    </div>
 
-        <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1578301978693-85fa9c026109?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
-            <img src="https://images.unsplash.com/photo-1578301978693-85fa9c026109?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Acrylic Canvas">
-            <div class="overlay"><div class="overlay-text">Vibrant Acrylic</div></div>
-        </div>
+    <!-- Gallery Container -->
+    <div id="portfolio" class="gallery-container"></div>
 
-        <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1582561424760-0321d6cb281b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
-            <img src="https://images.unsplash.com/photo-1582561424760-0321d6cb281b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Paper-Mache Tiger Mask Concept">
-            <div class="overlay"><div class="overlay-text">Mask Series</div></div>
-        </div>
-        
-        </div>
-
-    <div id="lightbox">
-        <span id="lightbox-close" onclick="closeLightbox()">&times;</span>
-        <img id="lightbox-img" src="" alt="Expanded Artwork">
+    <!-- Lightbox Pop-up -->
+    <div id="lightbox" onclick="closeLightbox()">
+        <span id="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="Enlarged artwork">
     </div>
 
     <script>
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
+        // ENTER YOUR ARTWORKS HERE
+        // Simply specify the filename, title, and matching category:
+        // Categories available: 'oil', 'watercolor', 'pen', 'pencil', 'decorations'
+        const artworks = [
+            { src: "oil1.jpg", title: "Autumn Bloom", category: "oil" },
+            { src: "oil2.jpg", title: "Sunset Reflections", category: "oil" },
+            { src: "water1.jpg", title: "Morning Mist", category: "watercolor" },
+            { src: "pen1.jpg", title: "Architectural Lines", category: "pen" },
+            { src: "pencil1.jpg", title: "Portrait Study", category: "pencil" },
+            { src: "dec1.jpg", title: "Folk Pattern Motif", category: "decorations" }
+            // Add remaining images following this exact format
+        ];
 
-        function openLightbox(imageSrc) {
-            lightbox.style.display = 'flex';
-            lightboxImg.src = imageSrc;
+        const gallery = document.getElementById('portfolio');
+
+        function renderGallery(items) {
+            gallery.innerHTML = "";
+            items.forEach(art => {
+                const item = document.createElement('div');
+                item.className = 'gallery-item';
+                item.onclick = () => openLightbox(art.src);
+                item.innerHTML = `
+                    <img src="${art.src}" alt="${art.title}" loading="lazy">
+                    <div class="overlay">
+                        <div class="overlay-title">${art.title}</div>
+                        <div class="overlay-cat">${art.category}</div>
+                    </div>
+                `;
+                gallery.appendChild(item);
+            });
+        }
+
+        function filterGallery(category) {
+            // Update active button color
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Filter items
+            if (category === 'all') {
+                renderGallery(artworks);
+            } else {
+                const filtered = artworks.filter(art => art.category === category);
+                renderGallery(filtered);
+            }
+        }
+
+        function openLightbox(src) {
+            const lb = document.getElementById('lightbox');
+            document.getElementById('lightbox-img').src = src;
+            lb.style.display = 'flex';
         }
 
         function closeLightbox() {
-            lightbox.style.display = 'none';
+            document.getElementById('lightbox').style.display = 'none';
         }
 
-        // Close lightbox if clicking outside the image
-        lightbox.addEventListener('click', function(e) {
-            if (e.target !== lightboxImg) {
-                closeLightbox();
-            }
-        });
+        // Initial display of all pieces
+        renderGallery(artworks);
     </script>
-
 </body>
 </html>
