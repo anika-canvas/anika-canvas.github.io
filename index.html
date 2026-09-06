@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-width=1.0">
+    <title>Anika | Contemporary Painter</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        /* Base Styles */
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #fcfcfc;
+            color: #333;
+        }
+        
+        /* Navigation */
+        header {
+            padding: 30px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+        header h1 {
+            margin: 0;
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            letter-spacing: 1px;
+        }
+        nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #555;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+        nav a:hover { color: #000; }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            background: #fff;
+        }
+        .hero h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Masonry Gallery */
+        .gallery-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            column-count: 3; /* Adjusts columns */
+            column-gap: 20px;
+        }
+        .gallery-item {
+            break-inside: avoid;
+            margin-bottom: 20px;
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            border-radius: 4px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .gallery-item img {
+            width: 100%;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.05); /* Adds a catchy zoom effect */
+        }
+        
+        /* Hover Overlay */
+        .overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.4);
+            opacity: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.3s ease;
+        }
+        .gallery-item:hover .overlay { opacity: 1; }
+        .overlay-text {
+            color: white;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Lightbox (Click to expand) */
+        #lightbox {
+            display: none; 
+            position: fixed; 
+            z-index: 1000; 
+            left: 0; top: 0; 
+            width: 100%; height: 100%; 
+            background-color: rgba(255,255,255,0.95);
+            align-items: center;
+            justify-content: center;
+        }
+        #lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+        }
+        #lightbox-close {
+            position: absolute;
+            top: 30px; right: 40px;
+            font-size: 40px;
+            color: #333;
+            cursor: pointer;
+            font-family: sans-serif;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) { .gallery-container { column-count: 2; } }
+        @media (max-width: 600px) { 
+            .gallery-container { column-count: 1; }
+            header { flex-direction: column; text-align: center; gap: 15px; }
+            nav a { margin: 0 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Anika</h1>
+        <nav>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Capturing the World in Color</h2>
+        <p>With 15 years of experience as a painter, my work explores the intersection of nature, culture, and emotion. Click on any image below to explore the details.</p>
+    </section>
+
+    <div id="portfolio" class="gallery-container">
+        
+        <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+            <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Oil Painting">
+            <div class="overlay"><div class="overlay-text">Abstract Oil</div></div>
+        </div>
+
+        <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1578301978693-85fa9c026109?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+            <img src="https://images.unsplash.com/photo-1578301978693-85fa9c026109?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Acrylic Canvas">
+            <div class="overlay"><div class="overlay-text">Vibrant Acrylic</div></div>
+        </div>
+
+        <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1582561424760-0321d6cb281b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+            <img src="https://images.unsplash.com/photo-1582561424760-0321d6cb281b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Paper-Mache Tiger Mask Concept">
+            <div class="overlay"><div class="overlay-text">Mask Series</div></div>
+        </div>
+        
+        </div>
+
+    <div id="lightbox">
+        <span id="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img" src="" alt="Expanded Artwork">
+    </div>
+
+    <script>
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        function openLightbox(imageSrc) {
+            lightbox.style.display = 'flex';
+            lightboxImg.src = imageSrc;
+        }
+
+        function closeLightbox() {
+            lightbox.style.display = 'none';
+        }
+
+        // Close lightbox if clicking outside the image
+        lightbox.addEventListener('click', function(e) {
+            if (e.target !== lightboxImg) {
+                closeLightbox();
+            }
+        });
+    </script>
+
+</body>
+</html>
