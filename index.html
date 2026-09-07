@@ -30,7 +30,7 @@
             overflow-x: hidden;
         }
 
-        /* Minimal Header */
+        /* Transparent Floating Header */
         header {
             position: absolute;
             top: 0;
@@ -67,11 +67,11 @@
             color: var(--text-primary);
         }
 
-        /* Tighter, smaller, right-aligned navigation */
+        /* Compact Right-Aligned Navigation */
         nav {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 22px;
             margin-left: auto;
         }
 
@@ -194,7 +194,7 @@
             user-select: none;
         }
 
-        /* Clean James Jean-Style Bottom-Left Caption (No Box / No Shadow) */
+        /* Clean Floating Bottom-Left Captions */
         .slide-caption {
             position: absolute;
             bottom: 35px;
@@ -237,7 +237,7 @@
             text-underline-offset: 3px;
         }
 
-        /* Slider Controls */
+        /* Controls */
         .slider-arrow {
             position: absolute;
             top: 50%;
@@ -292,7 +292,7 @@
             border-radius: 11px;
         }
 
-        /* Inner Page Views */
+        /* Gallery View */
         .inner-page-wrap {
             max-width: 1440px;
             margin: 0 auto;
@@ -359,7 +359,7 @@
             margin-right: 6px;
         }
 
-        /* Exhibitions (CV Style) */
+        /* Exhibitions */
         .cv-container {
             max-width: 840px;
             margin: 0 auto;
@@ -535,8 +535,6 @@
             <div class="nav-item">
                 <span class="nav-link active" id="nav-medium">MEDIUM ▾</span>
                 <div class="dropdown">
-                    <a href="javascript:void(0)" onclick="showSliderView()">FULL-SCREEN SHOWCASE</a>
-                    <a href="javascript:void(0)" onclick="filterMedium('all', 'ALL WORKS')">ALL WORKS (GRID)</a>
                     <a href="javascript:void(0)" onclick="filterMedium('oil', 'OIL PAINTING')">OIL PAINTING</a>
                     <a href="javascript:void(0)" onclick="filterMedium('acrylic', 'ACRYLIC PAINTING')">ACRYLIC PAINTING</a>
                     <a href="javascript:void(0)" onclick="filterMedium('pen', 'PEN SKETCH')">PEN SKETCH</a>
@@ -574,98 +572,35 @@
                 <img src="assets/gallery/WINDOW.jpg" class="slide-bg-img" alt="WINDOW" onclick="openLightbox('assets/gallery/WINDOW.jpg')">
                 <div class="slide-caption">
                     <div class="slide-title">WINDOW</div>
-                    <div class="slide-meta">MEDIUM: OIL PAINTING</div>
+                    <div class="slide-meta">OIL ON CANVAS</div>
                     <span class="slide-explore-btn" onclick="filterMedium('oil', 'OIL PAINTING')">VIEW OIL COLLECTION &rarr;</span>
                 </div>
             </div>
 
             <div class="slide">
-                <img src="assets/gallery/DSC09392.jpg" class="slide-bg-img" alt="Travelling with Window" onclick="openLightbox('assets/gallery/DSC09392.jpg')">
+                <img src="assets/gallery/DSC09392.jpg" class="slide-bg-img" alt="TRAVELLING WITH WINDOW" onclick="openLightbox('assets/gallery/DSC09392.jpg')">
                 <div class="slide-caption">
                     <div class="slide-title">TRAVELLING WITH WINDOW</div>
-                    <div class="slide-meta">MEDIUM: ACRYLIC PAINTING</div>
+                    <div class="slide-meta">ACRYLIC ON CANVAS</div>
                     <span class="slide-explore-btn" onclick="filterMedium('acrylic', 'ACRYLIC PAINTING')">VIEW ACRYLIC COLLECTION &rarr;</span>
                 </div>
             </div>
 
             <div class="slide">
-                <img src="aassets/gallery/20211212_150132.jpg" class="slide-bg-img" alt="Rickshaw Motif" onclick="openLightbox('assets/gallery/20211212_163047.jpg')">
-                <div class="slide-caption">
-                    <div class="slide-title">FOLK MOTIF</div>
-                    <div class="slide-meta">MEDIUM: RICKSHAW PAINTING</div>
-                    <span class="slide-explore-btn" onclick="filterMedium('rickshaw', 'RICKSHAW ART')">VIEW RICKSHAW ART &rarr;</span>
-                </div>
-            </div>
-
-            <div class="slide">
-                <img src="assets/gallery/restoration of reminiscence Size 48 . 36 inch.jpg" class="slide-bg-img" alt="Restoration of Reminiscence" onclick="openLightbox('assets/gallery/restoration of reminiscence Size 48 . 36 inch.jpg')">
+                <img src="assets/gallery/restoration of reminiscence Size 48 . 36 inch.jpg" class="slide-bg-img" alt="RESTORATION OF REMINISCENCE" onclick="openLightbox('assets/gallery/restoration of reminiscence Size 48 . 36 inch.jpg')">
                 <div class="slide-caption">
                     <div class="slide-title">RESTORATION OF REMINISCENCE</div>
-                    <div class="slide-meta">MEDIUM: PEN SKETCH</div>
+                    <div class="slide-meta">PEN ON PAPER &mdash; 48 &times; 36 INCHES</div>
                     <span class="slide-explore-btn" onclick="filterMedium('pen', 'PEN SKETCH')">VIEW PEN COLLECTION &rarr;</span>
                 </div>
             </div>
 
             <div class="slide">
-                <img src="assets/gallery/Constraint of life.jpg" class="slide-bg-img" alt="Constraint of Life" onclick="openLightbox('assets/gallery/Constraint of life.jpg')">
+                <img src="assets/gallery/Constraint of life.jpg" class="slide-bg-img" alt="CONSTRAINT OF LIFE" onclick="openLightbox('assets/gallery/Constraint of life.jpg')">
                 <div class="slide-caption">
                     <div class="slide-title">CONSTRAINT OF LIFE</div>
-                    <div class="slide-meta">MEDIUM: PENCIL SKETCH</div>
+                    <div class="slide-meta">PENCIL ON PAPER</div>
                     <span class="slide-explore-btn" onclick="filterMedium('pencil', 'PENCIL SKETCH')">VIEW PENCIL COLLECTION &rarr;</span>
-                </div>
-            </div>
-
-            <div class="slide">
-                <img src="assets/gallery/Metal Work.jpg" class="slide-bg-img" alt="Metal Work" onclick="openLightbox('assets/gallery/Metal Work.jpg')">
-                <div class="slide-caption">
-                    <div class="slide-title">METAL WORK COMPOSITION</div>
-                    <div class="slide-meta">MEDIUM: MIX MEDIA</div>
-                    <span class="slide-explore-btn" onclick="filterMedium('mix', 'MIX MEDIA')">VIEW MIX MEDIA COLLECTION &rarr;</span>
-                </div>
-            </div>
-
-            <div class="slide">
-                <img src="assets/gallery/IMG_20210123_233710.jpg" class="slide-bg-img" alt="Dystopia" onclick="openLightbox('assets/gallery/IMG_20210123_233710.jpg')">
-                <div class="slide-caption">
-                    <div class="slide-title">DYSTOPIA</div>
-                    <div class="slide-meta">MEDIUM: BOOK ILLUSTRATION</div>
-                    <span class="slide-explore-btn" onclick="filterMedium('book', 'BOOK ILLUSTRATION')">VIEW BOOK ILLUSTRATIONS &rarr;</span>
-                </div>
-            </div>
-
-            <div class="slide">
-                <img src="assets/gallery/vehement design 1.jpg" class="slide-bg-img" alt="Vehement Design" onclick="openLightbox('assets/gallery/vehement design 1.jpg')">
-                <div class="slide-caption">
-                    <div class="slide-title">VEHEMENT DESIGN</div>
-                    <div class="slide-meta">MEDIUM: DIGITAL MEDIUM</div>
-                    <span class="slide-explore-btn" onclick="filterMedium('digital', 'DIGITAL MEDIUM')">VIEW DIGITAL COLLECTION &rarr;</span>
-                </div>
-            </div>
-
-            <div class="slide">
-                <img src="assets/gallery/Mohanogor poster.png" class="slide-bg-img" alt="Mohanogor Poster" onclick="openLightbox('assets/gallery/Mohanogor poster.png')">
-                <div class="slide-caption">
-                    <div class="slide-title">MOHANOGOR POSTER</div>
-                    <div class="slide-meta">MEDIUM: POSTERS</div>
-                    <span class="slide-explore-btn" onclick="filterMedium('poster', 'POSTERS')">VIEW POSTERS COLLECTION &rarr;</span>
-                </div>
-            </div>
-
-            <div class="slide">
-                <img src="assets/gallery/IMG_20200625_192151.jpg" class="slide-bg-img" alt="Sketchbook Series" onclick="openLightbox('assets/gallery/IMG_20200625_192151.jpg')">
-                <div class="slide-caption">
-                    <div class="slide-title">PEN SKETCHBOOK JOURNAL</div>
-                    <div class="slide-meta">MEDIUM: SKETCHBOOKS</div>
-                    <span class="slide-explore-btn" onclick="filterMedium('sketch', 'SKETCHBOOKS')">VIEW SKETCHBOOKS &rarr;</span>
-                </div>
-            </div>
-
-            <div class="slide">
-                <img src="assets/gallery/Mirror.jpg" class="slide-bg-img" alt="Mirror Installation" onclick="openLightbox('assets/gallery/Mirror.jpg')">
-                <div class="slide-caption">
-                    <div class="slide-title">MIRROR INSTALLATION</div>
-                    <div class="slide-meta">MEDIUM: SET DECORATION</div>
-                    <span class="slide-explore-btn" onclick="filterMedium('decor', 'SET DECORATION')">VIEW SET DECORATION &rarr;</span>
                 </div>
             </div>
         </div>
@@ -942,7 +877,7 @@
             { src: "assets/gallery/FB_IMG_1702712562350.jpg", title: "Outdoor Set Installation", cat: "decor", label: "Set & Decor" }
         ];
 
-        // Slider Navigation
+        // 4-Piece Masterwork Slider
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
         const totalSlides = slides.length;
@@ -975,7 +910,6 @@
             updateSlider();
         }
 
-        // Automatic non-stop slide advancing every 4 seconds
         let slideTimer = setInterval(() => {
             moveSlide(1);
         }, 4000);
@@ -1025,14 +959,10 @@
             setHeaderStyle(true);
 
             document.getElementById('current-category-title').textContent = title;
-            document.getElementById('current-category-subtitle').textContent = category === 'all' ? 'COMPLETE ARCHIVE' : 'MEDIUM / ' + title;
+            document.getElementById('current-category-subtitle').textContent = 'MEDIUM / ' + title;
 
-            if (category === 'all') {
-                renderArt(catalog);
-            } else {
-                const filtered = catalog.filter(i => i.cat === category);
-                renderArt(filtered);
-            }
+            const filtered = catalog.filter(i => i.cat === category);
+            renderArt(filtered);
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
