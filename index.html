@@ -3,18 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anika Roy</title>
+    <title>ANIKA ROY</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg: #ffffff;
             --text-primary: #111111;
             --text-secondary: #767676;
             --border: #f0f0f2;
-            --hover-tint: rgba(0, 0, 0, 0.03);
-            --header-h: 75px;
         }
 
         * {
@@ -24,7 +22,7 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'EB Garamond', Garamond, serif;
             background-color: var(--bg);
             color: var(--text-primary);
             line-height: 1.6;
@@ -32,34 +30,48 @@
             overflow-x: hidden;
         }
 
-        /* Minimal Header */
+        /* Transparent Floating Header (James Jean Style) */
         header {
-            position: sticky;
+            position: absolute;
             top: 0;
-            height: var(--header-h);
-            background: rgba(255, 255, 255, 0.96);
-            backdrop-filter: blur(8px);
-            border-bottom: 1px solid var(--border);
-            padding: 0 6%;
+            left: 0;
+            width: 100%;
+            padding: 32px 6%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
+            background: linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0) 100%);
+            transition: background 0.3s ease;
         }
 
+        header.header-solid {
+            position: sticky;
+            background: #ffffff;
+            border-bottom: 1px solid var(--border);
+            padding: 22px 6%;
+        }
+
+        /* Typography & Spacing based on Garamond sample */
         .brand {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.65rem;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            color: var(--text-primary);
+            font-family: 'EB Garamond', Garamond, serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: #ffffff;
             text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        header.header-solid .brand {
+            color: var(--text-primary);
         }
 
         nav {
             display: flex;
             align-items: center;
-            gap: 32px;
+            gap: 36px;
         }
 
         .nav-item {
@@ -68,17 +80,26 @@
 
         .nav-link {
             text-decoration: none;
-            color: var(--text-secondary);
-            font-size: 0.82rem;
+            color: rgba(255, 255, 255, 0.85);
+            font-family: 'EB Garamond', Garamond, serif;
+            font-size: 1rem;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 500;
+            letter-spacing: 0.25em;
             cursor: pointer;
             padding: 8px 0;
             transition: color 0.25s ease;
         }
 
+        header.header-solid .nav-link {
+            color: var(--text-secondary);
+        }
+
         .nav-link:hover, .nav-link.active {
+            color: #ffffff;
+        }
+
+        header.header-solid .nav-link:hover, 
+        header.header-solid .nav-link.active {
             color: var(--text-primary);
         }
 
@@ -87,14 +108,20 @@
             display: none;
             position: absolute;
             top: 100%;
-            left: -16px;
+            left: -20px;
+            background: rgba(15, 15, 17, 0.95);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 4px;
+            min-width: 230px;
+            padding: 12px 0;
+            z-index: 1010;
+        }
+
+        header.header-solid .dropdown {
             background: #ffffff;
             border: 1px solid var(--border);
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-            border-radius: 4px;
-            min-width: 220px;
-            padding: 10px 0;
-            z-index: 1010;
         }
 
         .nav-item:hover .dropdown {
@@ -103,21 +130,30 @@
 
         .dropdown a {
             display: block;
-            padding: 9px 20px;
-            font-size: 0.78rem;
+            padding: 8px 22px;
+            font-size: 0.88rem;
+            letter-spacing: 0.18em;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-secondary);
+            color: rgba(255, 255, 255, 0.75);
             text-decoration: none;
             transition: all 0.2s ease;
         }
 
-        .dropdown a:hover {
-            color: var(--text-primary);
-            background-color: var(--hover-tint);
+        header.header-solid .dropdown a {
+            color: var(--text-secondary);
         }
 
-        /* Views */
+        .dropdown a:hover {
+            color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.08);
+        }
+
+        header.header-solid .dropdown a:hover {
+            color: var(--text-primary);
+            background-color: rgba(0, 0, 0, 0.03);
+        }
+
+        /* Fullscreen Viewport Slider */
         .view-container {
             display: none;
         }
@@ -126,49 +162,47 @@
             display: block;
         }
 
-        /* Fullscreen Hero Slider */
         #hero-slider-view {
             position: relative;
             width: 100vw;
-            height: calc(100vh - var(--header-h));
+            height: 100vh;
             overflow: hidden;
-            background-color: #0d0d0e;
+            background-color: #000000;
         }
 
         .slider-track {
             display: flex;
             width: 100%;
             height: 100%;
-            transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+            transition: transform 0.75s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
         .slide {
             min-width: 100vw;
-            height: calc(100vh - var(--header-h));
+            height: 100vh;
             position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
         .slide-bg-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            user-select: none;
+            object-position: center;
+            display: block;
             cursor: pointer;
+            user-select: none;
         }
 
         /* Slide Overlay Caption */
         .slide-caption {
             position: absolute;
-            bottom: 40px;
+            bottom: 48px;
             left: 6%;
-            background: rgba(15, 15, 17, 0.75);
-            backdrop-filter: blur(10px);
-            padding: 16px 26px;
-            border-radius: 6px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(12, 12, 14, 0.65);
+            backdrop-filter: blur(12px);
+            padding: 20px 28px;
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
             color: #ffffff;
             display: flex;
             flex-direction: column;
@@ -177,25 +211,24 @@
         }
 
         .slide-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
-            font-weight: 400;
-            font-style: italic;
+            font-size: 1.5rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
         }
 
         .slide-meta {
-            font-size: 0.75rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #b0b0b4;
+            letter-spacing: 0.2em;
+            color: #c4c4c8;
         }
 
         .slide-explore-btn {
             display: inline-block;
-            margin-top: 6px;
-            font-size: 0.72rem;
+            margin-top: 8px;
+            font-size: 0.78rem;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
+            letter-spacing: 0.25em;
             color: #ffffff;
             cursor: pointer;
             text-decoration: underline;
@@ -207,14 +240,14 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(8px);
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(6px);
             border: none;
-            width: 52px;
-            height: 52px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             color: #ffffff;
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -225,8 +258,8 @@
         }
 
         .slider-arrow:hover {
-            background: rgba(255, 255, 255, 0.85);
-            color: #111111;
+            background: rgba(255, 255, 255, 0.9);
+            color: #000000;
         }
 
         .arrow-prev { left: 30px; }
@@ -253,34 +286,34 @@
 
         .dot.active {
             background: #ffffff;
-            width: 24px;
-            border-radius: 12px;
+            width: 26px;
+            border-radius: 13px;
         }
 
-        /* Gallery View */
+        /* Inner Page Views */
         .inner-page-wrap {
             max-width: 1440px;
             margin: 0 auto;
-            padding: 40px 6% 100px;
+            padding: 120px 6% 100px;
         }
 
         .category-header {
             text-align: center;
             margin-bottom: 50px;
-            padding-top: 20px;
         }
 
         .category-header h2 {
-            font-family: 'Playfair Display', serif;
             font-size: 2.2rem;
-            font-weight: 400;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            font-weight: 500;
             margin-bottom: 8px;
         }
 
         .category-header p {
-            font-size: 0.82rem;
+            font-size: 0.9rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 0.3em;
             color: var(--text-secondary);
         }
 
@@ -310,29 +343,31 @@
 
         .art-caption {
             margin-top: 12px;
-            font-size: 0.82rem;
+            font-size: 0.88rem;
             color: var(--text-secondary);
-            letter-spacing: 0.5px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
         }
 
         .art-caption .title {
             color: var(--text-primary);
-            font-family: 'Playfair Display', serif;
             font-style: italic;
-            font-size: 0.95rem;
+            font-size: 1.05rem;
+            text-transform: none;
             margin-right: 6px;
         }
 
         /* Exhibitions (CV Style) */
         .cv-container {
-            max-width: 820px;
-            margin: 40px auto;
+            max-width: 840px;
+            margin: 0 auto;
         }
 
         .cv-section-title {
-            font-family: 'Playfair Display', serif;
             font-size: 1.8rem;
-            font-weight: 400;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            font-weight: 500;
             margin-bottom: 30px;
             border-bottom: 1px solid var(--border);
             padding-bottom: 12px;
@@ -345,34 +380,37 @@
 
         .cv-row {
             display: grid;
-            grid-template-columns: 80px 1fr;
+            grid-template-columns: 90px 1fr;
             gap: 20px;
-            padding: 14px 0;
+            padding: 16px 0;
             border-bottom: 1px solid #f9f9f9;
-            font-size: 0.92rem;
+            font-size: 1rem;
         }
 
         .cv-year {
             color: var(--text-secondary);
-            font-weight: 500;
+            letter-spacing: 0.15em;
+            font-weight: 600;
         }
 
         .cv-details strong {
             color: var(--text-primary);
-            font-weight: 500;
+            letter-spacing: 0.08em;
+            font-weight: 600;
+            display: block;
         }
 
         .cv-details span {
             color: var(--text-secondary);
             display: block;
-            font-size: 0.85rem;
+            font-size: 0.92rem;
             margin-top: 2px;
         }
 
         /* About Section */
         .about-wrap {
-            max-width: 900px;
-            margin: 40px auto;
+            max-width: 920px;
+            margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 60px;
@@ -386,36 +424,38 @@
         }
 
         .about-text h2 {
-            font-family: 'Playfair Display', serif;
             font-size: 2.2rem;
-            margin-bottom: 20px;
-            font-weight: 400;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            font-weight: 500;
         }
 
         .about-text p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.8;
+            color: #444444;
+            font-size: 1.05rem;
+            line-height: 1.85;
             margin-bottom: 18px;
         }
 
         /* Contact Section */
         .contact-wrap {
             max-width: 600px;
-            margin: 60px auto;
+            margin: 0 auto;
             text-align: center;
         }
 
         .contact-wrap h2 {
-            font-family: 'Playfair Display', serif;
             font-size: 2.2rem;
-            font-weight: 400;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            font-weight: 500;
             margin-bottom: 16px;
         }
 
         .contact-wrap p {
             color: var(--text-secondary);
-            font-size: 0.95rem;
+            font-size: 1.05rem;
             margin-bottom: 30px;
         }
 
@@ -423,18 +463,18 @@
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 14px;
+            gap: 16px;
             align-items: center;
         }
 
         .contact-methods a {
             color: var(--text-primary);
             text-decoration: none;
-            font-size: 0.88rem;
-            letter-spacing: 1px;
+            font-size: 0.95rem;
+            letter-spacing: 0.2em;
             text-transform: uppercase;
             padding-bottom: 2px;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid #ccc;
             transition: border-color 0.2s ease;
         }
 
@@ -471,66 +511,63 @@
             font-weight: 300;
         }
 
-        /* Responsive Breakpoints */
         @media (max-width: 990px) {
             .jamesjean-grid { column-count: 2; column-gap: 24px; }
             .about-wrap { grid-template-columns: 1fr; gap: 40px; }
             .slide-caption { bottom: 60px; left: 20px; right: 20px; }
         }
 
-        @media (max-width: 650px) {
-            header { flex-direction: column; height: auto; padding: 16px 6%; gap: 14px; align-items: flex-start; }
-            nav { flex-wrap: wrap; gap: 16px; }
+        @media (max-width: 700px) {
+            header { flex-direction: column; padding: 20px 6%; gap: 16px; align-items: flex-start; }
+            nav { flex-wrap: wrap; gap: 18px; }
             .jamesjean-grid { column-count: 1; }
-            #hero-slider-view { height: 75vh; }
-            .slide { height: 75vh; }
             .slider-arrow { display: none; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <a href="javascript:void(0)" onclick="showSliderView()" class="brand">Anika Roy</a>
+    <header id="main-header">
+        <a href="javascript:void(0)" onclick="showSliderView()" class="brand">ANIKA ROY</a>
         <nav>
             <!-- 1. MEDIUM -->
             <div class="nav-item">
-                <span class="nav-link active" id="nav-medium">Medium ▾</span>
+                <span class="nav-link active" id="nav-medium">MEDIUM ▾</span>
                 <div class="dropdown">
-                    <a href="javascript:void(0)" onclick="showSliderView()">Full-Screen Showcase</a>
-                    <a href="javascript:void(0)" onclick="filterMedium('all', 'All Works')">All Works (Grid)</a>
-                    <a href="javascript:void(0)" onclick="filterMedium('oil', 'Oil Painting')">Oil Painting</a>
-                    <a href="javascript:void(0)" onclick="filterMedium('acrylic', 'Acrylic Painting')">Acrylic Painting</a>
-                    <a href="javascript:void(0)" onclick="filterMedium('pen', 'Pen Sketch')">Pen Sketch</a>
-                    <a href="javascript:void(0)" onclick="filterMedium('pencil', 'Pencil Sketch')">Pencil Sketch</a>
-                    <a href="javascript:void(0)" onclick="filterMedium('mix', 'Mix Media')">Mix Media</a>
-                    <a href="javascript:void(0)" onclick="filterMedium('rickshaw', 'Rickshaw Art')">Rickshaw Art</a>
-                    <a href="javascript:void(0)" onclick="filterMedium('book', 'Book Illustration')">Book Illustration</a>
-                    <a href="javascript:void(0)" onclick="filterMedium('digital', 'Digital Medium')">Digital Medium</a>
-                    <a href="javascript:void(0)" onclick="filterMedium('poster', 'Posters')">Posters</a>
-                    <a href="javascript:void(0)" onclick="filterMedium('sketch', 'Sketchbooks')">Sketchbooks</a>
-                    <a href="javascript:void(0)" onclick="filterMedium('decor', 'Set Decoration')">Set Decoration</a>
+                    <a href="javascript:void(0)" onclick="showSliderView()">FULL-SCREEN SHOWCASE</a>
+                    <a href="javascript:void(0)" onclick="filterMedium('all', 'ALL WORKS')">ALL WORKS (GRID)</a>
+                    <a href="javascript:void(0)" onclick="filterMedium('oil', 'OIL PAINTING')">OIL PAINTING</a>
+                    <a href="javascript:void(0)" onclick="filterMedium('acrylic', 'ACRYLIC PAINTING')">ACRYLIC PAINTING</a>
+                    <a href="javascript:void(0)" onclick="filterMedium('pen', 'PEN SKETCH')">PEN SKETCH</a>
+                    <a href="javascript:void(0)" onclick="filterMedium('pencil', 'PENCIL SKETCH')">PENCIL SKETCH</a>
+                    <a href="javascript:void(0)" onclick="filterMedium('mix', 'MIX MEDIA')">MIX MEDIA</a>
+                    <a href="javascript:void(0)" onclick="filterMedium('rickshaw', 'RICKSHAW ART')">RICKSHAW ART</a>
+                    <a href="javascript:void(0)" onclick="filterMedium('book', 'BOOK ILLUSTRATION')">BOOK ILLUSTRATION</a>
+                    <a href="javascript:void(0)" onclick="filterMedium('digital', 'DIGITAL MEDIUM')">DIGITAL MEDIUM</a>
+                    <a href="javascript:void(0)" onclick="filterMedium('poster', 'POSTERS')">POSTERS</a>
+                    <a href="javascript:void(0)" onclick="filterMedium('sketch', 'SKETCHBOOKS')">SKETCHBOOKS</a>
+                    <a href="javascript:void(0)" onclick="filterMedium('decor', 'SET DECORATION')">SET DECORATION</a>
                 </div>
             </div>
 
             <!-- 2. EXHIBITIONS -->
             <div class="nav-item">
-                <a class="nav-link" id="nav-exhibitions" href="javascript:void(0)" onclick="showView('exhibitions')">Exhibitions</a>
+                <a class="nav-link" id="nav-exhibitions" href="javascript:void(0)" onclick="showView('exhibitions')">EXHIBITIONS</a>
             </div>
 
             <!-- 3. ABOUT -->
             <div class="nav-item">
-                <a class="nav-link" id="nav-about" href="javascript:void(0)" onclick="showView('about')">About</a>
+                <a class="nav-link" id="nav-about" href="javascript:void(0)" onclick="showView('about')">ABOUT</a>
             </div>
 
             <!-- 4. CONTACT -->
             <div class="nav-item">
-                <a class="nav-link" id="nav-contact" href="javascript:void(0)" onclick="showView('contact')">Contact</a>
+                <a class="nav-link" id="nav-contact" href="javascript:void(0)" onclick="showView('contact')">CONTACT</a>
             </div>
         </nav>
     </header>
 
-    <!-- 1. FULLSCREEN OPENING SLIDER (1 IMAGE PER MEDIUM) -->
+    <!-- FULLSCREEN HERO SLIDER -->
     <main id="hero-slider-view" class="view-container active-view">
         <button class="slider-arrow arrow-prev" onclick="moveSlide(-1)">&#10094;</button>
         <button class="slider-arrow arrow-next" onclick="moveSlide(1)">&#10095;</button>
@@ -541,8 +578,8 @@
                 <img src="assets/gallery/WINDOW.jpg" class="slide-bg-img" alt="WINDOW" onclick="openLightbox('assets/gallery/WINDOW.jpg')">
                 <div class="slide-caption">
                     <div class="slide-title">WINDOW</div>
-                    <div class="slide-meta">Medium: Oil Painting</div>
-                    <span class="slide-explore-btn" onclick="filterMedium('oil', 'Oil Painting')">View Full Oil Collection &rarr;</span>
+                    <div class="slide-meta">MEDIUM: OIL PAINTING</div>
+                    <span class="slide-explore-btn" onclick="filterMedium('oil', 'OIL PAINTING')">VIEW OIL COLLECTION &rarr;</span>
                 </div>
             </div>
 
@@ -550,9 +587,9 @@
             <div class="slide">
                 <img src="assets/gallery/DSC09392.jpg" class="slide-bg-img" alt="Travelling with Window" onclick="openLightbox('assets/gallery/DSC09392.jpg')">
                 <div class="slide-caption">
-                    <div class="slide-title">Travelling with Window</div>
-                    <div class="slide-meta">Medium: Acrylic Painting</div>
-                    <span class="slide-explore-btn" onclick="filterMedium('acrylic', 'Acrylic Painting')">View Full Acrylic Collection &rarr;</span>
+                    <div class="slide-title">TRAVELLING WITH WINDOW</div>
+                    <div class="slide-meta">MEDIUM: ACRYLIC PAINTING</div>
+                    <span class="slide-explore-btn" onclick="filterMedium('acrylic', 'ACRYLIC PAINTING')">VIEW ACRYLIC COLLECTION &rarr;</span>
                 </div>
             </div>
 
@@ -560,9 +597,9 @@
             <div class="slide">
                 <img src="assets/gallery/20211212_163047.jpg" class="slide-bg-img" alt="Rickshaw Motif" onclick="openLightbox('assets/gallery/20211212_163047.jpg')">
                 <div class="slide-caption">
-                    <div class="slide-title">Folk Motif</div>
-                    <div class="slide-meta">Medium: Rickshaw Painting</div>
-                    <span class="slide-explore-btn" onclick="filterMedium('rickshaw', 'Rickshaw Art')">View Full Rickshaw Collection &rarr;</span>
+                    <div class="slide-title">FOLK MOTIF</div>
+                    <div class="slide-meta">MEDIUM: RICKSHAW PAINTING</div>
+                    <span class="slide-explore-btn" onclick="filterMedium('rickshaw', 'RICKSHAW ART')">VIEW RICKSHAW ART &rarr;</span>
                 </div>
             </div>
 
@@ -570,9 +607,9 @@
             <div class="slide">
                 <img src="assets/gallery/restoration of reminiscence Size 48 . 36 inch.jpg" class="slide-bg-img" alt="Restoration of Reminiscence" onclick="openLightbox('assets/gallery/restoration of reminiscence Size 48 . 36 inch.jpg')">
                 <div class="slide-caption">
-                    <div class="slide-title">Restoration of Reminiscence</div>
-                    <div class="slide-meta">Medium: Pen Sketch</div>
-                    <span class="slide-explore-btn" onclick="filterMedium('pen', 'Pen Sketch')">View Full Pen Collection &rarr;</span>
+                    <div class="slide-title">RESTORATION OF REMINISCENCE</div>
+                    <div class="slide-meta">MEDIUM: PEN SKETCH</div>
+                    <span class="slide-explore-btn" onclick="filterMedium('pen', 'PEN SKETCH')">VIEW PEN COLLECTION &rarr;</span>
                 </div>
             </div>
 
@@ -580,9 +617,9 @@
             <div class="slide">
                 <img src="assets/gallery/Constraint of life.jpg" class="slide-bg-img" alt="Constraint of Life" onclick="openLightbox('assets/gallery/Constraint of life.jpg')">
                 <div class="slide-caption">
-                    <div class="slide-title">Constraint of Life</div>
-                    <div class="slide-meta">Medium: Pencil Sketch</div>
-                    <span class="slide-explore-btn" onclick="filterMedium('pencil', 'Pencil Sketch')">View Full Pencil Collection &rarr;</span>
+                    <div class="slide-title">CONSTRAINT OF LIFE</div>
+                    <div class="slide-meta">MEDIUM: PENCIL SKETCH</div>
+                    <span class="slide-explore-btn" onclick="filterMedium('pencil', 'PENCIL SKETCH')">VIEW PENCIL COLLECTION &rarr;</span>
                 </div>
             </div>
 
@@ -590,9 +627,9 @@
             <div class="slide">
                 <img src="assets/gallery/Metal Work.jpg" class="slide-bg-img" alt="Metal Work" onclick="openLightbox('assets/gallery/Metal Work.jpg')">
                 <div class="slide-caption">
-                    <div class="slide-title">Metal Work Composition</div>
-                    <div class="slide-meta">Medium: Mix Media</div>
-                    <span class="slide-explore-btn" onclick="filterMedium('mix', 'Mix Media')">View Full Mix Media Collection &rarr;</span>
+                    <div class="slide-title">METAL WORK COMPOSITION</div>
+                    <div class="slide-meta">MEDIUM: MIX MEDIA</div>
+                    <span class="slide-explore-btn" onclick="filterMedium('mix', 'MIX MEDIA')">VIEW MIX MEDIA COLLECTION &rarr;</span>
                 </div>
             </div>
 
@@ -600,9 +637,9 @@
             <div class="slide">
                 <img src="assets/gallery/IMG_20210123_233710.jpg" class="slide-bg-img" alt="Dystopia" onclick="openLightbox('assets/gallery/IMG_20210123_233710.jpg')">
                 <div class="slide-caption">
-                    <div class="slide-title">Dystopia</div>
-                    <div class="slide-meta">Medium: Book Illustration</div>
-                    <span class="slide-explore-btn" onclick="filterMedium('book', 'Book Illustration')">View Full Book Illustration Collection &rarr;</span>
+                    <div class="slide-title">DYSTOPIA</div>
+                    <div class="slide-meta">MEDIUM: BOOK ILLUSTRATION</div>
+                    <span class="slide-explore-btn" onclick="filterMedium('book', 'BOOK ILLUSTRATION')">VIEW BOOK ILLUSTRATIONS &rarr;</span>
                 </div>
             </div>
 
@@ -610,9 +647,9 @@
             <div class="slide">
                 <img src="assets/gallery/vehement design 1.jpg" class="slide-bg-img" alt="Vehement Design" onclick="openLightbox('assets/gallery/vehement design 1.jpg')">
                 <div class="slide-caption">
-                    <div class="slide-title">Vehement Design</div>
-                    <div class="slide-meta">Medium: Digital Medium</div>
-                    <span class="slide-explore-btn" onclick="filterMedium('digital', 'Digital Medium')">View Full Digital Collection &rarr;</span>
+                    <div class="slide-title">VEHEMENT DESIGN</div>
+                    <div class="slide-meta">MEDIUM: DIGITAL MEDIUM</div>
+                    <span class="slide-explore-btn" onclick="filterMedium('digital', 'DIGITAL MEDIUM')">VIEW DIGITAL COLLECTION &rarr;</span>
                 </div>
             </div>
 
@@ -620,9 +657,9 @@
             <div class="slide">
                 <img src="assets/gallery/Mohanogor poster.png" class="slide-bg-img" alt="Mohanogor Poster" onclick="openLightbox('assets/gallery/Mohanogor poster.png')">
                 <div class="slide-caption">
-                    <div class="slide-title">Mohanogor Poster</div>
-                    <div class="slide-meta">Medium: Posters</div>
-                    <span class="slide-explore-btn" onclick="filterMedium('poster', 'Posters')">View Full Posters Collection &rarr;</span>
+                    <div class="slide-title">MOHANOGOR POSTER</div>
+                    <div class="slide-meta">MEDIUM: POSTERS</div>
+                    <span class="slide-explore-btn" onclick="filterMedium('poster', 'POSTERS')">VIEW POSTERS COLLECTION &rarr;</span>
                 </div>
             </div>
 
@@ -630,9 +667,9 @@
             <div class="slide">
                 <img src="assets/gallery/IMG_20200625_192151.jpg" class="slide-bg-img" alt="Sketchbook Series" onclick="openLightbox('assets/gallery/IMG_20200625_192151.jpg')">
                 <div class="slide-caption">
-                    <div class="slide-title">Pen Sketchbook Journal</div>
-                    <div class="slide-meta">Medium: Sketchbooks</div>
-                    <span class="slide-explore-btn" onclick="filterMedium('sketch', 'Sketchbooks')">View Full Sketchbook Collection &rarr;</span>
+                    <div class="slide-title">PEN SKETCHBOOK JOURNAL</div>
+                    <div class="slide-meta">MEDIUM: SKETCHBOOKS</div>
+                    <span class="slide-explore-btn" onclick="filterMedium('sketch', 'SKETCHBOOKS')">VIEW SKETCHBOOKS &rarr;</span>
                 </div>
             </div>
 
@@ -640,9 +677,9 @@
             <div class="slide">
                 <img src="assets/gallery/Mirror.jpg" class="slide-bg-img" alt="Mirror Installation" onclick="openLightbox('assets/gallery/Mirror.jpg')">
                 <div class="slide-caption">
-                    <div class="slide-title">Mirror Installation</div>
-                    <div class="slide-meta">Medium: Set Decoration</div>
-                    <span class="slide-explore-btn" onclick="filterMedium('decor', 'Set Decoration')">View Full Set Decoration Collection &rarr;</span>
+                    <div class="slide-title">MIRROR INSTALLATION</div>
+                    <div class="slide-meta">MEDIUM: SET DECORATION</div>
+                    <span class="slide-explore-btn" onclick="filterMedium('decor', 'SET DECORATION')">VIEW SET DECORATION &rarr;</span>
                 </div>
             </div>
         </div>
@@ -650,22 +687,22 @@
         <div class="slider-indicators" id="slider-indicators"></div>
     </main>
 
-    <!-- 2. FILTERED GALLERY VIEW -->
+    <!-- FILTERED GALLERY VIEW -->
     <section id="gallery-view" class="view-container">
         <div class="inner-page-wrap">
             <div class="category-header">
-                <h2 id="current-category-title">Medium Collection</h2>
-                <p id="current-category-subtitle">Selected Archive</p>
+                <h2 id="current-category-title">MEDIUM COLLECTION</h2>
+                <p id="current-category-subtitle">SELECTED ARCHIVE</p>
             </div>
             <div id="art-grid" class="jamesjean-grid"></div>
         </div>
     </section>
 
-    <!-- 3. EXHIBITIONS VIEW -->
+    <!-- EXHIBITIONS VIEW -->
     <section id="exhibitions-view" class="view-container">
         <div class="inner-page-wrap">
             <div class="cv-container">
-                <h2 class="cv-section-title">Solo & Selected Exhibitions</h2>
+                <h2 class="cv-section-title">SOLO &amp; SELECTED EXHIBITIONS</h2>
                 <ul class="cv-list">
                     <li class="cv-row">
                         <div class="cv-year">2023</div>
@@ -770,13 +807,13 @@
         </div>
     </section>
 
-    <!-- 4. ABOUT VIEW -->
+    <!-- ABOUT VIEW -->
     <section id="about-view" class="view-container">
         <div class="inner-page-wrap">
             <div class="about-wrap">
                 <img src="assets/anika_roy.jpeg" alt="Anika Roy">
                 <div class="about-text">
-                    <h2>Anika Roy</h2>
+                    <h2>ANIKA ROY</h2>
                     <p>Painting is the way to narrate my stories and my imagination. From childhood, working with brush and color has been my central artistic pursuit.</p>
                     <p>Spanning over 15 years of creative output, my practice balances fine art, Rickshaw painting motifs, detailed pen sketchbook studies, illustration narratives, and large-scale decorative sets.</p>
                 </div>
@@ -784,11 +821,11 @@
         </div>
     </section>
 
-    <!-- 5. CONTACT VIEW -->
+    <!-- CONTACT VIEW -->
     <section id="contact-view" class="view-container">
         <div class="inner-page-wrap">
             <div class="contact-wrap">
-                <h2>Contact</h2>
+                <h2>CONTACT</h2>
                 <p>For commissions, acquisition inquiries, and exhibition projects:</p>
                 <ul class="contact-methods">
                     <li><a href="mailto:anikaroya2468@gmail.com">anikaroya2468@gmail.com</a></li>
@@ -799,7 +836,7 @@
         </div>
     </section>
 
-    <!-- FULLSCREEN LIGHTBOX -->
+    <!-- LIGHTBOX -->
     <div id="lightbox" onclick="closeLightbox()">
         <span id="lightbox-close">&times;</span>
         <img id="lightbox-img" src="" alt="Enlarged artwork">
@@ -924,14 +961,13 @@
             { src: "assets/gallery/FB_IMG_1702712562350.jpg", title: "Outdoor Set Installation", cat: "decor", label: "Set & Decor" }
         ];
 
-        // Slider Navigation Logic
+        // Slider Navigation
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
         const totalSlides = slides.length;
         const track = document.getElementById('slider-track');
         const indicatorContainer = document.getElementById('slider-indicators');
 
-        // Build dots
         for (let i = 0; i < totalSlides; i++) {
             const dot = document.createElement('div');
             dot.className = 'dot' + (i === 0 ? ' active' : '');
@@ -958,10 +994,8 @@
             updateSlider();
         }
 
-        // Auto-play slider slowly every 6 seconds
         let slideTimer = setInterval(() => moveSlide(1), 6000);
 
-        // Pause auto-play on interaction
         const sliderView = document.getElementById('hero-slider-view');
         sliderView.addEventListener('mouseenter', () => clearInterval(slideTimer));
         sliderView.addEventListener('mouseleave', () => {
@@ -969,7 +1003,7 @@
             slideTimer = setInterval(() => moveSlide(1), 6000);
         });
 
-        // Touch swipe support for mobile
+        // Touch gestures
         let startX = 0;
         sliderView.addEventListener('touchstart', e => {
             startX = e.touches[0].clientX;
@@ -982,7 +1016,7 @@
             }
         }, { passive: true });
 
-        // Gallery Grid Renderer
+        // Gallery Grid
         const grid = document.getElementById('art-grid');
 
         function renderArt(items) {
@@ -1001,11 +1035,21 @@
             });
         }
 
+        function setHeaderStyle(solid) {
+            const hdr = document.getElementById('main-header');
+            if (solid) {
+                hdr.classList.add('header-solid');
+            } else {
+                hdr.classList.remove('header-solid');
+            }
+        }
+
         function showSliderView() {
             document.querySelectorAll('.view-container').forEach(el => el.classList.remove('active-view'));
             document.querySelectorAll('.nav-link').forEach(el => el.classList.remove('active'));
             document.getElementById('hero-slider-view').classList.add('active-view');
             document.getElementById('nav-medium').classList.add('active');
+            setHeaderStyle(false);
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
@@ -1014,9 +1058,10 @@
             document.querySelectorAll('.nav-link').forEach(el => el.classList.remove('active'));
             document.getElementById('gallery-view').classList.add('active-view');
             document.getElementById('nav-medium').classList.add('active');
+            setHeaderStyle(true);
 
             document.getElementById('current-category-title').textContent = title;
-            document.getElementById('current-category-subtitle').textContent = category === 'all' ? 'Complete Archive' : 'Medium / ' + title;
+            document.getElementById('current-category-subtitle').textContent = category === 'all' ? 'COMPLETE ARCHIVE' : 'MEDIUM / ' + title;
 
             if (category === 'all') {
                 renderArt(catalog);
@@ -1034,10 +1079,10 @@
             document.getElementById(viewId + '-view').classList.add('active-view');
             const navLink = document.getElementById('nav-' + viewId);
             if (navLink) navLink.classList.add('active');
+            setHeaderStyle(true);
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Lightbox
         function openLightbox(src) {
             const lb = document.getElementById('lightbox');
             document.getElementById('lightbox-img').src = src;
