@@ -30,18 +30,18 @@
             overflow-x: hidden;
         }
 
-        /* Transparent Floating Header (James Jean Style) */
+        /* Minimal Header */
         header {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            padding: 32px 6%;
+            padding: 30px 4% 30px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
-            background: linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0) 100%);
+            background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.15) 60%, rgba(0,0,0,0) 100%);
             transition: background 0.3s ease;
         }
 
@@ -49,13 +49,12 @@
             position: sticky;
             background: #ffffff;
             border-bottom: 1px solid var(--border);
-            padding: 22px 6%;
+            padding: 20px 4% 20px 5%;
         }
 
-        /* Typography & Spacing based on Garamond sample */
         .brand {
             font-family: 'EB Garamond', Garamond, serif;
-            font-size: 1.5rem;
+            font-size: 1.45rem;
             font-weight: 500;
             letter-spacing: 0.35em;
             text-transform: uppercase;
@@ -68,10 +67,12 @@
             color: var(--text-primary);
         }
 
+        /* Tighter, smaller, right-aligned navigation */
         nav {
             display: flex;
             align-items: center;
-            gap: 36px;
+            gap: 20px;
+            margin-left: auto;
         }
 
         .nav-item {
@@ -82,11 +83,11 @@
             text-decoration: none;
             color: rgba(255, 255, 255, 0.85);
             font-family: 'EB Garamond', Garamond, serif;
-            font-size: 1rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
-            letter-spacing: 0.25em;
+            letter-spacing: 0.2em;
             cursor: pointer;
-            padding: 8px 0;
+            padding: 6px 4px;
             transition: color 0.25s ease;
         }
 
@@ -108,13 +109,13 @@
             display: none;
             position: absolute;
             top: 100%;
-            left: -20px;
-            background: rgba(15, 15, 17, 0.95);
+            right: 0;
+            background: rgba(15, 15, 17, 0.96);
             backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 4px;
-            min-width: 230px;
-            padding: 12px 0;
+            border-radius: 2px;
+            min-width: 220px;
+            padding: 10px 0;
             z-index: 1010;
         }
 
@@ -130,9 +131,9 @@
 
         .dropdown a {
             display: block;
-            padding: 8px 22px;
-            font-size: 0.88rem;
-            letter-spacing: 0.18em;
+            padding: 8px 18px;
+            font-size: 0.8rem;
+            letter-spacing: 0.15em;
             text-transform: uppercase;
             color: rgba(255, 255, 255, 0.75);
             text-decoration: none;
@@ -174,7 +175,7 @@
             display: flex;
             width: 100%;
             height: 100%;
-            transition: transform 0.75s cubic-bezier(0.25, 1, 0.5, 1);
+            transition: transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
         }
 
         .slide {
@@ -193,46 +194,47 @@
             user-select: none;
         }
 
-        /* Slide Overlay Caption */
+        /* Clean James Jean-Style Bottom-Left Caption (No Box / No Shadow) */
         .slide-caption {
             position: absolute;
-            bottom: 48px;
-            left: 6%;
-            background: rgba(12, 12, 14, 0.65);
-            backdrop-filter: blur(12px);
-            padding: 20px 28px;
-            border-radius: 4px;
-            border: 1px solid rgba(255, 255, 255, 0.12);
+            bottom: 35px;
+            left: 5%;
+            background: none;
+            border: none;
+            box-shadow: none;
+            padding: 0;
             color: #ffffff;
             display: flex;
             flex-direction: column;
-            gap: 4px;
+            gap: 2px;
             z-index: 50;
+            text-shadow: 0 1px 8px rgba(0,0,0,0.7);
         }
 
         .slide-title {
-            font-size: 1.5rem;
-            letter-spacing: 0.15em;
+            font-size: 1.35rem;
+            letter-spacing: 0.18em;
             text-transform: uppercase;
+            font-weight: 500;
         }
 
         .slide-meta {
-            font-size: 0.85rem;
+            font-size: 0.78rem;
             text-transform: uppercase;
-            letter-spacing: 0.2em;
-            color: #c4c4c8;
+            letter-spacing: 0.22em;
+            color: rgba(255, 255, 255, 0.85);
         }
 
         .slide-explore-btn {
             display: inline-block;
-            margin-top: 8px;
-            font-size: 0.78rem;
+            margin-top: 4px;
+            font-size: 0.72rem;
             text-transform: uppercase;
-            letter-spacing: 0.25em;
+            letter-spacing: 0.22em;
             color: #ffffff;
             cursor: pointer;
             text-decoration: underline;
-            text-underline-offset: 4px;
+            text-underline-offset: 3px;
         }
 
         /* Slider Controls */
@@ -243,11 +245,11 @@
             background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(6px);
             border: none;
-            width: 50px;
-            height: 50px;
+            width: 46px;
+            height: 46px;
             border-radius: 50%;
             color: #ffffff;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -262,39 +264,39 @@
             color: #000000;
         }
 
-        .arrow-prev { left: 30px; }
-        .arrow-next { right: 30px; }
+        .arrow-prev { left: 24px; }
+        .arrow-next { right: 24px; }
 
         .slider-indicators {
             position: absolute;
-            bottom: 24px;
+            bottom: 22px;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
-            gap: 10px;
+            gap: 8px;
             z-index: 60;
         }
 
         .dot {
-            width: 8px;
-            height: 8px;
+            width: 7px;
+            height: 7px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.35);
+            background: rgba(255, 255, 255, 0.4);
             cursor: pointer;
             transition: all 0.3s ease;
         }
 
         .dot.active {
             background: #ffffff;
-            width: 26px;
-            border-radius: 13px;
+            width: 22px;
+            border-radius: 11px;
         }
 
         /* Inner Page Views */
         .inner-page-wrap {
             max-width: 1440px;
             margin: 0 auto;
-            padding: 120px 6% 100px;
+            padding: 110px 5% 100px;
         }
 
         .category-header {
@@ -303,7 +305,7 @@
         }
 
         .category-header h2 {
-            font-size: 2.2rem;
+            font-size: 2.1rem;
             letter-spacing: 0.25em;
             text-transform: uppercase;
             font-weight: 500;
@@ -311,7 +313,7 @@
         }
 
         .category-header p {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 0.3em;
             color: var(--text-secondary);
@@ -343,7 +345,7 @@
 
         .art-caption {
             margin-top: 12px;
-            font-size: 0.88rem;
+            font-size: 0.85rem;
             color: var(--text-secondary);
             letter-spacing: 0.1em;
             text-transform: uppercase;
@@ -352,7 +354,7 @@
         .art-caption .title {
             color: var(--text-primary);
             font-style: italic;
-            font-size: 1.05rem;
+            font-size: 1rem;
             text-transform: none;
             margin-right: 6px;
         }
@@ -364,7 +366,7 @@
         }
 
         .cv-section-title {
-            font-size: 1.8rem;
+            font-size: 1.7rem;
             letter-spacing: 0.25em;
             text-transform: uppercase;
             font-weight: 500;
@@ -380,11 +382,11 @@
 
         .cv-row {
             display: grid;
-            grid-template-columns: 90px 1fr;
+            grid-template-columns: 85px 1fr;
             gap: 20px;
-            padding: 16px 0;
+            padding: 15px 0;
             border-bottom: 1px solid #f9f9f9;
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
 
         .cv-year {
@@ -403,7 +405,7 @@
         .cv-details span {
             color: var(--text-secondary);
             display: block;
-            font-size: 0.92rem;
+            font-size: 0.9rem;
             margin-top: 2px;
         }
 
@@ -424,16 +426,16 @@
         }
 
         .about-text h2 {
-            font-size: 2.2rem;
+            font-size: 2.1rem;
             letter-spacing: 0.3em;
             text-transform: uppercase;
-            margin-bottom: 24px;
+            margin-bottom: 22px;
             font-weight: 500;
         }
 
         .about-text p {
             color: #444444;
-            font-size: 1.05rem;
+            font-size: 1rem;
             line-height: 1.85;
             margin-bottom: 18px;
         }
@@ -446,7 +448,7 @@
         }
 
         .contact-wrap h2 {
-            font-size: 2.2rem;
+            font-size: 2.1rem;
             letter-spacing: 0.3em;
             text-transform: uppercase;
             font-weight: 500;
@@ -455,7 +457,7 @@
 
         .contact-wrap p {
             color: var(--text-secondary);
-            font-size: 1.05rem;
+            font-size: 1rem;
             margin-bottom: 30px;
         }
 
@@ -470,7 +472,7 @@
         .contact-methods a {
             color: var(--text-primary);
             text-decoration: none;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             letter-spacing: 0.2em;
             text-transform: uppercase;
             padding-bottom: 2px;
@@ -482,7 +484,7 @@
             border-color: var(--text-primary);
         }
 
-        /* Fullscreen Lightbox */
+        /* Lightbox */
         #lightbox {
             display: none;
             position: fixed;
@@ -514,12 +516,12 @@
         @media (max-width: 990px) {
             .jamesjean-grid { column-count: 2; column-gap: 24px; }
             .about-wrap { grid-template-columns: 1fr; gap: 40px; }
-            .slide-caption { bottom: 60px; left: 20px; right: 20px; }
+            .slide-caption { bottom: 45px; left: 20px; right: 20px; }
         }
 
         @media (max-width: 700px) {
-            header { flex-direction: column; padding: 20px 6%; gap: 16px; align-items: flex-start; }
-            nav { flex-wrap: wrap; gap: 18px; }
+            header { flex-direction: column; padding: 18px 5%; gap: 14px; align-items: flex-start; }
+            nav { width: 100%; justify-content: flex-start; flex-wrap: wrap; gap: 14px; }
             .jamesjean-grid { column-count: 1; }
             .slider-arrow { display: none; }
         }
@@ -530,7 +532,6 @@
     <header id="main-header">
         <a href="javascript:void(0)" onclick="showSliderView()" class="brand">ANIKA ROY</a>
         <nav>
-            <!-- 1. MEDIUM -->
             <div class="nav-item">
                 <span class="nav-link active" id="nav-medium">MEDIUM ▾</span>
                 <div class="dropdown">
@@ -550,30 +551,25 @@
                 </div>
             </div>
 
-            <!-- 2. EXHIBITIONS -->
             <div class="nav-item">
                 <a class="nav-link" id="nav-exhibitions" href="javascript:void(0)" onclick="showView('exhibitions')">EXHIBITIONS</a>
             </div>
 
-            <!-- 3. ABOUT -->
             <div class="nav-item">
                 <a class="nav-link" id="nav-about" href="javascript:void(0)" onclick="showView('about')">ABOUT</a>
             </div>
 
-            <!-- 4. CONTACT -->
             <div class="nav-item">
                 <a class="nav-link" id="nav-contact" href="javascript:void(0)" onclick="showView('contact')">CONTACT</a>
             </div>
         </nav>
     </header>
 
-    <!-- FULLSCREEN HERO SLIDER -->
     <main id="hero-slider-view" class="view-container active-view">
         <button class="slider-arrow arrow-prev" onclick="moveSlide(-1)">&#10094;</button>
         <button class="slider-arrow arrow-next" onclick="moveSlide(1)">&#10095;</button>
 
         <div class="slider-track" id="slider-track">
-            <!-- 1. Oil Painting -->
             <div class="slide">
                 <img src="assets/gallery/WINDOW.jpg" class="slide-bg-img" alt="WINDOW" onclick="openLightbox('assets/gallery/WINDOW.jpg')">
                 <div class="slide-caption">
@@ -583,7 +579,6 @@
                 </div>
             </div>
 
-            <!-- 2. Acrylic Painting -->
             <div class="slide">
                 <img src="assets/gallery/DSC09392.jpg" class="slide-bg-img" alt="Travelling with Window" onclick="openLightbox('assets/gallery/DSC09392.jpg')">
                 <div class="slide-caption">
@@ -593,7 +588,6 @@
                 </div>
             </div>
 
-            <!-- 3. Rickshaw Art -->
             <div class="slide">
                 <img src="assets/gallery/20211212_163047.jpg" class="slide-bg-img" alt="Rickshaw Motif" onclick="openLightbox('assets/gallery/20211212_163047.jpg')">
                 <div class="slide-caption">
@@ -603,7 +597,6 @@
                 </div>
             </div>
 
-            <!-- 4. Pen Sketch -->
             <div class="slide">
                 <img src="assets/gallery/restoration of reminiscence Size 48 . 36 inch.jpg" class="slide-bg-img" alt="Restoration of Reminiscence" onclick="openLightbox('assets/gallery/restoration of reminiscence Size 48 . 36 inch.jpg')">
                 <div class="slide-caption">
@@ -613,7 +606,6 @@
                 </div>
             </div>
 
-            <!-- 5. Pencil Sketch -->
             <div class="slide">
                 <img src="assets/gallery/Constraint of life.jpg" class="slide-bg-img" alt="Constraint of Life" onclick="openLightbox('assets/gallery/Constraint of life.jpg')">
                 <div class="slide-caption">
@@ -623,7 +615,6 @@
                 </div>
             </div>
 
-            <!-- 6. Mix Media -->
             <div class="slide">
                 <img src="assets/gallery/Metal Work.jpg" class="slide-bg-img" alt="Metal Work" onclick="openLightbox('assets/gallery/Metal Work.jpg')">
                 <div class="slide-caption">
@@ -633,7 +624,6 @@
                 </div>
             </div>
 
-            <!-- 7. Book Illustration -->
             <div class="slide">
                 <img src="assets/gallery/IMG_20210123_233710.jpg" class="slide-bg-img" alt="Dystopia" onclick="openLightbox('assets/gallery/IMG_20210123_233710.jpg')">
                 <div class="slide-caption">
@@ -643,7 +633,6 @@
                 </div>
             </div>
 
-            <!-- 8. Digital Medium -->
             <div class="slide">
                 <img src="assets/gallery/vehement design 1.jpg" class="slide-bg-img" alt="Vehement Design" onclick="openLightbox('assets/gallery/vehement design 1.jpg')">
                 <div class="slide-caption">
@@ -653,7 +642,6 @@
                 </div>
             </div>
 
-            <!-- 9. Posters -->
             <div class="slide">
                 <img src="assets/gallery/Mohanogor poster.png" class="slide-bg-img" alt="Mohanogor Poster" onclick="openLightbox('assets/gallery/Mohanogor poster.png')">
                 <div class="slide-caption">
@@ -663,7 +651,6 @@
                 </div>
             </div>
 
-            <!-- 10. Sketchbooks -->
             <div class="slide">
                 <img src="assets/gallery/IMG_20200625_192151.jpg" class="slide-bg-img" alt="Sketchbook Series" onclick="openLightbox('assets/gallery/IMG_20200625_192151.jpg')">
                 <div class="slide-caption">
@@ -673,7 +660,6 @@
                 </div>
             </div>
 
-            <!-- 11. Set Decoration -->
             <div class="slide">
                 <img src="assets/gallery/Mirror.jpg" class="slide-bg-img" alt="Mirror Installation" onclick="openLightbox('assets/gallery/Mirror.jpg')">
                 <div class="slide-caption">
@@ -687,7 +673,6 @@
         <div class="slider-indicators" id="slider-indicators"></div>
     </main>
 
-    <!-- FILTERED GALLERY VIEW -->
     <section id="gallery-view" class="view-container">
         <div class="inner-page-wrap">
             <div class="category-header">
@@ -698,7 +683,6 @@
         </div>
     </section>
 
-    <!-- EXHIBITIONS VIEW -->
     <section id="exhibitions-view" class="view-container">
         <div class="inner-page-wrap">
             <div class="cv-container">
@@ -807,7 +791,6 @@
         </div>
     </section>
 
-    <!-- ABOUT VIEW -->
     <section id="about-view" class="view-container">
         <div class="inner-page-wrap">
             <div class="about-wrap">
@@ -821,7 +804,6 @@
         </div>
     </section>
 
-    <!-- CONTACT VIEW -->
     <section id="contact-view" class="view-container">
         <div class="inner-page-wrap">
             <div class="contact-wrap">
@@ -836,7 +818,6 @@
         </div>
     </section>
 
-    <!-- LIGHTBOX -->
     <div id="lightbox" onclick="closeLightbox()">
         <span id="lightbox-close">&times;</span>
         <img id="lightbox-img" src="" alt="Enlarged artwork">
@@ -994,27 +975,10 @@
             updateSlider();
         }
 
-        let slideTimer = setInterval(() => moveSlide(1), 6000);
-
-        const sliderView = document.getElementById('hero-slider-view');
-        sliderView.addEventListener('mouseenter', () => clearInterval(slideTimer));
-        sliderView.addEventListener('mouseleave', () => {
-            clearInterval(slideTimer);
-            slideTimer = setInterval(() => moveSlide(1), 6000);
-        });
-
-        // Touch gestures
-        let startX = 0;
-        sliderView.addEventListener('touchstart', e => {
-            startX = e.touches[0].clientX;
-        }, { passive: true });
-
-        sliderView.addEventListener('touchend', e => {
-            const diffX = startX - e.changedTouches[0].clientX;
-            if (Math.abs(diffX) > 50) {
-                moveSlide(diffX > 0 ? 1 : -1);
-            }
-        }, { passive: true });
+        // Automatic non-stop slide advancing every 4 seconds
+        let slideTimer = setInterval(() => {
+            moveSlide(1);
+        }, 4000);
 
         // Gallery Grid
         const grid = document.getElementById('art-grid');
