@@ -11,9 +11,10 @@
         :root {
             --bg: #ffffff;
             --text-primary: #111111;
-            --text-secondary: #707072;
+            --text-secondary: #767676;
             --border: #f0f0f2;
             --hover-tint: rgba(0, 0, 0, 0.03);
+            --header-h: 75px;
         }
 
         * {
@@ -28,16 +29,18 @@
             color: var(--text-primary);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
         }
 
         /* Minimal Header */
         header {
             position: sticky;
             top: 0;
+            height: var(--header-h);
             background: rgba(255, 255, 255, 0.96);
             backdrop-filter: blur(8px);
             border-bottom: 1px solid var(--border);
-            padding: 22px 6%;
+            padding: 0 6%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -79,7 +82,7 @@
             color: var(--text-primary);
         }
 
-        /* Dropdown Menu for Medium */
+        /* Dropdown for Medium */
         .dropdown {
             display: none;
             position: absolute;
@@ -87,7 +90,7 @@
             left: -16px;
             background: #ffffff;
             border: 1px solid var(--border);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
             border-radius: 4px;
             min-width: 220px;
             padding: 10px 0;
@@ -117,106 +120,150 @@
         /* Views */
         .view-container {
             display: none;
-            max-width: 1440px;
-            margin: 0 auto;
-            padding: 40px 6% 100px;
         }
 
         .view-container.active-view {
             display: block;
         }
 
-        /* Opening Showcase Styles */
-        .showcase-header {
-            text-align: center;
-            margin: 30px auto 70px;
-            max-width: 720px;
-        }
-
-        .showcase-header h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.6rem;
-            font-weight: 400;
-            letter-spacing: -0.5px;
-            margin-bottom: 12px;
-        }
-
-        .showcase-header p {
-            font-size: 0.9rem;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            color: var(--text-secondary);
-        }
-
-        .showcase-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 70px 50px;
-        }
-
-        .showcase-card {
-            cursor: pointer;
-            text-decoration: none;
-            color: inherit;
-            display: block;
-            group: card;
-        }
-
-        .showcase-image-wrap {
-            overflow: hidden;
-            background: #f7f7f7;
+        /* Fullscreen Hero Slider */
+        #hero-slider-view {
             position: relative;
+            width: 100vw;
+            height: calc(100vh - var(--header-h));
+            overflow: hidden;
+            background-color: #0d0d0e;
         }
 
-        .showcase-image-wrap img {
-            width: 100%;
-            height: 480px;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
-        }
-
-        .showcase-card:hover img {
-            transform: scale(1.03);
-            opacity: 0.95;
-        }
-
-        .showcase-meta {
-            margin-top: 18px;
+        .slider-track {
             display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 12px;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
-        .showcase-title {
+        .slide {
+            min-width: 100vw;
+            height: calc(100vh - var(--header-h));
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slide-bg-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            user-select: none;
+            cursor: pointer;
+        }
+
+        /* Slide Overlay Caption */
+        .slide-caption {
+            position: absolute;
+            bottom: 40px;
+            left: 6%;
+            background: rgba(15, 15, 17, 0.75);
+            backdrop-filter: blur(10px);
+            padding: 16px 26px;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            z-index: 50;
+        }
+
+        .slide-title {
             font-family: 'Playfair Display', serif;
-            font-size: 1.25rem;
+            font-size: 1.4rem;
             font-weight: 400;
+            font-style: italic;
         }
 
-        .showcase-medium {
-            font-size: 0.78rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--text-secondary);
-        }
-
-        .showcase-action {
-            margin-top: 8px;
+        .slide-meta {
             font-size: 0.75rem;
             text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #b0b0b4;
+        }
+
+        .slide-explore-btn {
+            display: inline-block;
+            margin-top: 6px;
+            font-size: 0.72rem;
+            text-transform: uppercase;
             letter-spacing: 1.5px;
-            color: var(--text-secondary);
-            transition: color 0.2s ease;
+            color: #ffffff;
+            cursor: pointer;
+            text-decoration: underline;
+            text-underline-offset: 4px;
         }
 
-        .showcase-card:hover .showcase-action {
-            color: var(--text-primary);
+        /* Slider Controls */
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
+            border: none;
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            color: #ffffff;
+            font-size: 1.6rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            z-index: 60;
+            user-select: none;
         }
 
-        /* Filtered Gallery Grid */
+        .slider-arrow:hover {
+            background: rgba(255, 255, 255, 0.85);
+            color: #111111;
+        }
+
+        .arrow-prev { left: 30px; }
+        .arrow-next { right: 30px; }
+
+        .slider-indicators {
+            position: absolute;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 60;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.35);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            background: #ffffff;
+            width: 24px;
+            border-radius: 12px;
+        }
+
+        /* Gallery View */
+        .inner-page-wrap {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 40px 6% 100px;
+        }
+
         .category-header {
             text-align: center;
             margin-bottom: 50px;
@@ -426,31 +473,32 @@
 
         /* Responsive Breakpoints */
         @media (max-width: 990px) {
-            .showcase-grid { grid-template-columns: 1fr; gap: 50px; }
-            .showcase-image-wrap img { height: 380px; }
             .jamesjean-grid { column-count: 2; column-gap: 24px; }
             .about-wrap { grid-template-columns: 1fr; gap: 40px; }
+            .slide-caption { bottom: 60px; left: 20px; right: 20px; }
         }
 
         @media (max-width: 650px) {
-            header { flex-direction: column; gap: 16px; align-items: flex-start; }
+            header { flex-direction: column; height: auto; padding: 16px 6%; gap: 14px; align-items: flex-start; }
             nav { flex-wrap: wrap; gap: 16px; }
             .jamesjean-grid { column-count: 1; }
-            .showcase-image-wrap img { height: 280px; }
+            #hero-slider-view { height: 75vh; }
+            .slide { height: 75vh; }
+            .slider-arrow { display: none; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <a href="javascript:void(0)" onclick="showOpeningShowcase()" class="brand">Anika Roy</a>
+        <a href="javascript:void(0)" onclick="showSliderView()" class="brand">Anika Roy</a>
         <nav>
             <!-- 1. MEDIUM -->
             <div class="nav-item">
                 <span class="nav-link active" id="nav-medium">Medium ▾</span>
                 <div class="dropdown">
-                    <a href="javascript:void(0)" onclick="showOpeningShowcase()">Showcase (All Mediums)</a>
-                    <a href="javascript:void(0)" onclick="filterMedium('all', 'Complete Catalog')">All Works</a>
+                    <a href="javascript:void(0)" onclick="showSliderView()">Full-Screen Showcase</a>
+                    <a href="javascript:void(0)" onclick="filterMedium('all', 'All Works')">All Works (Grid)</a>
                     <a href="javascript:void(0)" onclick="filterMedium('oil', 'Oil Painting')">Oil Painting</a>
                     <a href="javascript:void(0)" onclick="filterMedium('acrylic', 'Acrylic Painting')">Acrylic Painting</a>
                     <a href="javascript:void(0)" onclick="filterMedium('pen', 'Pen Sketch')">Pen Sketch</a>
@@ -482,289 +530,276 @@
         </nav>
     </header>
 
-    <!-- 1. OPENING SHOWCASE: ONE IMAGE FROM EACH MEDIUM -->
-    <main id="showcase-view" class="view-container active-view">
-        <div class="showcase-header">
-            <h1>Medium Disciplines</h1>
-            <p>A Retrospective of Form &amp; Craft Across 15 Years</p>
-        </div>
-        <div class="showcase-grid">
+    <!-- 1. FULLSCREEN OPENING SLIDER (1 IMAGE PER MEDIUM) -->
+    <main id="hero-slider-view" class="view-container active-view">
+        <button class="slider-arrow arrow-prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="slider-arrow arrow-next" onclick="moveSlide(1)">&#10095;</button>
+
+        <div class="slider-track" id="slider-track">
             <!-- 1. Oil Painting -->
-            <div class="showcase-card" onclick="filterMedium('oil', 'Oil Painting')">
-                <div class="showcase-image-wrap">
-                    <img src="assets/gallery/WINDOW.jpg" alt="WINDOW - Oil Painting" loading="lazy">
+            <div class="slide">
+                <img src="assets/gallery/WINDOW.jpg" class="slide-bg-img" alt="WINDOW" onclick="openLightbox('assets/gallery/WINDOW.jpg')">
+                <div class="slide-caption">
+                    <div class="slide-title">WINDOW</div>
+                    <div class="slide-meta">Medium: Oil Painting</div>
+                    <span class="slide-explore-btn" onclick="filterMedium('oil', 'Oil Painting')">View Full Oil Collection &rarr;</span>
                 </div>
-                <div class="showcase-meta">
-                    <div class="showcase-title">WINDOW</div>
-                    <div class="showcase-medium">Oil Painting</div>
-                </div>
-                <div class="showcase-action">Explore Oil Collection &rarr;</div>
             </div>
 
             <!-- 2. Acrylic Painting -->
-            <div class="showcase-card" onclick="filterMedium('acrylic', 'Acrylic Painting')">
-                <div class="showcase-image-wrap">
-                    <img src="assets/gallery/DSC09392.jpg" alt="Travelling with Window - Acrylic" loading="lazy">
+            <div class="slide">
+                <img src="assets/gallery/DSC09392.jpg" class="slide-bg-img" alt="Travelling with Window" onclick="openLightbox('assets/gallery/DSC09392.jpg')">
+                <div class="slide-caption">
+                    <div class="slide-title">Travelling with Window</div>
+                    <div class="slide-meta">Medium: Acrylic Painting</div>
+                    <span class="slide-explore-btn" onclick="filterMedium('acrylic', 'Acrylic Painting')">View Full Acrylic Collection &rarr;</span>
                 </div>
-                <div class="showcase-meta">
-                    <div class="showcase-title">Travelling with Window</div>
-                    <div class="showcase-medium">Acrylic Painting</div>
-                </div>
-                <div class="showcase-action">Explore Acrylic Collection &rarr;</div>
             </div>
 
             <!-- 3. Rickshaw Art -->
-            <div class="showcase-card" onclick="filterMedium('rickshaw', 'Rickshaw Art')">
-                <div class="showcase-image-wrap">
-                    <img src="assets/gallery/20211212_163047.jpg" alt="Rickshaw Motif" loading="lazy">
+            <div class="slide">
+                <img src="assets/gallery/20211212_163047.jpg" class="slide-bg-img" alt="Rickshaw Motif" onclick="openLightbox('assets/gallery/20211212_163047.jpg')">
+                <div class="slide-caption">
+                    <div class="slide-title">Folk Motif</div>
+                    <div class="slide-meta">Medium: Rickshaw Painting</div>
+                    <span class="slide-explore-btn" onclick="filterMedium('rickshaw', 'Rickshaw Art')">View Full Rickshaw Collection &rarr;</span>
                 </div>
-                <div class="showcase-meta">
-                    <div class="showcase-title">Heritage Motif</div>
-                    <div class="showcase-medium">Rickshaw Art</div>
-                </div>
-                <div class="showcase-action">Explore Rickshaw Art &rarr;</div>
             </div>
 
             <!-- 4. Pen Sketch -->
-            <div class="showcase-card" onclick="filterMedium('pen', 'Pen Sketch')">
-                <div class="showcase-image-wrap">
-                    <img src="assets/gallery/restoration of reminiscence Size 48 . 36 inch.jpg" alt="Restoration of Reminiscence" loading="lazy">
+            <div class="slide">
+                <img src="assets/gallery/restoration of reminiscence Size 48 . 36 inch.jpg" class="slide-bg-img" alt="Restoration of Reminiscence" onclick="openLightbox('assets/gallery/restoration of reminiscence Size 48 . 36 inch.jpg')">
+                <div class="slide-caption">
+                    <div class="slide-title">Restoration of Reminiscence</div>
+                    <div class="slide-meta">Medium: Pen Sketch</div>
+                    <span class="slide-explore-btn" onclick="filterMedium('pen', 'Pen Sketch')">View Full Pen Collection &rarr;</span>
                 </div>
-                <div class="showcase-meta">
-                    <div class="showcase-title">Restoration of Reminiscence</div>
-                    <div class="showcase-medium">Pen Sketch</div>
-                </div>
-                <div class="showcase-action">Explore Pen Media &rarr;</div>
             </div>
 
             <!-- 5. Pencil Sketch -->
-            <div class="showcase-card" onclick="filterMedium('pencil', 'Pencil Sketch')">
-                <div class="showcase-image-wrap">
-                    <img src="assets/gallery/Constraint of life.jpg" alt="Constraint of Life" loading="lazy">
+            <div class="slide">
+                <img src="assets/gallery/Constraint of life.jpg" class="slide-bg-img" alt="Constraint of Life" onclick="openLightbox('assets/gallery/Constraint of life.jpg')">
+                <div class="slide-caption">
+                    <div class="slide-title">Constraint of Life</div>
+                    <div class="slide-meta">Medium: Pencil Sketch</div>
+                    <span class="slide-explore-btn" onclick="filterMedium('pencil', 'Pencil Sketch')">View Full Pencil Collection &rarr;</span>
                 </div>
-                <div class="showcase-meta">
-                    <div class="showcase-title">Constraint of Life</div>
-                    <div class="showcase-medium">Pencil Sketch</div>
-                </div>
-                <div class="showcase-action">Explore Pencil Media &rarr;</div>
             </div>
 
             <!-- 6. Mix Media -->
-            <div class="showcase-card" onclick="filterMedium('mix', 'Mix Media')">
-                <div class="showcase-image-wrap">
-                    <img src="assets/gallery/Metal Work.jpg" alt="Metal Work" loading="lazy">
+            <div class="slide">
+                <img src="assets/gallery/Metal Work.jpg" class="slide-bg-img" alt="Metal Work" onclick="openLightbox('assets/gallery/Metal Work.jpg')">
+                <div class="slide-caption">
+                    <div class="slide-title">Metal Work Composition</div>
+                    <div class="slide-meta">Medium: Mix Media</div>
+                    <span class="slide-explore-btn" onclick="filterMedium('mix', 'Mix Media')">View Full Mix Media Collection &rarr;</span>
                 </div>
-                <div class="showcase-meta">
-                    <div class="showcase-title">Metal Work Composition</div>
-                    <div class="showcase-medium">Mix Media</div>
-                </div>
-                <div class="showcase-action">Explore Mix Media &rarr;</div>
             </div>
 
             <!-- 7. Book Illustration -->
-            <div class="showcase-card" onclick="filterMedium('book', 'Book Illustration')">
-                <div class="showcase-image-wrap">
-                    <img src="assets/gallery/IMG_20210123_233710.jpg" alt="Dystopia Book Illustration" loading="lazy">
+            <div class="slide">
+                <img src="assets/gallery/IMG_20210123_233710.jpg" class="slide-bg-img" alt="Dystopia" onclick="openLightbox('assets/gallery/IMG_20210123_233710.jpg')">
+                <div class="slide-caption">
+                    <div class="slide-title">Dystopia</div>
+                    <div class="slide-meta">Medium: Book Illustration</div>
+                    <span class="slide-explore-btn" onclick="filterMedium('book', 'Book Illustration')">View Full Book Illustration Collection &rarr;</span>
                 </div>
-                <div class="showcase-meta">
-                    <div class="showcase-title">Dystopia</div>
-                    <div class="showcase-medium">Book Illustration</div>
-                </div>
-                <div class="showcase-action">Explore Book Illustrations &rarr;</div>
             </div>
 
             <!-- 8. Digital Medium -->
-            <div class="showcase-card" onclick="filterMedium('digital', 'Digital Medium')">
-                <div class="showcase-image-wrap">
-                    <img src="assets/gallery/vehement design 1.jpg" alt="Vehement Design" loading="lazy">
+            <div class="slide">
+                <img src="assets/gallery/vehement design 1.jpg" class="slide-bg-img" alt="Vehement Design" onclick="openLightbox('assets/gallery/vehement design 1.jpg')">
+                <div class="slide-caption">
+                    <div class="slide-title">Vehement Design</div>
+                    <div class="slide-meta">Medium: Digital Medium</div>
+                    <span class="slide-explore-btn" onclick="filterMedium('digital', 'Digital Medium')">View Full Digital Collection &rarr;</span>
                 </div>
-                <div class="showcase-meta">
-                    <div class="showcase-title">Vehement Design</div>
-                    <div class="showcase-medium">Digital Medium</div>
-                </div>
-                <div class="showcase-action">Explore Digital Works &rarr;</div>
             </div>
 
             <!-- 9. Posters -->
-            <div class="showcase-card" onclick="filterMedium('poster', 'Posters')">
-                <div class="showcase-image-wrap">
-                    <img src="assets/gallery/Mohanogor poster.png" alt="Mohanogor Poster" loading="lazy">
+            <div class="slide">
+                <img src="assets/gallery/Mohanogor poster.png" class="slide-bg-img" alt="Mohanogor Poster" onclick="openLightbox('assets/gallery/Mohanogor poster.png')">
+                <div class="slide-caption">
+                    <div class="slide-title">Mohanogor Poster</div>
+                    <div class="slide-meta">Medium: Posters</div>
+                    <span class="slide-explore-btn" onclick="filterMedium('poster', 'Posters')">View Full Posters Collection &rarr;</span>
                 </div>
-                <div class="showcase-meta">
-                    <div class="showcase-title">Mohanogor Poster</div>
-                    <div class="showcase-medium">Posters</div>
-                </div>
-                <div class="showcase-action">Explore Posters &rarr;</div>
             </div>
 
             <!-- 10. Sketchbooks -->
-            <div class="showcase-card" onclick="filterMedium('sketch', 'Sketchbooks')">
-                <div class="showcase-image-wrap">
-                    <img src="assets/gallery/IMG_20200625_192151.jpg" alt="Sketchbook Series" loading="lazy">
+            <div class="slide">
+                <img src="assets/gallery/IMG_20200625_192151.jpg" class="slide-bg-img" alt="Sketchbook Series" onclick="openLightbox('assets/gallery/IMG_20200625_192151.jpg')">
+                <div class="slide-caption">
+                    <div class="slide-title">Pen Sketchbook Journal</div>
+                    <div class="slide-meta">Medium: Sketchbooks</div>
+                    <span class="slide-explore-btn" onclick="filterMedium('sketch', 'Sketchbooks')">View Full Sketchbook Collection &rarr;</span>
                 </div>
-                <div class="showcase-meta">
-                    <div class="showcase-title">Drawing Journal Plate</div>
-                    <div class="showcase-medium">Sketchbooks</div>
-                </div>
-                <div class="showcase-action">Explore Sketchbooks &rarr;</div>
             </div>
 
             <!-- 11. Set Decoration -->
-            <div class="showcase-card" onclick="filterMedium('decor', 'Set Decoration')">
-                <div class="showcase-image-wrap">
-                    <img src="assets/gallery/Mirror.jpg" alt="Mirror Installation" loading="lazy">
+            <div class="slide">
+                <img src="assets/gallery/Mirror.jpg" class="slide-bg-img" alt="Mirror Installation" onclick="openLightbox('assets/gallery/Mirror.jpg')">
+                <div class="slide-caption">
+                    <div class="slide-title">Mirror Installation</div>
+                    <div class="slide-meta">Medium: Set Decoration</div>
+                    <span class="slide-explore-btn" onclick="filterMedium('decor', 'Set Decoration')">View Full Set Decoration Collection &rarr;</span>
                 </div>
-                <div class="showcase-meta">
-                    <div class="showcase-title">Mirror Scenography</div>
-                    <div class="showcase-medium">Set Decoration</div>
-                </div>
-                <div class="showcase-action">Explore Set Decoration &rarr;</div>
             </div>
         </div>
+
+        <div class="slider-indicators" id="slider-indicators"></div>
     </main>
 
-    <!-- 2. FILTERED MEDIUM GALLERY VIEW -->
+    <!-- 2. FILTERED GALLERY VIEW -->
     <section id="gallery-view" class="view-container">
-        <div class="category-header">
-            <h2 id="current-category-title">Medium Collection</h2>
-            <p id="current-category-subtitle">Selected Archive</p>
+        <div class="inner-page-wrap">
+            <div class="category-header">
+                <h2 id="current-category-title">Medium Collection</h2>
+                <p id="current-category-subtitle">Selected Archive</p>
+            </div>
+            <div id="art-grid" class="jamesjean-grid"></div>
         </div>
-        <div id="art-grid" class="jamesjean-grid"></div>
     </section>
 
     <!-- 3. EXHIBITIONS VIEW -->
     <section id="exhibitions-view" class="view-container">
-        <div class="cv-container">
-            <h2 class="cv-section-title">Solo & Selected Exhibitions</h2>
-            <ul class="cv-list">
-                <li class="cv-row">
-                    <div class="cv-year">2023</div>
-                    <div class="cv-details">
-                        <strong>WINDOW - First Solo Exhibition</strong>
-                        <span>Zainul Gallery, Faculty of Fine Art, University of Dhaka</span>
-                    </div>
-                </li>
-                <li class="cv-row">
-                    <div class="cv-year">2023</div>
-                    <div class="cv-details">
-                        <strong>Annual Art Exhibition</strong>
-                        <span>Zainul Gallery, Faculty of Fine Art, University of Dhaka</span>
-                    </div>
-                </li>
-                <li class="cv-row">
-                    <div class="cv-year">2022</div>
-                    <div class="cv-details">
-                        <strong>Time: as we know it</strong>
-                        <span>EMK Center</span>
-                    </div>
-                </li>
-                <li class="cv-row">
-                    <div class="cv-year">2022</div>
-                    <div class="cv-details">
-                        <strong>25th National Art Exhibition</strong>
-                        <span>National Art Gallery, Bangladesh Shilpakala Academy</span>
-                    </div>
-                </li>
-                <li class="cv-row">
-                    <div class="cv-year">2022</div>
-                    <div class="cv-details">
-                        <strong>Prottaborton Art Exhibition</strong>
-                        <span>University of Dhaka</span>
-                    </div>
-                </li>
-                <li class="cv-row">
-                    <div class="cv-year">2021</div>
-                    <div class="cv-details">
-                        <strong>24th National Art Exhibition</strong>
-                        <span>National Art Gallery, Bangladesh Shilpakala Academy</span>
-                    </div>
-                </li>
-                <li class="cv-row">
-                    <div class="cv-year">2021</div>
-                    <div class="cv-details">
-                        <strong>Berger Young Painter Art Competition</strong>
-                        <span>Dhaka</span>
-                    </div>
-                </li>
-                <li class="cv-row">
-                    <div class="cv-year">2020</div>
-                    <div class="cv-details">
-                        <strong>22nd Young Artist Art Exhibition</strong>
-                        <span>National Art Gallery, Bangladesh Shilpakala Academy</span>
-                    </div>
-                </li>
-                <li class="cv-row">
-                    <div class="cv-year">2020</div>
-                    <div class="cv-details">
-                        <strong>Berger Young Painter Art Competition</strong>
-                        <span>Dhaka</span>
-                    </div>
-                </li>
-                <li class="cv-row">
-                    <div class="cv-year">2019</div>
-                    <div class="cv-details">
-                        <strong>Inktober Dhaka</strong>
-                        <span>EMK Center</span>
-                    </div>
-                </li>
-                <li class="cv-row">
-                    <div class="cv-year">2019</div>
-                    <div class="cv-details">
-                        <strong>Shilpi Kaiyum Chowdhury Smriti Chitrangkon Protijogita</strong>
-                        <span>University of Dhaka</span>
-                    </div>
-                </li>
-                <li class="cv-row">
-                    <div class="cv-year">2018</div>
-                    <div class="cv-details">
-                        <strong>Department of Drawing and Painting Annual Exhibition</strong>
-                        <span>University of Dhaka</span>
-                    </div>
-                </li>
-                <li class="cv-row">
-                    <div class="cv-year">2018</div>
-                    <div class="cv-details">
-                        <strong>2nd Beauty in Wreckage Group Art Exhibition</strong>
-                        <span>Bangladesh Shilpakala Academy</span>
-                    </div>
-                </li>
-                <li class="cv-row">
-                    <div class="cv-year">2018</div>
-                    <div class="cv-details">
-                        <strong>Inktober Bangladesh</strong>
-                        <span>EMK Center</span>
-                    </div>
-                </li>
-            </ul>
+        <div class="inner-page-wrap">
+            <div class="cv-container">
+                <h2 class="cv-section-title">Solo & Selected Exhibitions</h2>
+                <ul class="cv-list">
+                    <li class="cv-row">
+                        <div class="cv-year">2023</div>
+                        <div class="cv-details">
+                            <strong>WINDOW - First Solo Exhibition</strong>
+                            <span>Zainul Gallery, Faculty of Fine Art, University of Dhaka</span>
+                        </div>
+                    </li>
+                    <li class="cv-row">
+                        <div class="cv-year">2023</div>
+                        <div class="cv-details">
+                            <strong>Annual Art Exhibition</strong>
+                            <span>Zainul Gallery, Faculty of Fine Art, University of Dhaka</span>
+                        </div>
+                    </li>
+                    <li class="cv-row">
+                        <div class="cv-year">2022</div>
+                        <div class="cv-details">
+                            <strong>Time: as we know it</strong>
+                            <span>EMK Center</span>
+                        </div>
+                    </li>
+                    <li class="cv-row">
+                        <div class="cv-year">2022</div>
+                        <div class="cv-details">
+                            <strong>25th National Art Exhibition</strong>
+                            <span>National Art Gallery, Bangladesh Shilpakala Academy</span>
+                        </div>
+                    </li>
+                    <li class="cv-row">
+                        <div class="cv-year">2022</div>
+                        <div class="cv-details">
+                            <strong>Prottaborton Art Exhibition</strong>
+                            <span>University of Dhaka</span>
+                        </div>
+                    </li>
+                    <li class="cv-row">
+                        <div class="cv-year">2021</div>
+                        <div class="cv-details">
+                            <strong>24th National Art Exhibition</strong>
+                            <span>National Art Gallery, Bangladesh Shilpakala Academy</span>
+                        </div>
+                    </li>
+                    <li class="cv-row">
+                        <div class="cv-year">2021</div>
+                        <div class="cv-details">
+                            <strong>Berger Young Painter Art Competition</strong>
+                            <span>Dhaka</span>
+                        </div>
+                    </li>
+                    <li class="cv-row">
+                        <div class="cv-year">2020</div>
+                        <div class="cv-details">
+                            <strong>22nd Young Artist Art Exhibition</strong>
+                            <span>National Art Gallery, Bangladesh Shilpakala Academy</span>
+                        </div>
+                    </li>
+                    <li class="cv-row">
+                        <div class="cv-year">2020</div>
+                        <div class="cv-details">
+                            <strong>Berger Young Painter Art Competition</strong>
+                            <span>Dhaka</span>
+                        </div>
+                    </li>
+                    <li class="cv-row">
+                        <div class="cv-year">2019</div>
+                        <div class="cv-details">
+                            <strong>Inktober Dhaka</strong>
+                            <span>EMK Center</span>
+                        </div>
+                    </li>
+                    <li class="cv-row">
+                        <div class="cv-year">2019</div>
+                        <div class="cv-details">
+                            <strong>Shilpi Kaiyum Chowdhury Smriti Chitrangkon Protijogita</strong>
+                            <span>University of Dhaka</span>
+                        </div>
+                    </li>
+                    <li class="cv-row">
+                        <div class="cv-year">2018</div>
+                        <div class="cv-details">
+                            <strong>Department of Drawing and Painting Annual Exhibition</strong>
+                            <span>University of Dhaka</span>
+                        </div>
+                    </li>
+                    <li class="cv-row">
+                        <div class="cv-year">2018</div>
+                        <div class="cv-details">
+                            <strong>2nd Beauty in Wreckage Group Art Exhibition</strong>
+                            <span>Bangladesh Shilpakala Academy</span>
+                        </div>
+                    </li>
+                    <li class="cv-row">
+                        <div class="cv-year">2018</div>
+                        <div class="cv-details">
+                            <strong>Inktober Bangladesh</strong>
+                            <span>EMK Center</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
     </section>
 
     <!-- 4. ABOUT VIEW -->
     <section id="about-view" class="view-container">
-        <div class="about-wrap">
-            <img src="assets/anika_roy.jpeg" alt="Anika Roy">
-            <div class="about-text">
-                <h2>Anika Roy</h2>
-                <p>Painting is the way to narrate my stories and my imagination. From childhood, working with brush and color has been my central artistic pursuit.</p>
-                <p>Spanning over 15 years of creative output, my practice balances fine art, Rickshaw painting motifs, detailed pen sketchbook studies, illustration narratives, and large-scale decorative sets.</p>
+        <div class="inner-page-wrap">
+            <div class="about-wrap">
+                <img src="assets/anika_roy.jpeg" alt="Anika Roy">
+                <div class="about-text">
+                    <h2>Anika Roy</h2>
+                    <p>Painting is the way to narrate my stories and my imagination. From childhood, working with brush and color has been my central artistic pursuit.</p>
+                    <p>Spanning over 15 years of creative output, my practice balances fine art, Rickshaw painting motifs, detailed pen sketchbook studies, illustration narratives, and large-scale decorative sets.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- 5. CONTACT VIEW -->
     <section id="contact-view" class="view-container">
-        <div class="contact-wrap">
-            <h2>Contact</h2>
-            <p>For commissions, acquisition inquiries, and exhibition projects:</p>
-            <ul class="contact-methods">
-                <li><a href="mailto:anikaroya2468@gmail.com">anikaroya2468@gmail.com</a></li>
-                <li><a href="https://www.instagram.com/anikaroya01?igsh=MTA2bmF2YnU5bmZuaw==" target="_blank">Instagram: @anikaroya01</a></li>
-                <li><a href="https://www.facebook.com/profile.php?id=100063773701113" target="_blank">Facebook: Anika's Canvas</a></li>
-            </ul>
+        <div class="inner-page-wrap">
+            <div class="contact-wrap">
+                <h2>Contact</h2>
+                <p>For commissions, acquisition inquiries, and exhibition projects:</p>
+                <ul class="contact-methods">
+                    <li><a href="mailto:anikaroya2468@gmail.com">anikaroya2468@gmail.com</a></li>
+                    <li><a href="https://www.instagram.com/anikaroya01?igsh=MTA2bmF2YnU5bmZuaw==" target="_blank">Instagram: @anikaroya01</a></li>
+                    <li><a href="https://www.facebook.com/profile.php?id=100063773701113" target="_blank">Facebook: Anika's Canvas</a></li>
+                </ul>
+            </div>
         </div>
     </section>
 
-    <!-- LIGHTBOX -->
+    <!-- FULLSCREEN LIGHTBOX -->
     <div id="lightbox" onclick="closeLightbox()">
         <span id="lightbox-close">&times;</span>
         <img id="lightbox-img" src="" alt="Enlarged artwork">
@@ -889,6 +924,65 @@
             { src: "assets/gallery/FB_IMG_1702712562350.jpg", title: "Outdoor Set Installation", cat: "decor", label: "Set & Decor" }
         ];
 
+        // Slider Navigation Logic
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        const track = document.getElementById('slider-track');
+        const indicatorContainer = document.getElementById('slider-indicators');
+
+        // Build dots
+        for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement('div');
+            dot.className = 'dot' + (i === 0 ? ' active' : '');
+            dot.onclick = () => goToSlide(i);
+            indicatorContainer.appendChild(dot);
+        }
+
+        const dots = document.querySelectorAll('.dot');
+
+        function updateSlider() {
+            track.style.transform = `translateX(-${currentSlide * 100}vw)`;
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        function moveSlide(direction) {
+            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+            updateSlider();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateSlider();
+        }
+
+        // Auto-play slider slowly every 6 seconds
+        let slideTimer = setInterval(() => moveSlide(1), 6000);
+
+        // Pause auto-play on interaction
+        const sliderView = document.getElementById('hero-slider-view');
+        sliderView.addEventListener('mouseenter', () => clearInterval(slideTimer));
+        sliderView.addEventListener('mouseleave', () => {
+            clearInterval(slideTimer);
+            slideTimer = setInterval(() => moveSlide(1), 6000);
+        });
+
+        // Touch swipe support for mobile
+        let startX = 0;
+        sliderView.addEventListener('touchstart', e => {
+            startX = e.touches[0].clientX;
+        }, { passive: true });
+
+        sliderView.addEventListener('touchend', e => {
+            const diffX = startX - e.changedTouches[0].clientX;
+            if (Math.abs(diffX) > 50) {
+                moveSlide(diffX > 0 ? 1 : -1);
+            }
+        }, { passive: true });
+
+        // Gallery Grid Renderer
         const grid = document.getElementById('art-grid');
 
         function renderArt(items) {
@@ -907,10 +1001,10 @@
             });
         }
 
-        function showOpeningShowcase() {
+        function showSliderView() {
             document.querySelectorAll('.view-container').forEach(el => el.classList.remove('active-view'));
             document.querySelectorAll('.nav-link').forEach(el => el.classList.remove('active'));
-            document.getElementById('showcase-view').classList.add('active-view');
+            document.getElementById('hero-slider-view').classList.add('active-view');
             document.getElementById('nav-medium').classList.add('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
@@ -943,6 +1037,7 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
+        // Lightbox
         function openLightbox(src) {
             const lb = document.getElementById('lightbox');
             document.getElementById('lightbox-img').src = src;
