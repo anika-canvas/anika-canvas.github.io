@@ -3,234 +3,663 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anika | Artist Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <title>Anika Roy | Contemporary Artist & Painter</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        body {
-            margin: 0;
-            font-family: 'Roboto', sans-serif;
-            background-color: #fafafa;
-            color: #2b2b2b;
+        :root {
+            --bg: #fcfcfb;
+            --card-bg: #ffffff;
+            --text-dark: #161617;
+            --text-subtle: #636366;
+            --border: #e5e5ea;
+            --accent: #1c1c1e;
         }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation Header */
         header {
-            padding: 22px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #fff;
             position: sticky;
             top: 0;
-            z-index: 100;
-            border-bottom: 1px solid #eaeaea;
+            z-index: 999;
+            background: rgba(252, 252, 251, 0.94);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 5%;
         }
-        header h1 {
-            margin: 0;
+
+        .brand-title {
             font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            letter-spacing: 1px;
+            font-size: 1.65rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: var(--text-dark);
+            text-decoration: none;
         }
-        
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-subtle);
+            font-size: 0.88rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+            cursor: pointer;
+        }
+
+        .nav-link:hover {
+            color: var(--text-dark);
+        }
+
+        /* Hero Section */
         .hero {
             text-align: center;
-            padding: 50px 20px 20px;
-        }
-        .hero h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
-            margin-bottom: 10px;
-        }
-        .hero p {
-            color: #666;
-            max-width: 600px;
+            padding: 70px 20px 24px;
+            max-width: 780px;
             margin: 0 auto;
-            line-height: 1.6;
         }
 
-        /* Category Filter Buttons */
-        .filter-nav {
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.75rem;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            color: var(--text-subtle);
+            line-height: 1.7;
+        }
+
+        /* Filter Pills */
+        .filter-wrapper {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 24px 20px 16px;
             display: flex;
-            justify-content: center;
             flex-wrap: wrap;
-            gap: 10px;
-            padding: 30px 15px;
-        }
-        .filter-btn {
-            background: transparent;
-            border: 1px solid #ddd;
-            padding: 8px 18px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: all 0.25s ease;
-            color: #555;
-            font-family: inherit;
-        }
-        .filter-btn:hover, .filter-btn.active {
-            background: #111;
-            color: #fff;
-            border-color: #111;
+            justify-content: center;
+            gap: 8px;
         }
 
-        /* Dynamic Masonry Grid */
-        .gallery-container {
+        .pill {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 30px;
+            padding: 7px 18px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--text-subtle);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .pill:hover, .pill.active {
+            background: var(--accent);
+            color: #fff;
+            border-color: var(--accent);
+        }
+
+        /* Masonry Grid */
+        .gallery-wrap {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 10px 20px 80px;
+            padding: 20px 20px 80px;
             column-count: 4;
-            column-gap: 18px;
+            column-gap: 20px;
         }
-        .gallery-item {
+
+        .art-card {
             break-inside: avoid;
-            margin-bottom: 18px;
+            margin-bottom: 20px;
             position: relative;
             cursor: pointer;
             overflow: hidden;
-            border-radius: 6px;
-            background: #f0f0f0;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-            transition: transform 0.3s ease;
+            border-radius: 8px;
+            background: #eaeaea;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.04);
         }
-        .gallery-item img {
+
+        .art-card img {
             width: 100%;
+            height: auto;
             display: block;
-            transition: transform 0.4s ease;
+            transition: transform 0.45s ease;
         }
-        .gallery-item:hover img {
+
+        .art-card:hover img {
             transform: scale(1.04);
         }
-        .overlay {
+
+        .card-overlay {
             position: absolute;
             inset: 0;
-            background: rgba(0, 0, 0, 0.45);
+            background: linear-gradient(180deg, rgba(0,0,0,0) 35%, rgba(0,0,0,0.75) 100%);
             opacity: 0;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            justify-content: flex-end;
+            padding: 18px;
             transition: opacity 0.3s ease;
-            padding: 15px;
-            text-align: center;
         }
-        .gallery-item:hover .overlay { opacity: 1; }
-        .overlay-title {
-            color: #fff;
+
+        .art-card:hover .card-overlay {
+            opacity: 1;
+        }
+
+        .card-title {
+            color: #ffffff;
             font-family: 'Playfair Display', serif;
-            font-size: 1.15rem;
-            margin-bottom: 4px;
+            font-size: 1.1rem;
+            font-weight: 600;
         }
-        .overlay-cat {
-            color: #ddd;
-            font-size: 0.8rem;
+
+        .card-tag {
+            color: #e0e0e0;
+            font-size: 0.72rem;
             text-transform: uppercase;
             letter-spacing: 1px;
+            margin-top: 3px;
+        }
+
+        /* Content Sections */
+        .page-section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 24px;
+            border-top: 1px solid var(--border);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 16px;
+            color: var(--text-subtle);
+            font-size: 1.02rem;
+            line-height: 1.8;
+        }
+
+        .about-img img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        /* Exhibitions List */
+        .exhibit-list {
+            list-style: none;
+            display: grid;
+            gap: 16px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .exhibit-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 18px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .exhibit-main strong {
+            font-size: 1.02rem;
+            color: var(--text-dark);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .exhibit-main span {
+            color: var(--text-subtle);
+            font-size: 0.88rem;
+        }
+
+        .exhibit-year {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            background: #f0f0f2;
+            padding: 4px 12px;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+
+        /* Contact Section */
+        .contact-box {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 40px 24px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.03);
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .contact-btn {
+            text-decoration: none;
+            padding: 10px 22px;
+            border-radius: 30px;
+            font-size: 0.88rem;
+            font-weight: 500;
+            border: 1px solid var(--border);
+            color: var(--text-dark);
+            transition: all 0.2s ease;
+        }
+
+        .contact-btn:hover {
+            background: var(--accent);
+            color: #fff;
+            border-color: var(--accent);
         }
 
         /* Lightbox */
         #lightbox {
             display: none;
             position: fixed;
-            z-index: 1000;
-            left: 0; top: 0;
-            width: 100%; height: 100%;
-            background: rgba(10, 10, 10, 0.92);
+            inset: 0;
+            background: rgba(12, 12, 14, 0.94);
+            z-index: 1200;
             align-items: center;
             justify-content: center;
+            padding: 20px;
         }
+
         #lightbox img {
             max-width: 90vw;
             max-height: 88vh;
             border-radius: 4px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
         }
+
         #lightbox-close {
             position: absolute;
-            top: 25px; right: 35px;
+            top: 24px;
+            right: 32px;
             font-size: 40px;
             color: #fff;
             cursor: pointer;
         }
 
-        @media (max-width: 1100px) { .gallery-container { column-count: 3; } }
-        @media (max-width: 768px) { .gallery-container { column-count: 2; } }
-        @media (max-width: 480px) { .gallery-container { column-count: 1; } }
+        /* Responsive */
+        @media (max-width: 1100px) { .gallery-wrap { column-count: 3; } }
+        @media (max-width: 768px) {
+            .gallery-wrap { column-count: 2; }
+            header { flex-direction: column; gap: 14px; }
+            nav { flex-wrap: wrap; justify-content: center; gap: 14px; }
+            .about-grid { grid-template-columns: 1fr; }
+            .exhibit-item { flex-direction: column; align-items: flex-start; }
+        }
+        @media (max-width: 480px) { .gallery-wrap { column-count: 1; } }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Anika</h1>
+        <a href="#" class="brand-title">Anika Roy</a>
+        <nav>
+            <a class="nav-link" href="#gallery-section">Works</a>
+            <a class="nav-link" href="#about">About</a>
+            <a class="nav-link" href="#exhibitions">Exhibitions</a>
+            <a class="nav-link" href="#contact">Contact</a>
+        </nav>
     </header>
 
     <section class="hero">
-        <h2>Selected Artworks</h2>
-        <p>A collection of oil paintings, sketches, watercolors, and decorative pieces.</p>
+        <h1>Paintings & Visual Works</h1>
+        <p>A personal narrative exploring memories, everyday figures, folk forms, and visual storytelling spanning 15 years.</p>
     </section>
 
     <!-- Filter Buttons -->
-    <div class="filter-nav">
-        <button class="filter-btn active" onclick="filterGallery('all')">All Works</button>
-        <button class="filter-btn" onclick="filterGallery('oil')">Oil Paintings</button>
-        <button class="filter-btn" onclick="filterGallery('watercolor')">Watercolor</button>
-        <button class="filter-btn" onclick="filterGallery('pen')">Pen Sketch</button>
-        <button class="filter-btn" onclick="filterGallery('pencil')">Pencil Sketch</button>
-        <button class="filter-btn" onclick="filterGallery('decorations')">Decorations</button>
+    <div id="gallery-section" class="filter-wrapper">
+        <button class="pill active" onclick="filterWorks('all')">All Works</button>
+        <button class="pill" onclick="filterWorks('oil')">Oil</button>
+        <button class="pill" onclick="filterWorks('acrylic')">Acrylic</button>
+        <button class="pill" onclick="filterWorks('pen')">Pen Media</button>
+        <button class="pill" onclick="filterWorks('pencil')">Pencil Media</button>
+        <button class="pill" onclick="filterWorks('mix')">Mix Media</button>
+        <button class="pill" onclick="filterWorks('rickshaw')">Rickshaw Art</button>
+        <button class="pill" onclick="filterWorks('book')">Book Illustration</button>
+        <button class="pill" onclick="filterWorks('digital')">Digital</button>
+        <button class="pill" onclick="filterWorks('poster')">Posters</button>
+        <button class="pill" onclick="filterWorks('sketch')">Sketchbooks</button>
+        <button class="pill" onclick="filterWorks('decor')">Set Decor</button>
     </div>
 
-    <!-- Gallery Container -->
-    <div id="portfolio" class="gallery-container"></div>
+    <!-- Masonry Portfolio -->
+    <div id="gallery" class="gallery-wrap"></div>
 
     <!-- Lightbox Pop-up -->
     <div id="lightbox" onclick="closeLightbox()">
         <span id="lightbox-close">&times;</span>
-        <img id="lightbox-img" src="" alt="Enlarged artwork">
+        <img id="lightbox-img" src="" alt="Enlarged Artwork">
     </div>
 
+    <!-- About Section -->
+    <section id="about" class="page-section">
+        <h2 class="section-title">About the Artist</h2>
+        <div class="about-grid">
+            <div class="about-text">
+                <p>Painting is the way to narrate my stories and imagination. Since childhood, working with brush and color has been my primary form of expression.</p>
+                <p>Spanning traditional oil on canvas, introspective acrylic series, pen sketchbooks, and heritage rickshaw art, this collection marks a reflective exploration across 15 years of creative pursuit.</p>
+            </div>
+            <div class="about-img">
+                <img src="assets/anika_roy.jpeg" alt="Anika Roy">
+            </div>
+        </div>
+    </section>
+
+    <!-- Exhibitions Section -->
+    <section id="exhibitions" class="page-section">
+        <h2 class="section-title">Exhibitions</h2>
+        <ul class="exhibit-list">
+            <li class="exhibit-item">
+                <div class="exhibit-main">
+                    <strong>WINDOW - First Solo Exhibition</strong>
+                    <span>Zainul Gallery, Faculty of Fine Art, University of Dhaka</span>
+                </div>
+                <div class="exhibit-year">2023</div>
+            </li>
+            <li class="exhibit-item">
+                <div class="exhibit-main">
+                    <strong>Annual Art Exhibition</strong>
+                    <span>Zainul Gallery, Faculty of Fine Art, University of Dhaka</span>
+                </div>
+                <div class="exhibit-year">2023</div>
+            </li>
+            <li class="exhibit-item">
+                <div class="exhibit-main">
+                    <strong>Time: as we know it</strong>
+                    <span>EMK Center</span>
+                </div>
+                <div class="exhibit-year">2022</div>
+            </li>
+            <li class="exhibit-item">
+                <div class="exhibit-main">
+                    <strong>25th National Art Exhibition</strong>
+                    <span>National Art Gallery, Bangladesh Shilpakala Academy</span>
+                </div>
+                <div class="exhibit-year">2022</div>
+            </li>
+            <li class="exhibit-item">
+                <div class="exhibit-main">
+                    <strong>Prottaborton Art Exhibition</strong>
+                    <span>University of Dhaka</span>
+                </div>
+                <div class="exhibit-year">2022</div>
+            </li>
+            <li class="exhibit-item">
+                <div class="exhibit-main">
+                    <strong>24th National Art Exhibition</strong>
+                    <span>National Art Gallery, Bangladesh Shilpakala Academy</span>
+                </div>
+                <div class="exhibit-year">2021</div>
+            </li>
+            <li class="exhibit-item">
+                <div class="exhibit-main">
+                    <strong>Berger Young Painter Art Competition</strong>
+                    <span>Competitive Showcase</span>
+                </div>
+                <div class="exhibit-year">2021</div>
+            </li>
+            <li class="exhibit-item">
+                <div class="exhibit-main">
+                    <strong>22nd Young Artist Art Exhibition</strong>
+                    <span>National Art Gallery, Bangladesh Shilpakala Academy</span>
+                </div>
+                <div class="exhibit-year">2020</div>
+            </li>
+            <li class="exhibit-item">
+                <div class="exhibit-main">
+                    <strong>Berger Young Painter Art Competition</strong>
+                    <span>Competitive Showcase</span>
+                </div>
+                <div class="exhibit-year">2020</div>
+            </li>
+            <li class="exhibit-item">
+                <div class="exhibit-main">
+                    <strong>Inktober Dhaka</strong>
+                    <span>EMK Center</span>
+                </div>
+                <div class="exhibit-year">2019</div>
+            </li>
+            <li class="exhibit-item">
+                <div class="exhibit-main">
+                    <strong>Shilpi Kaiyum Chowdhury Smriti Chitrangkon Protijogita</strong>
+                    <span>University of Dhaka</span>
+                </div>
+                <div class="exhibit-year">2019</div>
+            </li>
+            <li class="exhibit-item">
+                <div class="exhibit-main">
+                    <strong>Department of Drawing and Painting Annual Exhibition</strong>
+                    <span>University of Dhaka</span>
+                </div>
+                <div class="exhibit-year">2018</div>
+            </li>
+            <li class="exhibit-item">
+                <div class="exhibit-main">
+                    <strong>2nd Beauty in Wreckage Group Art Exhibition</strong>
+                    <span>Bangladesh Shilpakala Academy</span>
+                </div>
+                <div class="exhibit-year">2018</div>
+            </li>
+            <li class="exhibit-item">
+                <div class="exhibit-main">
+                    <strong>Inktober Bangladesh</strong>
+                    <span>EMK Center</span>
+                </div>
+                <div class="exhibit-year">2018</div>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="page-section">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-box">
+            <p>For commissions, acquisition inquiries, exhibition bookings, or creative collaborations, please reach out via email or social channels.</p>
+            <div class="contact-links">
+                <a class="contact-btn" href="mailto:anikaroya2468@gmail.com">anikaroya2468@gmail.com</a>
+                <a class="contact-btn" href="https://www.instagram.com/anikaroya01?igsh=MTA2bmF2YnU5bmZuaw==" target="_blank">Instagram</a>
+                <a class="contact-btn" href="https://www.facebook.com/profile.php?id=100063773701113" target="_blank">Facebook Page</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Data & Dynamic Renderer -->
     <script>
-        // ENTER YOUR ARTWORKS HERE
-        // Simply specify the filename, title, and matching category:
-        // Categories available: 'oil', 'watercolor', 'pen', 'pencil', 'decorations'
-        const artworks = [
-            { src: "assets/gallery/120701766_2508550589443798_1193951147227609559_n.jpg", title: "Burger", category: "pen" },
-            { src: "aassets/gallery/120930773_2511034489195408_7434027082924506477_n.jpg", title: "Comb", category: "pen" },
-            { src: "assets/gallery/120933677_2511034449195412_2356453849936025544_n.jpg", title: "Radio", category: "pen" },
-            { src: "assets/gallery/121062675_2511034529195404_3602983878182268639_n.jpg", title: "Radio", category: "pen" },
-            { src: "oil2.jpg", title: "Sunset Reflections", category: "oil" },
-            { src: "water1.jpg", title: "Morning Mist", category: "watercolor" },
-            { src: "pen1.jpg", title: "Architectural Lines", category: "pen" },
-            { src: "pencil1.jpg", title: "Portrait Study", category: "pencil" },
-            { src: "dec1.jpg", title: "Folk Pattern Motif", category: "decorations" }
-            // Add remaining images following this exact format
+        const catalog = [
+            // Oil Paintings
+            { src: "assets/gallery/WINDOW.jpg", title: "WINDOW", cat: "oil", label: "Oil Painting" },
+            { src: "assets/gallery/Soil_s storage.jpg", title: "Soil's Storage", cat: "oil", label: "Oil Painting" },
+            { src: "assets/gallery/InkedIMG_20200203_155451_LI.jpg", title: "Still Life", cat: "oil", label: "Oil Painting" },
+            { src: "assets/gallery/IMG_20191119_183905.jpg", title: "Trivu Dawn", cat: "oil", label: "Oil Painting" },
+            { src: "assets/gallery/figure drawing 1.jpg", title: "Figure Composition 1", cat: "oil", label: "Oil Painting" },
+            { src: "assets/gallery/DSC09460.jpg", title: "Trivu Morning", cat: "oil", label: "Oil Painting" },
+            { src: "assets/gallery/IMG_20180630_000758.jpg", title: "Still Life", cat: "oil", label: "Oil Painting" },
+            { src: "assets/gallery/IMG-20221114-WA0006.jpg", title: "Trivu Afternoon", cat: "oil", label: "Oil Painting" },
+            { src: "assets/gallery/IMG-20221113-WA0008.jpg", title: "Study in Oil", cat: "oil", label: "Oil Painting" },
+            { src: "assets/gallery/IMG-20221017-WA0000.jpg", title: "Figure Composition 2", cat: "oil", label: "Oil Painting" },
+            { src: "assets/gallery/IMG-20220321-WA0000.jpg", title: "Figure Composition 3", cat: "oil", label: "Oil Painting" },
+            { src: "assets/gallery/IMG_20220920_012756.jpg", title: "Two Satire (Copy Work)", cat: "oil", label: "Oil Painting" },
+            { src: "assets/gallery/20220811_190102.jpg", title: "Oil Study", cat: "oil", label: "Oil Painting" },
+            { src: "assets/gallery/2.jpg", title: "Fish Market", cat: "oil", label: "Oil Painting" },
+            { src: "assets/gallery/IMG_3053.jpeg", title: "Meat Market", cat: "oil", label: "Oil Painting" },
+            { src: "assets/gallery/IMG_5620.jpeg", title: "Meat Market 2", cat: "oil", label: "Oil Painting" },
+
+            // Acrylic Paintings
+            { src: "assets/gallery/DSC09392.jpg", title: "Travelling with Window 1", cat: "acrylic", label: "Acrylic" },
+            { src: "assets/gallery/DSC09388.jpg", title: "Travelling with Window 2", cat: "acrylic", label: "Acrylic" },
+            { src: "assets/gallery/DSC09442 edit.jpg", title: "Travelling with Window 3", cat: "acrylic", label: "Acrylic" },
+            { src: "assets/gallery/Traveling With Window.jpg", title: "Traveling With Window 4", cat: "acrylic", label: "Acrylic" },
+            { src: "assets/gallery/Traveling With Window 2.jpg", title: "Traveling With Window 5", cat: "acrylic", label: "Acrylic" },
+            { src: "assets/gallery/DSC09397.jpg", title: "Traveling With Window 6", cat: "acrylic", label: "Acrylic" },
+            { src: "assets/gallery/1630748852401.jpg", title: "Selfie", cat: "acrylic", label: "Acrylic" },
+            { src: "assets/gallery/Metamorphosis of Emotion 2.jpg", title: "Metamorphosis of Emotion", cat: "acrylic", label: "Acrylic" },
+            { src: "assets/gallery/Metamorphosis of Emotion 3.jpg", title: "Metamorphosis of Emotion 2", cat: "acrylic", label: "Acrylic" },
+            { src: "assets/gallery/Metamorphosis of Emotion 4.jpg", title: "Metamorphosis of Emotion 3", cat: "acrylic", label: "Acrylic" },
+            { src: "assets/gallery/Metamorphosis of Emotion 5.jpg", title: "Metamorphosis of Emotion 4", cat: "acrylic", label: "Acrylic" },
+            { src: "assets/gallery/Metamorphosis of Emotion 6.jpg", title: "Metamorphosis of Emotion 5", cat: "acrylic", label: "Acrylic" },
+
+            // Pen Media
+            { src: "assets/gallery/restoration of reminiscence Size 48 . 36 inch.jpg", title: "Restoration of Reminiscence", cat: "pen", label: "Pen Media" },
+            { src: "assets/gallery/IMG_20190228_190300.jpg", title: "Pen Drawing Study", cat: "pen", label: "Pen Media" },
+            { src: "assets/gallery/IMG_20190110_111453_106.jpg", title: "Intricate Pen Study", cat: "pen", label: "Pen Media" },
+            { src: "assets/gallery/IMG_20190102_123225.jpg", title: "Linear Study", cat: "pen", label: "Pen Media" },
+            { src: "assets/gallery/IMG_20180630_001246.jpg", title: "Freedom", cat: "pen", label: "Pen Media" },
+            { src: "assets/gallery/IMG_20180630_001018.jpg", title: "Pen Graphic Study", cat: "pen", label: "Pen Media" },
+
+            // Pencil Media
+            { src: "assets/gallery/Constraint of life.jpg", title: "Constraint of Life", cat: "pencil", label: "Pencil Media" },
+            { src: "assets/gallery/IMG_20190302_210824.jpg", title: "Still Life Study", cat: "pencil", label: "Pencil Media" },
+            { src: "assets/gallery/IMG_20190302_210652.jpg", title: "Pencil Study", cat: "pencil", label: "Pencil Media" },
+            { src: "assets/gallery/IMG_20180723_224519_911.jpg", title: "Drawing Series", cat: "pencil", label: "Pencil Media" },
+            { src: "assets/gallery/IMG_20180701_171854.jpg", title: "Tonal Study", cat: "pencil", label: "Pencil Media" },
+            { src: "assets/gallery/FB_IMG_1543685540184.jpg", title: "Still Life 2", cat: "pencil", label: "Pencil Media" },
+            { src: "assets/gallery/FFB_IMG_1543685515843.jpg", title: "Pencil Sketch", cat: "pencil", label: "Pencil Media" },
+            { src: "assets/gallery/FB_IMG_1543685507979.jpg", title: "Form Study", cat: "pencil", label: "Pencil Media" },
+            { src: "assets/gallery/FB_IMG_1543685488868.jpg", title: "Contour Drawing", cat: "pencil", label: "Pencil Media" },
+            { src: "assets/gallery/Metamorphosis of Emotion 1.jpg", title: "Metamorphosis of Emotion 1", cat: "pencil", label: "Pencil Media" },
+
+            // Mix Media
+            { src: "assets/gallery/Metal Work.jpg", title: "Metal Work", cat: "mix", label: "Mix Media" },
+            { src: "assets/gallery/IMG_20230909_080356.jpg", title: "Khewadani", cat: "mix", label: "Mix Media" },
+            { src: "assets/gallery/IMG_20200625_015704.jpg", title: "Tagore", cat: "mix", label: "Mix Media" },
+
+            // Rickshaw Painting
+            { src: "assets/gallery/20211212_163047.jpg", title: "Rickshaw Craft Motif", cat: "rickshaw", label: "Rickshaw Painting" },
+            { src: "assets/gallery/20211212_150132.jpg", title: "Traditional Rickshaw Art", cat: "rickshaw", label: "Rickshaw Painting" },
+
+            // Book Illustration
+            { src: "assets/gallery/IMG_20210123_233950.jpg", title: "Narrative Scene", cat: "book", label: "Book Illustration" },
+            { src: "assets/gallery/IMG_20210123_233931.jpg", title: "Editorial Spread", cat: "book", label: "Book Illustration" },
+            { src: "assets/gallery/IMG_20210123_233908.jpg", title: "Character Story", cat: "book", label: "Book Illustration" },
+            { src: "assets/gallery/IMG_20210123_233833.jpg", title: "Story Plate", cat: "book", label: "Book Illustration" },
+            { src: "assets/gallery/IMG_20210123_233758.jpg", title: "Book Plate Study", cat: "book", label: "Book Illustration" },
+            { src: "assets/gallery/IMG_20210123_233710.jpg", title: "Dystopia", cat: "book", label: "Book Illustration" },
+            { src: "assets/gallery/IMG_20210123_233654.jpg", title: "Story Visual", cat: "book", label: "Book Illustration" },
+            { src: "assets/gallery/IMG_20210123_233621.jpg", title: "Narrative Drawing", cat: "book", label: "Book Illustration" },
+            { src: "assets/gallery/IMG_20210123_233604.jpg", title: "Book Art Scene", cat: "book", label: "Book Illustration" },
+            { src: "assets/gallery/IMG_20210123_233520.jpg", title: "Illustration Composition", cat: "book", label: "Book Illustration" },
+            { src: "assets/gallery/IMG_20210123_233353.jpg", title: "Ink Narrative", cat: "book", label: "Book Illustration" },
+            { src: "assets/gallery/IMG_20210123_232725.jpg", title: "Story Concept", cat: "book", label: "Book Illustration" },
+            { src: "assets/gallery/FB_IMG_1543685593338.jpg", title: "Book Artwork", cat: "book", label: "Book Illustration" },
+            { src: "assets/gallery/IMG_20210123_232632.jpg", title: "Character Panel", cat: "book", label: "Book Illustration" },
+            { src: "assets/gallery/IMG_20190728_214110.jpg", title: "Editorial Illustration", cat: "book", label: "Book Illustration" },
+
+            // Digital Illustration
+            { src: "assets/gallery/vehement design 1.jpg", title: "Vehement Design", cat: "digital", label: "Digital" },
+            { src: "assets/gallery/me.jpg", title: "Self Portrait Concept", cat: "digital", label: "Digital" },
+            { src: "assets/gallery/freedom.jpg", title: "Freedom", cat: "digital", label: "Digital" },
+            { src: "assets/gallery/cartoon anika.jpg", title: "Cartoon Persona", cat: "digital", label: "Digital" },
+            { src: "assets/gallery/book illustration 1.png", title: "Book Illustration 1", cat: "digital", label: "Digital" },
+            { src: "assets/gallery/book illustration 2.png", title: "Book Illustration 2", cat: "digital", label: "Digital" },
+            { src: "assets/gallery/book illustration 3.png", title: "Book Illustration 3", cat: "digital", label: "Digital" },
+            { src: "assets/gallery/book illustration 4.png", title: "Book Illustration 4", cat: "digital", label: "Digital" },
+            { src: "assets/gallery/illus 3a.png", title: "Digital Concept 3A", cat: "digital", label: "Digital" },
+            { src: "assets/gallery/illus 3b.png", title: "Digital Concept 3B", cat: "digital", label: "Digital" },
+            { src: "assets/gallery/illus 3c.png", title: "Digital Concept 3C", cat: "digital", label: "Digital" },
+            { src: "assets/gallery/illus 4 b.png", title: "Digital Concept 4B", cat: "digital", label: "Digital" },
+            { src: "assets/gallery/illus 7b.png", title: "Digital Concept 7B", cat: "digital", label: "Digital" },
+            { src: "assets/gallery/illus 8b.png", title: "Digital Concept 8B", cat: "digital", label: "Digital" },
+            { src: "assets/gallery/illus 8d.png", title: "Digital Concept 8D", cat: "digital", label: "Digital" },
+
+            // Poster Design & Mix Media
+            { src: "assets/gallery/Mohanogor poster.png", title: "Mohanogor Poster", cat: "poster", label: "Poster Design" },
+            { src: "assets/gallery/Friday poster design.png", title: "Friday Poster Design", cat: "poster", label: "Poster Design" },
+            { src: "assets/gallery/bijli poster design.jpg", title: "Bijli Poster Design", cat: "poster", label: "Poster Design" },
+            { src: "assets/gallery/Sedin October Book Illustration.png", title: "Sedin October", cat: "book", label: "Book Illustration" },
+            { src: "assets/gallery/Hridoyakkhi.png", title: "Hridoyakkhi", cat: "book", label: "Book Illustration" },
+
+            // Pen Sketchbook
+            { src: "assets/gallery/IMG_20200625_192151.jpg", title: "Sketchbook Entry 1", cat: "sketch", label: "Sketchbook" },
+            { src: "assets/gallery/IMG_20200625_185346.jpg", title: "Sketchbook Entry 2", cat: "sketch", label: "Sketchbook" },
+            { src: "assets/gallery/IMG_20200625_185135.jpg", title: "Sketchbook Entry 3", cat: "sketch", label: "Sketchbook" },
+            { src: "assets/gallery/IMG_20200625_184928.jpg", title: "Sketchbook Entry 4", cat: "sketch", label: "Sketchbook" },
+            { src: "assets/gallery/IMG_20200625_184845.jpg", title: "Sketchbook Entry 5", cat: "sketch", label: "Sketchbook" },
+            { src: "assets/gallery/IMG_20200502_171057.jpg", title: "Sketchbook Entry 6", cat: "sketch", label: "Sketchbook" },
+
+            // Set Decor
+            { src: "assets/gallery/Mirror.jpg", title: "Mirror Installation", cat: "decor", label: "Set Decor" },
+            { src: "assets/gallery/Ring thala.jpg", title: "Ring Thala", cat: "decor", label: "Set Decor" },
+            { src: "assets/gallery/Pakha.jpg", title: "Handcrafted Pakha", cat: "decor", label: "Set Decor" },
+            { src: "assets/gallery/FB_IMG_1702712562350.jpg", title: "Event Scenography", cat: "decor", label: "Set Decor" }
         ];
 
-        const gallery = document.getElementById('portfolio');
+        const gallery = document.getElementById('gallery');
 
         function renderGallery(items) {
-            gallery.innerHTML = "";
+            gallery.innerHTML = '';
             items.forEach(art => {
-                const item = document.createElement('div');
-                item.className = 'gallery-item';
-                item.onclick = () => openLightbox(art.src);
-                item.innerHTML = `
+                const card = document.createElement('div');
+                card.className = 'art-card';
+                card.onclick = () => openLightbox(art.src);
+                card.innerHTML = `
                     <img src="${art.src}" alt="${art.title}" loading="lazy">
-                    <div class="overlay">
-                        <div class="overlay-title">${art.title}</div>
-                        <div class="overlay-cat">${art.category}</div>
+                    <div class="card-overlay">
+                        <div class="card-title">${art.title}</div>
+                        <div class="card-tag">${art.label}</div>
                     </div>
                 `;
-                gallery.appendChild(item);
+                gallery.appendChild(card);
             });
         }
 
-        function filterGallery(category) {
-            // Update active button color
-            const buttons = document.querySelectorAll('.filter-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+        function filterWorks(category) {
+            const pills = document.querySelectorAll('.pill');
+            pills.forEach(p => p.classList.remove('active'));
+            if (event && event.target) event.target.classList.add('active');
 
-            // Filter items
             if (category === 'all') {
-                renderGallery(artworks);
+                renderGallery(catalog);
             } else {
-                const filtered = artworks.filter(art => art.category === category);
+                const filtered = catalog.filter(i => i.cat === category);
                 renderGallery(filtered);
             }
         }
@@ -245,8 +674,8 @@
             document.getElementById('lightbox').style.display = 'none';
         }
 
-        // Initial display of all pieces
-        renderGallery(artworks);
+        // Render initial view
+        renderGallery(catalog);
     </script>
 </body>
 </html>
