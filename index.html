@@ -30,7 +30,7 @@
             overflow-x: hidden;
         }
 
-        /* Transparent Floating Header */
+        /* Floating Transparent Header */
         header {
             position: absolute;
             top: 0;
@@ -67,7 +67,6 @@
             color: var(--text-primary);
         }
 
-        /* Compact Right-Aligned Navigation */
         nav {
             display: flex;
             align-items: center;
@@ -154,7 +153,7 @@
             background-color: rgba(0, 0, 0, 0.03);
         }
 
-        /* Fullscreen Viewport Slider */
+        /* Views */
         .view-container {
             display: none;
         }
@@ -163,6 +162,7 @@
             display: block;
         }
 
+        /* Fullscreen Hero Slider */
         #hero-slider-view {
             position: relative;
             width: 100vw;
@@ -194,7 +194,6 @@
             user-select: none;
         }
 
-        /* Clean Floating Bottom-Left Captions */
         .slide-caption {
             position: absolute;
             bottom: 35px;
@@ -237,7 +236,6 @@
             text-underline-offset: 3px;
         }
 
-        /* Controls */
         .slider-arrow {
             position: absolute;
             top: 50%;
@@ -292,7 +290,7 @@
             border-radius: 11px;
         }
 
-        /* Gallery View */
+        /* Inner Page & Masonry Gallery Views */
         .inner-page-wrap {
             max-width: 1440px;
             margin: 0 auto;
@@ -370,21 +368,26 @@
             letter-spacing: 0.25em;
             text-transform: uppercase;
             font-weight: 500;
-            margin-bottom: 30px;
+            margin-top: 40px;
+            margin-bottom: 24px;
             border-bottom: 1px solid var(--border);
             padding-bottom: 12px;
         }
 
+        .cv-section-title:first-child {
+            margin-top: 0;
+        }
+
         .cv-list {
             list-style: none;
-            margin-bottom: 50px;
+            margin-bottom: 30px;
         }
 
         .cv-row {
             display: grid;
             grid-template-columns: 85px 1fr;
             gap: 20px;
-            padding: 15px 0;
+            padding: 14px 0;
             border-bottom: 1px solid #f9f9f9;
             font-size: 0.95rem;
         }
@@ -532,6 +535,7 @@
     <header id="main-header">
         <a href="javascript:void(0)" onclick="showSliderView()" class="brand">ANIKA ROY</a>
         <nav>
+            <!-- 1. MEDIUM -->
             <div class="nav-item">
                 <span class="nav-link active" id="nav-medium">MEDIUM ▾</span>
                 <div class="dropdown">
@@ -549,25 +553,30 @@
                 </div>
             </div>
 
+            <!-- 2. EXHIBITIONS -->
             <div class="nav-item">
                 <a class="nav-link" id="nav-exhibitions" href="javascript:void(0)" onclick="showView('exhibitions')">EXHIBITIONS</a>
             </div>
 
+            <!-- 3. ABOUT -->
             <div class="nav-item">
                 <a class="nav-link" id="nav-about" href="javascript:void(0)" onclick="showView('about')">ABOUT</a>
             </div>
 
+            <!-- 4. CONTACT -->
             <div class="nav-item">
                 <a class="nav-link" id="nav-contact" href="javascript:void(0)" onclick="showView('contact')">CONTACT</a>
             </div>
         </nav>
     </header>
 
+    <!-- FULLSCREEN 4-PIECE SLIDER -->
     <main id="hero-slider-view" class="view-container active-view">
         <button class="slider-arrow arrow-prev" onclick="moveSlide(-1)">&#10094;</button>
         <button class="slider-arrow arrow-next" onclick="moveSlide(1)">&#10095;</button>
 
         <div class="slider-track" id="slider-track">
+            <!-- 1. WINDOW -->
             <div class="slide">
                 <img src="assets/gallery/WINDOW.jpg" class="slide-bg-img" alt="WINDOW" onclick="openLightbox('assets/gallery/WINDOW.jpg')">
                 <div class="slide-caption">
@@ -577,15 +586,7 @@
                 </div>
             </div>
 
-            <div class="slide">
-                <img src="assets/gallery/Metamorphosis of Emotion 1.jpg" class="slide-bg-img" alt="Metamorphosis of Emotion 1" onclick="openLightbox('assets/gallery/Metamorphosis of Emotion 1.jpg')">
-                <div class="slide-caption">
-                    <div class="slide-title">Metamorphosis of Emotion Series 3 (1/1)</div>
-                    <div class="slide-meta">MIX MEDIA</div>
-                    <span class="slide-explore-btn" onclick="filterMedium('mix', 'MIX MEDIA')">VIEW MIX MEDIA COLLECTION &rarr;</span>
-                </div>
-            </div>
-
+            <!-- 2. Travelling with Window -->
             <div class="slide">
                 <img src="assets/gallery/DSC09392.jpg" class="slide-bg-img" alt="TRAVELLING WITH WINDOW" onclick="openLightbox('assets/gallery/DSC09392.jpg')">
                 <div class="slide-caption">
@@ -595,6 +596,7 @@
                 </div>
             </div>
 
+            <!-- 3. RESTORATION OF REMINISCENCE -->
             <div class="slide">
                 <img src="assets/gallery/restoration of reminiscence Size 48 . 36 inch.jpg" class="slide-bg-img" alt="RESTORATION OF REMINISCENCE" onclick="openLightbox('assets/gallery/restoration of reminiscence Size 48 . 36 inch.jpg')">
                 <div class="slide-caption">
@@ -604,6 +606,7 @@
                 </div>
             </div>
 
+            <!-- 4. CONSTRAINT OF LIFE -->
             <div class="slide">
                 <img src="assets/gallery/Constraint of life.jpg" class="slide-bg-img" alt="CONSTRAINT OF LIFE" onclick="openLightbox('assets/gallery/Constraint of life.jpg')">
                 <div class="slide-caption">
@@ -617,7 +620,18 @@
         <div class="slider-indicators" id="slider-indicators"></div>
     </main>
 
-<!-- EXHIBITIONS VIEW (GALLERY CV STYLE) -->
+    <!-- FILTERED GALLERY VIEW -->
+    <section id="gallery-view" class="view-container">
+        <div class="inner-page-wrap">
+            <div class="category-header">
+                <h2 id="current-category-title">MEDIUM COLLECTION</h2>
+                <p id="current-category-subtitle">SELECTED ARCHIVE</p>
+            </div>
+            <div id="art-grid" class="jamesjean-grid"></div>
+        </div>
+    </section>
+
+    <!-- EXHIBITIONS VIEW (CV FORMAT) -->
     <section id="exhibitions-view" class="view-container">
         <div class="inner-page-wrap">
             <div class="cv-container">
@@ -636,7 +650,7 @@
                         <div class="cv-year">2023</div>
                         <div class="cv-details">
                             <strong>WINDOW &mdash; First Solo Exhibition</strong>
-                            <span>Zainul Gallery, Faculty of Fine Art, University of Dhaka, Bangladesh</span>
+                            <span>Zainul Gallery, Faculty of Fine Art, University of Dhaka, Bangladesh[cite: 9]</span>
                         </div>
                     </li>
                 </ul>
@@ -648,91 +662,91 @@
                         <div class="cv-year">2026</div>
                         <div class="cv-details">
                             <strong>Art on Eve</strong>
-                            <span>Downtown Manhattan, Manhattan, KS, USA</span>
+                            <span>Downtown Manhattan, Manhattan, KS, USA[cite: 9]</span>
                         </div>
                     </li>
                     <li class="cv-row">
                         <div class="cv-year">2025</div>
                         <div class="cv-details">
                             <strong>King Sized Juried Exhibition</strong>
-                            <span>Lawrence Arts Center, Lawrence, KS, USA</span>
+                            <span>Lawrence Arts Center, Lawrence, KS, USA[cite: 9]</span>
                         </div>
                     </li>
                     <li class="cv-row">
                         <div class="cv-year">2023</div>
                         <div class="cv-details">
                             <strong>Annual Art Exhibition</strong>
-                            <span>Zainul Gallery, Faculty of Fine Art, University of Dhaka</span>
+                            <span>Zainul Gallery, Faculty of Fine Art, University of Dhaka[cite: 9]</span>
                         </div>
                     </li>
                     <li class="cv-row">
                         <div class="cv-year">2022</div>
                         <div class="cv-details">
                             <strong>Time: as we know it</strong>
-                            <span>EMK Center, Dhaka, Bangladesh</span>
+                            <span>EMK Center, Dhaka, Bangladesh[cite: 9]</span>
                         </div>
                     </li>
                     <li class="cv-row">
                         <div class="cv-year">2022</div>
                         <div class="cv-details">
                             <strong>25th National Art Exhibition</strong>
-                            <span>National Art Gallery, Bangladesh Shilpakala Academy</span>
+                            <span>National Art Gallery, Bangladesh Shilpakala Academy[cite: 9]</span>
                         </div>
                     </li>
                     <li class="cv-row">
                         <div class="cv-year">2022</div>
                         <div class="cv-details">
                             <strong>Prottaborton Art Exhibition</strong>
-                            <span>University of Dhaka, Bangladesh</span>
+                            <span>University of Dhaka, Bangladesh[cite: 9]</span>
                         </div>
                     </li>
                     <li class="cv-row">
                         <div class="cv-year">2022</div>
                         <div class="cv-details">
                             <strong>Annual Art Exhibition</strong>
-                            <span>Zainul Gallery, Faculty of Fine Art, University of Dhaka</span>
+                            <span>Zainul Gallery, Faculty of Fine Art, University of Dhaka[cite: 9]</span>
                         </div>
                     </li>
                     <li class="cv-row">
                         <div class="cv-year">2021</div>
                         <div class="cv-details">
                             <strong>24th National Art Exhibition</strong>
-                            <span>National Art Gallery, Bangladesh Shilpakala Academy</span>
+                            <span>National Art Gallery, Bangladesh Shilpakala Academy[cite: 9]</span>
                         </div>
                     </li>
                     <li class="cv-row">
                         <div class="cv-year">2021</div>
                         <div class="cv-details">
                             <strong>Berger Young Painter Art Competition Exhibition</strong>
-                            <span>Dhaka, Bangladesh</span>
+                            <span>Dhaka, Bangladesh[cite: 9]</span>
                         </div>
                     </li>
                     <li class="cv-row">
                         <div class="cv-year">2020</div>
                         <div class="cv-details">
                             <strong>22nd Young Artist Art Exhibition</strong>
-                            <span>National Art Gallery, Bangladesh Shilpakala Academy</span>
+                            <span>National Art Gallery, Bangladesh Shilpakala Academy[cite: 9]</span>
                         </div>
                     </li>
                     <li class="cv-row">
                         <div class="cv-year">2020</div>
                         <div class="cv-details">
                             <strong>Berger Young Painter Art Competition Exhibition</strong>
-                            <span>Dhaka, Bangladesh</span>
+                            <span>Dhaka, Bangladesh[cite: 9]</span>
                         </div>
                     </li>
                     <li class="cv-row">
                         <div class="cv-year">2019</div>
                         <div class="cv-details">
                             <strong>Shilpi Kaiyum Chowdhury Smriti Chitrangkon Protijogita</strong>
-                            <span>University of Dhaka, Bangladesh</span>
+                            <span>University of Dhaka, Bangladesh[cite: 9]</span>
                         </div>
                     </li>
                     <li class="cv-row">
                         <div class="cv-year">2018</div>
                         <div class="cv-details">
                             <strong>Annual Art Exhibition</strong>
-                            <span>Department of Drawing and Painting, University of Dhaka</span>
+                            <span>Department of Drawing and Painting, University of Dhaka[cite: 9]</span>
                         </div>
                     </li>
                 </ul>
@@ -744,7 +758,7 @@
                         <div class="cv-year">2025</div>
                         <div class="cv-details">
                             <strong>Rickshaw Painting: Illustration in Urban Landscape Representing Marginal Community</strong>
-                            <span>National Association of Minority Landscape Architects (NAMLA), Kansas State University, Manhattan, KS</span>
+                            <span>National Association of Minority Landscape Architects (NAMLA), Kansas State University, Manhattan, KS[cite: 9]</span>
                         </div>
                     </li>
                 </ul>
@@ -756,42 +770,42 @@
                         <div class="cv-year">2026</div>
                         <div class="cv-details">
                             <strong>Timothy R. Donoghue Graduate Scholarship</strong>
-                            <span>Kansas State University</span>
+                            <span>Kansas State University[cite: 9]</span>
                         </div>
                     </li>
                     <li class="cv-row">
                         <div class="cv-year">2022</div>
                         <div class="cv-details">
                             <strong>Top 40 Nominated Artist</strong>
-                            <span>Berger Young Artist Exhibition</span>
+                            <span>Berger Young Artist Exhibition[cite: 9]</span>
                         </div>
                     </li>
                     <li class="cv-row">
                         <div class="cv-year">2021</div>
                         <div class="cv-details">
                             <strong>Top 40 Nominated Artist</strong>
-                            <span>Berger Young Artist Exhibition</span>
+                            <span>Berger Young Artist Exhibition[cite: 9]</span>
                         </div>
                     </li>
                     <li class="cv-row">
                         <div class="cv-year">2019</div>
                         <div class="cv-details">
                             <strong>Award Recipient</strong>
-                            <span>Shilpi Kaiyum Chowdhury Smriti Chitrangkon Protijogita</span>
+                            <span>Shilpi Kaiyum Chowdhury Smriti Chitrangkon Protijogita[cite: 9]</span>
                         </div>
                     </li>
                     <li class="cv-row">
                         <div class="cv-year">2019</div>
                         <div class="cv-details">
                             <strong>Rabeya Khatun Smriti Scholarship</strong>
-                            <span>Awarded for standing 1st in class, University of Dhaka</span>
+                            <span>Awarded for standing 1st in class, University of Dhaka[cite: 9]</span>
                         </div>
                     </li>
                     <li class="cv-row">
                         <div class="cv-year">2018</div>
                         <div class="cv-details">
                             <strong>Media Best Award (Pencil &amp; Pen)</strong>
-                            <span>Annual Art Exhibition, Department of Drawing and Painting, University of Dhaka</span>
+                            <span>Annual Art Exhibition, Department of Drawing and Painting, University of Dhaka[cite: 9]</span>
                         </div>
                     </li>
                 </ul>
@@ -803,14 +817,14 @@
                         <div class="cv-year">2026&ndash;</div>
                         <div class="cv-details">
                             <strong>Master of Fine Arts (MFA) in Painting</strong>
-                            <span>Department of Art, Kansas State University, Manhattan, KS, USA</span>
+                            <span>Department of Art, Kansas State University, Manhattan, KS, USA[cite: 9]</span>
                         </div>
                     </li>
                     <li class="cv-row">
                         <div class="cv-year">2017&ndash;23</div>
                         <div class="cv-details">
                             <strong>Bachelor of Fine Arts (BFA) in Drawing &amp; Painting</strong>
-                            <span>Faculty of Fine Art, University of Dhaka, Bangladesh (2nd in Class)</span>
+                            <span>Faculty of Fine Art, University of Dhaka, Bangladesh (2nd in Class)[cite: 9]</span>
                         </div>
                     </li>
                 </ul>
@@ -833,13 +847,15 @@
         </div>
     </section>
 
+    <!-- CONTACT VIEW -->
     <section id="contact-view" class="view-container">
         <div class="inner-page-wrap">
             <div class="contact-wrap">
                 <h2>CONTACT</h2>
                 <p>For commissions, acquisition inquiries, and exhibition projects:</p>
                 <ul class="contact-methods">
-                    <li><a href="mailto:anikaroy@ksu.edu.com">anikaroy@ksu.edu</a></li>
+                    <li><a href="mailto:anikaroy@ksu.edu">anikaroy@ksu.edu</a>[cite: 9]</li>
+                    <li><a href="mailto:anikaroya2468@gmail.com">anikaroya2468@gmail.com</a></li>
                     <li><a href="https://www.instagram.com/anikaroya01?igsh=MTA2bmF2YnU5bmZuaw==" target="_blank">Instagram: @anikaroya01</a></li>
                     <li><a href="https://www.facebook.com/profile.php?id=100063773701113" target="_blank">Facebook: Anika's Canvas</a></li>
                 </ul>
@@ -847,6 +863,7 @@
         </div>
     </section>
 
+    <!-- LIGHTBOX -->
     <div id="lightbox" onclick="closeLightbox()">
         <span id="lightbox-close">&times;</span>
         <img id="lightbox-img" src="" alt="Enlarged artwork">
@@ -880,11 +897,11 @@
             { src: "assets/gallery/Traveling With Window 2.jpg", title: "Traveling With Window 5", cat: "acrylic", label: "Acrylic on Canvas" },
             { src: "assets/gallery/DSC09397.jpg", title: "Traveling With Window 6", cat: "acrylic", label: "Acrylic on Canvas" },
             { src: "assets/gallery/1630748852401.jpg", title: "Selfie", cat: "acrylic", label: "Acrylic on Canvas" },
-            { src: "assets/gallery/Metamorphosis of Emotion 2.jpg", title: "Metamorphosis of Emotion Series 2 (1/5)", cat: "acrylic", label: "Acrylic on Canvas" },
-            { src: "assets/gallery/Metamorphosis of Emotion 3.jpg", title: "Metamorphosis of Emotion Series 2 (2/5)", cat: "acrylic", label: "Acrylic on Canvas" },
-            { src: "assets/gallery/Metamorphosis of Emotion 4.jpg", title: "Metamorphosis of Emotion Series 2 (3/5)", cat: "acrylic", label: "Acrylic on Canvas" },
-            { src: "assets/gallery/Metamorphosis of Emotion 5.jpg", title: "Metamorphosis of Emotion Series 2 (4/5)", cat: "acrylic", label: "Acrylic on Canvas" },
-            { src: "assets/gallery/Metamorphosis of Emotion 6.jpg", title: "Metamorphosis of Emotion Series 2 (5/5)", cat: "acrylic", label: "Acrylic on Canvas" },
+            { src: "assets/gallery/Metamorphosis of Emotion 2.jpg", title: "Metamorphosis of Emotion", cat: "acrylic", label: "Acrylic on Canvas" },
+            { src: "assets/gallery/Metamorphosis of Emotion 3.jpg", title: "Metamorphosis of Emotion 2", cat: "acrylic", label: "Acrylic on Canvas" },
+            { src: "assets/gallery/Metamorphosis of Emotion 4.jpg", title: "Metamorphosis of Emotion 3", cat: "acrylic", label: "Acrylic on Canvas" },
+            { src: "assets/gallery/Metamorphosis of Emotion 5.jpg", title: "Metamorphosis of Emotion 4", cat: "acrylic", label: "Acrylic on Canvas" },
+            { src: "assets/gallery/Metamorphosis of Emotion 6.jpg", title: "Metamorphosis of Emotion 5", cat: "acrylic", label: "Acrylic on Canvas" },
 
             // Pen Sketch
             { src: "assets/gallery/restoration of reminiscence Size 48 . 36 inch.jpg", title: "Restoration of Reminiscence (48×36\")", cat: "pen", label: "Pen on Paper" },
@@ -910,12 +927,6 @@
             { src: "assets/gallery/Metal Work.jpg", title: "Metal Work", cat: "mix", label: "Mixed Media & Metal" },
             { src: "assets/gallery/IMG_20230909_080356.jpg", title: "Khewadani", cat: "mix", label: "Mixed Media" },
             { src: "assets/gallery/IMG_20200625_015704.jpg", title: "Tagore", cat: "mix", label: "Mixed Media" },
-            { src: "assets/gallery/Metamorphosis of Emotion 1(1).JPG", title: "Metamorphosis of Emotion Series 1 (1/4)", cat: "mix", label: "Mixed Media" },
-            { src: "assets/gallery/Metamorphosis of Emotion 2(1).JPG", title: "Metamorphosis of Emotion Series 1 (2/4)", cat: "mix", label: "Mixed Media" },
-            { src: "assets/gallery/Metamorphosis of Emotion 3(1).JPG", title: "Metamorphosis of Emotion Series 1 (3/4)", cat: "mix", label: "Mixed Media" },
-            { src: "assets/gallery/Metamorphosis of Emotion 4(1).JPG", title: "Metamorphosis of Emotion Series 1 (4/4)", cat: "mix", label: "Mixed Media" },
-            { src: "assets/gallery/Metamorphosis of Emotion 1.jpg", title: "Metamorphosis of Emotion Series 3 (1/1)", cat: "mix", label: "Mixed Media" },
-            
 
             // Rickshaw Art
             { src: "assets/gallery/20211212_163047.jpg", title: "Rickshaw Craft Motif I", cat: "rickshaw", label: "Enamel & Tin" },
@@ -977,7 +988,7 @@
             { src: "assets/gallery/FB_IMG_1702712562350.jpg", title: "Outdoor Set Installation", cat: "decor", label: "Set & Decor" }
         ];
 
-        // 4-Piece Masterwork Slider
+        // Slider Navigation
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
         const totalSlides = slides.length;
@@ -1014,7 +1025,7 @@
             moveSlide(1);
         }, 4000);
 
-        // Gallery Grid
+        // Gallery Grid Rendering
         const grid = document.getElementById('art-grid');
 
         function renderArt(items) {
