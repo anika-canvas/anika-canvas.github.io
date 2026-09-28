@@ -89,6 +89,7 @@
             cursor: pointer;
             padding: 6px 4px;
             transition: color 0.25s ease;
+            user-select: none;
         }
 
         header.header-solid .nav-link {
@@ -104,7 +105,7 @@
             color: var(--text-primary);
         }
 
-        /* Dropdown for Medium */
+        /* Dropdown for Medium (Hover on desktop, class toggle on mobile) */
         .dropdown {
             display: none;
             position: absolute;
@@ -125,7 +126,8 @@
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
         }
 
-        .nav-item:hover .dropdown {
+        .nav-item:hover .dropdown,
+        .dropdown.show-dropdown {
             display: block;
         }
 
@@ -539,7 +541,7 @@
         <nav>
             <!-- 1. MEDIUM -->
             <div class="nav-item">
-                <span class="nav-link active" id="nav-medium">MEDIUM ▾</span>
+                <span class="nav-link active" id="nav-medium" onclick="toggleMediumDropdown(event)">MEDIUM ▾</span>
                 <div class="dropdown">
                     <a href="javascript:void(0)" onclick="filterMedium('oil', 'OIL PAINTING')">OIL PAINTING</a>
                     <a href="javascript:void(0)" onclick="filterMedium('acrylic', 'ACRYLIC PAINTING')">ACRYLIC PAINTING</a>
@@ -645,14 +647,14 @@
                         <div class="cv-year">2026</div>
                         <div class="cv-details">
                             <strong>Eyes &mdash; Second Solo Exhibition</strong>
-                            <span>Manhattan Senior Center, Manhattan, KS, USA</span>
+                            <span>Manhattan Senior Center, Manhattan, KS, USA[cite: 6]</span>
                         </div>
                     </li>
                     <li class="cv-row">
                         <div class="cv-year">2023</div>
                         <div class="cv-details">
                             <strong>WINDOW &mdash; First Solo Exhibition</strong>
-                            <span>Zainul Gallery, Faculty of Fine Art, University of Dhaka, Bangladesh</span>
+                            <span>Zainul Gallery, Faculty of Fine Art, University of Dhaka, Bangladesh[cite: 6]</span>
                         </div>
                     </li>
                 </ul>
@@ -664,91 +666,91 @@
                         <div class="cv-year">2026</div>
                         <div class="cv-details">
                             <strong>Art on Eve</strong>
-                            <span>Downtown Manhattan, Manhattan, KS, USA</span>
+                            <span>Downtown Manhattan, Manhattan, KS, USA[cite: 6]</span>
                         </div>
                     </li>
                     <li class="cv-row">
                         <div class="cv-year">2025</div>
                         <div class="cv-details">
                             <strong>King Sized Juried Exhibition</strong>
-                            <span>Lawrence Arts Center, Lawrence, KS, USA</span>
+                            <span>Lawrence Arts Center, Lawrence, KS, USA[cite: 6]</span>
                         </div>
                     </li>
                     <li class="cv-row">
                         <div class="cv-year">2023</div>
                         <div class="cv-details">
                             <strong>Annual Art Exhibition</strong>
-                            <span>Zainul Gallery, Faculty of Fine Art, University of Dhaka</span>
+                            <span>Zainul Gallery, Faculty of Fine Art, University of Dhaka[cite: 6]</span>
                         </div>
                     </li>
                     <li class="cv-row">
                         <div class="cv-year">2022</div>
                         <div class="cv-details">
                             <strong>Time: as we know it</strong>
-                            <span>EMK Center, Dhaka, Bangladesh</span>
+                            <span>EMK Center, Dhaka, Bangladesh[cite: 6]</span>
                         </div>
                     </li>
                     <li class="cv-row">
                         <div class="cv-year">2022</div>
                         <div class="cv-details">
                             <strong>25th National Art Exhibition</strong>
-                            <span>National Art Gallery, Bangladesh Shilpakala Academy</span>
+                            <span>National Art Gallery, Bangladesh Shilpakala Academy[cite: 6]</span>
                         </div>
                     </li>
                     <li class="cv-row">
                         <div class="cv-year">2022</div>
                         <div class="cv-details">
                             <strong>Prottaborton Art Exhibition</strong>
-                            <span>University of Dhaka, Bangladesh</span>
+                            <span>University of Dhaka, Bangladesh[cite: 6]</span>
                         </div>
                     </li>
                     <li class="cv-row">
                         <div class="cv-year">2022</div>
                         <div class="cv-details">
                             <strong>Annual Art Exhibition</strong>
-                            <span>Zainul Gallery, Faculty of Fine Art, University of Dhaka</span>
+                            <span>Zainul Gallery, Faculty of Fine Art, University of Dhaka[cite: 6]</span>
                         </div>
                     </li>
                     <li class="cv-row">
                         <div class="cv-year">2021</div>
                         <div class="cv-details">
                             <strong>24th National Art Exhibition</strong>
-                            <span>National Art Gallery, Bangladesh Shilpakala Academy</span>
+                            <span>National Art Gallery, Bangladesh Shilpakala Academy[cite: 6]</span>
                         </div>
                     </li>
                     <li class="cv-row">
                         <div class="cv-year">2021</div>
                         <div class="cv-details">
                             <strong>Berger Young Painter Art Competition Exhibition</strong>
-                            <span>Dhaka, Bangladesh</span>
+                            <span>Dhaka, Bangladesh[cite: 6]</span>
                         </div>
                     </li>
                     <li class="cv-row">
                         <div class="cv-year">2020</div>
                         <div class="cv-details">
                             <strong>22nd Young Artist Art Exhibition</strong>
-                            <span>National Art Gallery, Bangladesh Shilpakala Academy</span>
+                            <span>National Art Gallery, Bangladesh Shilpakala Academy[cite: 6]</span>
                         </div>
                     </li>
                     <li class="cv-row">
                         <div class="cv-year">2020</div>
                         <div class="cv-details">
                             <strong>Berger Young Painter Art Competition Exhibition</strong>
-                            <span>Dhaka, Bangladesh</span>
+                            <span>Dhaka, Bangladesh[cite: 6]</span>
                         </div>
                     </li>
                     <li class="cv-row">
                         <div class="cv-year">2019</div>
                         <div class="cv-details">
                             <strong>Shilpi Kaiyum Chowdhury Smriti Chitrangkon Protijogita</strong>
-                            <span>University of Dhaka, Bangladesh</span>
+                            <span>University of Dhaka, Bangladesh[cite: 6]</span>
                         </div>
                     </li>
                     <li class="cv-row">
                         <div class="cv-year">2018</div>
                         <div class="cv-details">
                             <strong>Annual Art Exhibition</strong>
-                            <span>Department of Drawing and Painting, University of Dhaka</span>
+                            <span>Department of Drawing and Painting, University of Dhaka[cite: 6]</span>
                         </div>
                     </li>
                 </ul>
@@ -760,7 +762,7 @@
                         <div class="cv-year">2025</div>
                         <div class="cv-details">
                             <strong>Rickshaw Painting: Illustration in Urban Landscape Representing Marginal Community</strong>
-                            <span>National Association of Minority Landscape Architects (NAMLA), Kansas State University, Manhattan, KS</span>
+                            <span>National Association of Minority Landscape Architects (NAMLA), Kansas State University, Manhattan, KS[cite: 6]</span>
                         </div>
                     </li>
                 </ul>
@@ -772,42 +774,42 @@
                         <div class="cv-year">2026</div>
                         <div class="cv-details">
                             <strong>Timothy R. Donoghue Graduate Scholarship</strong>
-                            <span>Kansas State University</span>
+                            <span>Kansas State University[cite: 6]</span>
                         </div>
                     </li>
                     <li class="cv-row">
                         <div class="cv-year">2022</div>
                         <div class="cv-details">
                             <strong>Top 40 Nominated Artist</strong>
-                            <span>Berger Young Artist Exhibition</span>
+                            <span>Berger Young Artist Exhibition[cite: 6]</span>
                         </div>
                     </li>
                     <li class="cv-row">
                         <div class="cv-year">2021</div>
                         <div class="cv-details">
                             <strong>Top 40 Nominated Artist</strong>
-                            <span>Berger Young Artist Exhibition</span>
+                            <span>Berger Young Artist Exhibition[cite: 6]</span>
                         </div>
                     </li>
                     <li class="cv-row">
                         <div class="cv-year">2019</div>
                         <div class="cv-details">
                             <strong>Award Recipient</strong>
-                            <span>Shilpi Kaiyum Chowdhury Smriti Chitrangkon Protijogita</span>
+                            <span>Shilpi Kaiyum Chowdhury Smriti Chitrangkon Protijogita[cite: 6]</span>
                         </div>
                     </li>
                     <li class="cv-row">
                         <div class="cv-year">2019</div>
                         <div class="cv-details">
                             <strong>Rabeya Khatun Smriti Scholarship</strong>
-                            <span>Awarded for standing 1st in class, University of Dhaka</span>
+                            <span>Awarded for standing 1st in class, University of Dhaka[cite: 6]</span>
                         </div>
                     </li>
                     <li class="cv-row">
                         <div class="cv-year">2018</div>
                         <div class="cv-details">
                             <strong>Media Best Award (Pencil &amp; Pen)</strong>
-                            <span>Annual Art Exhibition, Department of Drawing and Painting, University of Dhaka</span>
+                            <span>Annual Art Exhibition, Department of Drawing and Painting, University of Dhaka[cite: 6]</span>
                         </div>
                     </li>
                 </ul>
@@ -819,14 +821,14 @@
                         <div class="cv-year">2026&ndash;</div>
                         <div class="cv-details">
                             <strong>Master of Fine Arts (MFA) in Painting</strong>
-                            <span>Department of Art, Kansas State University, Manhattan, KS, USA</span>
+                            <span>Department of Art, Kansas State University, Manhattan, KS, USA[cite: 6]</span>
                         </div>
                     </li>
                     <li class="cv-row">
                         <div class="cv-year">2017&ndash;23</div>
                         <div class="cv-details">
                             <strong>Bachelor of Fine Arts (BFA) in Drawing &amp; Painting</strong>
-                            <span>Faculty of Fine Art, University of Dhaka, Bangladesh (2nd in Class)</span>
+                            <span>Faculty of Fine Art, University of Dhaka, Bangladesh (2nd in Class)[cite: 6]</span>
                         </div>
                     </li>
                 </ul>
@@ -842,8 +844,8 @@
                 <img src="assets/anika_roy.jpeg" alt="Anika Roy">
                 <div class="about-text">
                     <h2>ANIKA ROY</h2>
-                    <p>Anika Roy is a visual artist whose work illustrates the nuances of social construction. Spanning traditional studio practices and cultural crafts, her practice encompasses oil on canvas, acrylics, pen and pencil studies, printmaking, and rickshaw painting traditions.</p>
-                    <p>She is currently an MFA student and Graduate Teaching Assistant in Painting within the Department of Art at Kansas State University. She completed her Bachelor of Fine Arts in Drawing and Painting at the University of Dhaka.</p>
+                    <p>Anika Roy is a visual artist whose work illustrates the nuances of social construction[cite: 6]. Spanning traditional studio practices and cultural crafts, her practice encompasses oil on canvas, acrylics, pen and pencil studies, printmaking, and rickshaw painting traditions[cite: 6].</p>
+                    <p>She is currently an MFA student and Graduate Teaching Assistant in Painting within the Department of Art at Kansas State University[cite: 6]. She completed her Bachelor of Fine Arts in Drawing and Painting at the University of Dhaka[cite: 6].</p>
                 </div>
             </div>
         </div>
@@ -856,21 +858,11 @@
                 <h2>CONTACT</h2>
                 <p>For commissions, acquisition inquiries, and exhibition projects:</p>
                 <ul class="contact-methods">
-                    <li><a href="mailto:anikaroy@ksu.edu">anikaroy@ksu.edu</a></li>
+                    <li><a href="mailto:anikaroy@ksu.edu">anikaroy@ksu.edu</a>[cite: 6]</li>
                     <li><a href="mailto:anikaroya2468@gmail.com">anikaroya2468@gmail.com</a></li>
                     <li><a href="https://www.instagram.com/anikaroya01?igsh=MTA2bmF2YnU5bmZuaw==" target="_blank">Instagram: @anikaroya01</a></li>
                     <li><a href="https://www.facebook.com/profile.php?id=100063773701113" target="_blank">Facebook: Anika's Canvas</a></li>
                 </ul>
-
-                <!-- Embedded QR Code -->
-                <div style="margin-top: 50px; display: flex; flex-direction: column; align-items: center; gap: 12px;">
-                    <img 
-                        src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://anika-canvas.github.io/&margin=10" 
-                        alt="Portfolio QR Code" 
-                        style="width: 170px; height: 170px; border: 1px solid var(--border); border-radius: 4px; padding: 8px; background: #ffffff;"
-                    >
-                    <span style="font-size: 0.78rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--text-secondary);">Scan to view portfolio</span>
-                </div>
             </div>
         </div>
     </section>
@@ -1037,6 +1029,20 @@
             moveSlide(1);
         }, 4000);
 
+        // Mobile Dropdown Toggle Handler
+        function toggleMediumDropdown(e) {
+            e.stopPropagation();
+            const dropdown = document.querySelector('.dropdown');
+            dropdown.classList.toggle('show-dropdown');
+        }
+
+        document.addEventListener('click', function(e) {
+            const dropdown = document.querySelector('.dropdown');
+            if (dropdown && !dropdown.contains(e.target)) {
+                dropdown.classList.remove('show-dropdown');
+            }
+        });
+
         // Gallery Grid Rendering
         const grid = document.getElementById('art-grid');
 
@@ -1066,6 +1072,9 @@
         }
 
         function showSliderView() {
+            const dropdown = document.querySelector('.dropdown');
+            if (dropdown) dropdown.classList.remove('show-dropdown');
+
             document.querySelectorAll('.view-container').forEach(el => el.classList.remove('active-view'));
             document.querySelectorAll('.nav-link').forEach(el => el.classList.remove('active'));
             document.getElementById('hero-slider-view').classList.add('active-view');
@@ -1075,6 +1084,9 @@
         }
 
         function filterMedium(category, title) {
+            const dropdown = document.querySelector('.dropdown');
+            if (dropdown) dropdown.classList.remove('show-dropdown');
+
             document.querySelectorAll('.view-container').forEach(el => el.classList.remove('active-view'));
             document.querySelectorAll('.nav-link').forEach(el => el.classList.remove('active'));
             document.getElementById('gallery-view').classList.add('active-view');
@@ -1090,6 +1102,9 @@
         }
 
         function showView(viewId) {
+            const dropdown = document.querySelector('.dropdown');
+            if (dropdown) dropdown.classList.remove('show-dropdown');
+
             document.querySelectorAll('.view-container').forEach(el => el.classList.remove('active-view'));
             document.querySelectorAll('.nav-link').forEach(el => el.classList.remove('active'));
 
