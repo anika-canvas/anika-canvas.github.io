@@ -105,7 +105,7 @@
             color: var(--text-primary);
         }
 
-        /* Dropdown for Medium (Hover on desktop, class toggle on mobile) */
+        /* Dropdown for Medium */
         .dropdown {
             display: none;
             position: absolute;
@@ -526,11 +526,33 @@
             .slide-caption { bottom: 45px; left: 20px; right: 20px; }
         }
 
+        /* Mobile specific positioning to prevent dropdown clipping */
         @media (max-width: 700px) {
-            header { flex-direction: column; padding: 18px 5%; gap: 14px; align-items: flex-start; }
-            nav { width: 100%; justify-content: flex-start; flex-wrap: wrap; gap: 14px; }
-            .jamesjean-grid { column-count: 1; }
-            .slider-arrow { display: none; }
+            header { 
+                flex-direction: column; 
+                padding: 18px 5%; 
+                gap: 14px; 
+                align-items: flex-start; 
+            }
+            nav { 
+                width: 100%; 
+                justify-content: flex-start; 
+                flex-wrap: wrap; 
+                gap: 16px; 
+            }
+            .dropdown {
+                right: auto;
+                left: 0;
+                min-width: 200px;
+                max-width: calc(100vw - 32px);
+                box-shadow: 0 14px 28px rgba(0, 0, 0, 0.4);
+            }
+            .jamesjean-grid { 
+                column-count: 1; 
+            }
+            .slider-arrow { 
+                display: none; 
+            }
         }
     </style>
 </head>
