@@ -61,6 +61,7 @@
             color: #ffffff;
             text-decoration: none;
             transition: color 0.3s ease;
+            cursor: pointer;
         }
 
         header.header-solid .brand {
@@ -137,6 +138,7 @@
             color: rgba(255, 255, 255, 0.75);
             text-decoration: none;
             transition: all 0.2s ease;
+            cursor: pointer;
         }
 
         header.header-solid .dropdown a {
@@ -718,28 +720,28 @@
                         <div class="cv-year">2021</div>
                         <div class="cv-details">
                             <strong>Berger Young Painter Art Competition Exhibition</strong>
-                            <span>Dhaka, Bangladesh[cite: 9]</span>
+                            <span>Dhaka, Bangladesh</span>
                         </div>
                     </li>
                     <li class="cv-row">
                         <div class="cv-year">2020</div>
                         <div class="cv-details">
                             <strong>22nd Young Artist Art Exhibition</strong>
-                            <span>National Art Gallery, Bangladesh Shilpakala Academy[cite: 9]</span>
+                            <span>National Art Gallery, Bangladesh Shilpakala Academy</span>
                         </div>
                     </li>
                     <li class="cv-row">
                         <div class="cv-year">2020</div>
                         <div class="cv-details">
                             <strong>Berger Young Painter Art Competition Exhibition</strong>
-                            <span>Dhaka, Bangladesh[cite: 9]</span>
+                            <span>Dhaka, Bangladesh</span>
                         </div>
                     </li>
                     <li class="cv-row">
                         <div class="cv-year">2019</div>
                         <div class="cv-details">
                             <strong>Shilpi Kaiyum Chowdhury Smriti Chitrangkon Protijogita</strong>
-                            <span>University of Dhaka, Bangladesh[cite: 9]</span>
+                            <span>University of Dhaka, Bangladesh</span>
                         </div>
                     </li>
                     <li class="cv-row">
@@ -859,6 +861,16 @@
                     <li><a href="https://www.instagram.com/anikaroya01?igsh=MTA2bmF2YnU5bmZuaw==" target="_blank">Instagram: @anikaroya01</a></li>
                     <li><a href="https://www.facebook.com/profile.php?id=100063773701113" target="_blank">Facebook: Anika's Canvas</a></li>
                 </ul>
+
+                <!-- Embedded QR Code -->
+                <div style="margin-top: 50px; display: flex; flex-direction: column; align-items: center; gap: 12px;">
+                    <img 
+                        src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://anika-canvas.github.io/&margin=10" 
+                        alt="Portfolio QR Code" 
+                        style="width: 170px; height: 170px; border: 1px solid var(--border); border-radius: 4px; padding: 8px; background: #ffffff;"
+                    >
+                    <span style="font-size: 0.78rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--text-secondary);">Scan to view portfolio</span>
+                </div>
             </div>
         </div>
     </section>
@@ -921,7 +933,6 @@
             { src: "assets/gallery/FFB_IMG_1543685515843.jpg", title: "Pencil Study", cat: "pencil", label: "Pencil on Paper" },
             { src: "assets/gallery/FB_IMG_1543685507979.jpg", title: "Perspective Study", cat: "pencil", label: "Pencil on Paper" },
             { src: "assets/gallery/FB_IMG_1543685488868.jpg", title: "Contour Form", cat: "pencil", label: "Pencil on Paper" },
-            
 
             // Mix Media
             { src: "assets/gallery/Metal Work.jpg", title: "Metal Work", cat: "mix", label: "Mixed Media & Metal" },
@@ -1082,9 +1093,12 @@
             document.querySelectorAll('.view-container').forEach(el => el.classList.remove('active-view'));
             document.querySelectorAll('.nav-link').forEach(el => el.classList.remove('active'));
 
-            document.getElementById(viewId + '-view').classList.add('active-view');
-            const navLink = document.getElementById('nav-' + viewId);
-            if (navLink) navLink.classList.add('active');
+            const targetView = document.getElementById(viewId + '-view');
+            if (targetView) targetView.classList.add('active-view');
+
+            const targetNav = document.getElementById('nav-' + viewId);
+            if (targetNav) targetNav.classList.add('active');
+
             setHeaderStyle(true);
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
